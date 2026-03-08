@@ -1,5 +1,7 @@
-# Hugo configuration file
-title: My Site
+title: 萌睡梦
+baseURL: "https://mengshuimeng.github.io/"
+languageCode: "zh-cn"
+enableRobotsTXT: true
 
 # import hextra as module
 module:
@@ -7,40 +9,39 @@ module:
     - path: github.com/imfing/hextra
 
 markup:
-  # allow raw html
   goldmark:
     renderer:
       unsafe: true
 
-  # enable hextra syntax highlight
   highlight:
     noClasses: false
 
 menu:
   main:
-    - name: Docs
-      pageRef: /docs
+    - name: 首页
+      pageRef: /
       weight: 1
-    - name: About
+    - name: 关于我
       pageRef: /about
       weight: 2
-    - name: Contact ↗
-      url: "https://github.com/imfing"
+    - name: 项目
+      pageRef: /projects
       weight: 3
-    - name: Search
+    - name: 博客
+      pageRef: /blog
       weight: 4
+    - name: 简历
+      pageRef: /resume
+      weight: 5
+    - name: 搜索
+      weight: 6
       params:
         type: search
     - name: GitHub
-      weight: 5
-      url: "https://github.com/imfing/hextra-starter-template"
+      weight: 7
+      url: "https://github.com/mengshuimeng"
       params:
         icon: github
-    - name: Twitter
-      weight: 6
-      url: "https://twitter.com/"
-      params:
-        icon: x-twitter
 
 params:
   navbar:
@@ -48,9 +49,8 @@ params:
     displayLogo: false
 
   footer:
-    displayCopyright: false
+    displayCopyright: true
     displayPoweredBy: true
 
   editURL:
-    enable: true
-    base: "https://github.com/imfing/hextra-starter-template/edit/main/content"
+    enable: false

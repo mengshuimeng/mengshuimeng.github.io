@@ -23,13 +23,14 @@ languages:
         - name: 博客
           pageRef: /blog
           weight: 4
-        - name: 简历
-          pageRef: /resume
+        - name: 文档
+          pageRef: /docs
           weight: 5
         - name: 搜索
           weight: 6
           params:
             type: search
+            label: false
         - name: Language
           weight: 7
           params:
@@ -60,8 +61,8 @@ languages:
         - name: Blog
           pageRef: /blog
           weight: 4
-        - name: Resume
-          pageRef: /resume
+        - name: Docs
+          pageRef: /docs
           weight: 5
         - name: Search
           weight: 6

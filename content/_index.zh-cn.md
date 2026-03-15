@@ -31,10 +31,7 @@ toc: false
   <p style="margin: 0; font-size: 1.05rem; opacity: 0.85;">
     新疆大学 · 计算机科学与技术本科生
   </p>
-  <p style="margin: 0; max-width: 46rem; opacity: 0.75; line-height: 1.8;">
-    关注计算机视觉、行人重识别、机器人视觉感知与边缘部署，<br>
-    更在意把算法真正做成可运行、可展示、可落地的系统。
-  </p>
+  
 
   <div
     style="

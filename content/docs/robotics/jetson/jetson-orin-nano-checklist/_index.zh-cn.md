@@ -1,5 +1,5 @@
 ﻿---
-title: TODO
+title: jetson-orin-nano-checklist
 ---
 
 TODO

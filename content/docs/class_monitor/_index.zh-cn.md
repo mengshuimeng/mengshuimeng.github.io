@@ -1,5 +1,5 @@
 ﻿---
-title: TODO
+title: Class Monitor
 ---
 
 TODO

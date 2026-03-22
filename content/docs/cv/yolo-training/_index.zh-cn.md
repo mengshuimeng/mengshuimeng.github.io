@@ -1,5 +1,5 @@
 ﻿---
-title: TODO
+title: yolo-training
 ---
 
 TODO

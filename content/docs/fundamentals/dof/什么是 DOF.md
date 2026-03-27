@@ -1,3 +1,11 @@
+﻿---
+title: 什么是 DOF
+description: 机器人自由度与相关变量的基础解释
+slug: what-is-dof
+aliases:
+  - /docs/fundamentals/dof/什么是-dof/
+---
+
 DOF = **Degree Of Freedom（自由度）**，在机器人/仿真中是一个非常基础的概念。下面用中文把它从概念、种类、在这段代码中的具体含义和常见表示方式都讲清楚，带几点例子和注意事项，方便你理解代码里跟 `dof` 有关的变量（`dof_pos`、`dof_vel`、`dof_state`、`num_dof`、`torque_limits` 等）。
 
 ------

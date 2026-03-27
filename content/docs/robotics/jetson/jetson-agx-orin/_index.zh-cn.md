@@ -1,5 +1,5 @@
-﻿---
-title: Jetson-agx-orin
+---
+title: Jetson AGX Orin
 ---
 
-TODO
+AGX Orin 平台的部署、环境与调试记录。

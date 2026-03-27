@@ -1,5 +1,5 @@
-﻿---
-title: TODO
+---
+title: YOLO Training
 ---
 
-TODO
+Local testing, server training, and Colab-based YOLO workflows.

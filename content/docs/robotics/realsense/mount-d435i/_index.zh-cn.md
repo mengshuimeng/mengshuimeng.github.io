@@ -1,5 +1,5 @@
-﻿---
-title: Mount-d435i
+---
+title: 挂载 D435i
 ---
 
-TODO
+记录 D435i 的安装、挂载和故障排查。

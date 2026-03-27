@@ -1,5 +1,5 @@
-﻿---
-title: labelimg
+---
+title: 数据标注
 ---
 
-TODO
+LabelImg 标注规则、标注边界和数据集整理放在这里。

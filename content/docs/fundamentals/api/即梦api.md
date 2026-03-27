@@ -1,3 +1,11 @@
+﻿---
+title: 即梦 API 需求整理
+description: 即梦 API 的调用需求与封装要求记录
+slug: jimeng-api-notes
+aliases:
+  - /docs/fundamentals/api/即梦api/
+---
+
 请你帮我用这个即梦api写一段python代码。
 
 要求
@@ -1220,4 +1228,5 @@ if __name__ == "__main__":
     except Exception as e:
         print(f"错误: {e}")
 ```
+
 

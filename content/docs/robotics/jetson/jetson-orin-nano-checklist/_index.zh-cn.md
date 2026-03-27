@@ -1,5 +1,5 @@
-﻿---
-title: jetson-orin-nano-checklist
+---
+title: Jetson Orin Nano 排查清单
 ---
 
-TODO
+Jetson Orin Nano 环境排查和启动检查清单。

@@ -1,5 +1,5 @@
-﻿---
-title: TODO
+---
+title: Computer Vision
 ---
 
-TODO
+Notes on visual data annotation, YOLO training, ReID experiments, and end-to-end CV workflows.

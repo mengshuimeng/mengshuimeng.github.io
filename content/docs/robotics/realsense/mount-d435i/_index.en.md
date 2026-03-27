@@ -1,5 +1,5 @@
-﻿---
-title: TODO
+---
+title: Mount D435i
 ---
 
-TODO
+Mounting notes and troubleshooting for the D435i camera.

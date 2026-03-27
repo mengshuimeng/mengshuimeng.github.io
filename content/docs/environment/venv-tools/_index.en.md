@@ -1,5 +1,5 @@
-﻿---
-title: TODO
+---
+title: Tools and Virtual Environments
 ---
 
-TODO
+Helper notes for requirements export, editor setup, mirrors, and VM maintenance.

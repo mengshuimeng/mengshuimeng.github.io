@@ -1,5 +1,5 @@
-﻿---
-title: TODO
+---
+title: Jetson Orin Nano Checklist
 ---
 
-TODO
+Troubleshooting and startup checklist for Jetson Orin Nano.

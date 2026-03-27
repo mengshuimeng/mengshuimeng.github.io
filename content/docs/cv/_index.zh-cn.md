@@ -1,12 +1,6 @@
-﻿---
-title: cv
-type: docs
-prev: docs/first-page
-next: docs/folder/leaf
-sidebar:
-  open: true
-
+---
+title: 计算机视觉
 ---
 
-TODO
+这里收录视觉方向的训练记录、标注方法、ReID 笔记以及工程工作流整理。
 

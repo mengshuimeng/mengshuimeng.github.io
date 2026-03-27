@@ -1,5 +1,5 @@
-﻿---
-title: TODO
+---
+title: Simulation
 ---
 
-TODO
+Simulation notes, configuration references, and experiment breakdowns.

@@ -1,3 +1,11 @@
+﻿---
+title: 什么是广播 Broadcasting
+description: PyTorch 与 NumPy 中 broadcasting 的基础理解
+slug: what-is-broadcasting
+aliases:
+  - /docs/fundamentals/tensor/什么是广播broadcasting/
+---
+
 # 广播broadcasting
 
 好问题 👍，**广播（broadcasting）**是 PyTorch（和 NumPy）里的一个重要机制，用来让不同形状的张量在运算时“自动扩展”成兼容的形状，而不用你手动复制数据。

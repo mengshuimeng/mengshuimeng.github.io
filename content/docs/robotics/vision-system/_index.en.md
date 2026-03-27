@@ -1,5 +1,5 @@
-﻿---
-title: TODO
+---
+title: Vision System
 ---
 
-TODO
+Long-lived vision-system notes, including OpenMV, OpenClaw, and RC vision setup.

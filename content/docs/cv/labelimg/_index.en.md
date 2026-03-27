@@ -1,5 +1,5 @@
-﻿---
-title: TODO
+---
+title: Annotation
 ---
 
-TODO
+LabelImg conventions, annotation boundaries, and dataset preparation notes.

@@ -1,5 +1,5 @@
-﻿---
-title: reid-notes
+---
+title: ReID 笔记
 ---
 
-TODO
+这里收录行人重识别相关思路、资料和实验笔记。

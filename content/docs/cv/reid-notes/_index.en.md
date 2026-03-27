@@ -1,5 +1,5 @@
-﻿---
-title: TODO
+---
+title: ReID Notes
 ---
 
-TODO
+Notes, references, and experiment records for person re-identification.

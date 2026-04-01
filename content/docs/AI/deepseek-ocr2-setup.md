@@ -15,26 +15,26 @@ aliases:
 
 1. Clone this repository and navigate to the DeepSeek-OCR-2 folder
 
-```
+```bash
 git clone https://github.com/deepseek-ai/DeepSeek-OCR-2.git
 ```
 
 
 
-1. Conda
+2. Conda
 
-```
+```bash
 conda create -n deepseek-ocr2 python=3.12.9 -y
 conda activate deepseek-ocr2
 ```
 
 
 
-1. Packages
+3. Packages
 
 - download the vllm-0.8.5 [whl](https://github.com/vllm-project/vllm/releases/tag/v0.8.5)
 
-```
+```bash
 wget https://github.com/vllm-project/vllm/releases/download/v0.8.5/vllm-0.8.5+cu118-cp38-abi3-manylinux1_x86_64.whl
 ```
 
@@ -43,12 +43,7 @@ cu118
 cu1215060
 
 
-
-
-
-cu
-
-```
+```bash
 # The current PyTorch install supports CUDA capabilities sm_50 sm_60 sm_70 sm_75 sm_80 sm_86 sm_37 sm_90.
 
 pip install torch==2.6.0 torchvision==0.21.0 torchaudio==2.6.0 --index-url https://download.pytorch.org/whl/cu118
@@ -76,13 +71,11 @@ pip install flash-attn==2.7.3 --no-build-isolation
 
 **第二步：确认系统级 CUDA 开发工具（重要）**
 
-```
+```bash
 nvcc --version
 gcc --version
 nvidia-smi
 ```
-
-
 
 1. **添加 NVIDIA 仓库密钥和源** (如果之前没加过)：
 
@@ -109,13 +102,13 @@ nvidia-smi
 
    如果输出了版本号（例如 `Cuda compilation tools, release 11.8...`），说明成功了。
 
-### **第二步：设置环境变量**
+3. **设置环境变量**
 
 即使安装了工具，Python 编译脚本有时也找不到路径，需要手动指定 `CUDA_HOME`。
 
-1. **临时设置（当前终端有效）**：
+方法一： **临时设置（当前终端有效）**：
 
-   ```
+   ```bash
    export CUDA_HOME=/usr/local/cuda-11.8
    export PATH=$CUDA_HOME/bin:$PATH
    
@@ -125,10 +118,10 @@ nvidia-smi
 
    *(如果 `/usr/local/cuda-11.8` 不存在，尝试 `ls /usr/local/` 看看 cuda 具体安装在哪个文件夹，通常是 `cuda-11.8` 或 `cuda`)*
 
-2. **永久设置（推荐）**：
+方法二： **永久设置（推荐）**：
    为了避免每次打开终端都要输入，将其写入 `~/.bashrc`：
 
-   ```
+   ```bash
    echo 'export CUDA_HOME=/usr/local/cuda-11.8' >> ~/.bashrc
    echo 'export PATH=$CUDA_HOME/bin:$PATH' >> ~/.bashrc
    source ~/.bashrc
@@ -138,22 +131,22 @@ nvidia-smi
    source ~/.bashrc
    ```
 
-3. **验证安装**：
+4. **验证安装**：
    安装完成后，检查 `nvcc` 是否可用：
 
-   ```
+```bash
 nvcc --version
 gcc --version
 nvidia-smi
-   ```
+```
 
 修改`config.py`
-
+```bash
 (deepseek-ocr2) gpu@9gpu-com:~/Downloads/DeepSeek-OCR-2$ python3 -c "import torch; print(f'PyTorch Version: {torch.__version__}'); print(f'CUDA Available: {torch.cuda.is_available()}'); print(f'GPU Name: {torch.cuda.get_device_name(0)}')"
 PyTorch Version: 2.6.0+cu124
 CUDA Available: True
 GPU Name: NVIDIA GeForce RTX 3090
-
+```
 
 ## vLLM-Inference
 
@@ -195,42 +188,39 @@ python run_dpsk_ocr2_eval_batch.py
 
 
 
-XAIZAI DEB
+安装 DEB
+```bash
 sudo apt install -y ./Clash.Verge_2.4.6_amd64.deb 
+```
 
-
-XIAZAIGIT
+下载 GIT
+```bash
 sudo apt install git
-
-conda 
+```
+下载 conda 
 1. 下载最新版的 Miniconda 安装脚本
 我们使用清华大学的镜像源，速度快且稳定。
 (注：以下命令会下载最新的 Python 3.x 版本 Miniconda)
-bash
-
+```bash
 cd ~
 
 # 使用 wget 下载 (如果 wget 不可用，请先尝试 apt install wget，若 apt 仍报错则用 curl)
-
 wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/Miniconda3-latest-Linux-x86_64.sh -O Miniconda3-latest-Linux-x86_64.sh
-
-
 # 如果 wget 也报错，请改用 curl:
-
 # curl -O https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/Miniconda3-latest-Linux-x86_64.sh
+```
+
 
 2. 验证文件完整性（可选但推荐）
 确保下载的文件没有损坏：
-bash
-
+```bash
 sha256sum Miniconda3-latest-Linux-x86_64.sh
-
+```
 (您可以去清华源网页核对一下输出的哈希值，通常只要下载过程没报错，大概率是好的)
 3. 运行安装脚本
-bash
-
+```bash
 bash Miniconda3-latest-Linux-x86_64.sh
-
+```
 安装过程中的交互提示：
 
     许可协议：出现 Do you accept the license terms? [yes|no] 时，输入 yes 并回车。
@@ -242,38 +232,31 @@ bash Miniconda3-latest-Linux-x86_64.sh
 
 4. 激活环境
 安装完成后，让配置立即生效：
-bash
-
+```bash
 source ~/.bashrc
-
+```
 5. 验证安装
 输入以下命令，如果出现版本号且没有报错，说明安装成功：
-bash
-
+```bash
 conda --version
-
+```
 输出示例：conda 24.x.x
 ⚙️ 后续优化：配置 Conda 使用清华源
 为了避免以后 conda install 包时速度慢或连接超时，建议将 conda 的默认源也改为清华镜像：
 bash
 
-# 添加清华源
-
+添加清华源
+```bash
 conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
 
 conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
 
 conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge
+```
 
-
-# 显示源地址（确认是否添加成功）
-
+显示源地址（确认是否添加成功）
+```bash
 conda config --show channels
-
-💡 常见问题排查
-
-
-conda --version
-
+```
 
 

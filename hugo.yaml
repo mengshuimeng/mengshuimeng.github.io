@@ -17,12 +17,12 @@ languages:
         - name: 关于我
           pageRef: /about
           weight: 2
-        - name: 项目
-          pageRef: /projects
-          weight: 3
-        - name: 博客
-          pageRef: /blog
-          weight: 4
+        # - name: 项目
+        #   pageRef: /projects
+        #   weight: 3
+        # - name: 博客
+        #   pageRef: /blog
+        #   weight: 4
         - name: 文档
           pageRef: /docs
           weight: 5

@@ -6,5 +6,5 @@ Operational notes for vision projects, including workflow conventions and output
 
 ## Suggested Reading
 
-- [Vision Workflow](/docs/cv/workflow/vision-workflow/)
+<!-- - [Vision Workflow](/docs/cv/workflow/vision-workflow/) -->
 - [CMYK, RGB, and Printing Basics](/docs/cv/workflow/cmyk-vs-rgb-and-printing/)

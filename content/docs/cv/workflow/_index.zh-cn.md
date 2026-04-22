@@ -6,5 +6,5 @@ title: 视觉工作流
 
 ## 推荐阅读
 
-- [视觉工作流](/docs/cv/workflow/vision-workflow/)
+<!-- - [视觉工作流](/docs/cv/workflow/vision-workflow/) -->
 - [CMYK、RGB 与印刷基础](/docs/cv/workflow/cmyk-vs-rgb-and-printing/)

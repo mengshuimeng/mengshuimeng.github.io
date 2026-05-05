@@ -1,3 +1,8 @@
+---
+title: VMware 虚拟机复用 Windows 宿主机代理教程
+description: VMware Ubuntu 虚拟机通过 Windows 宿主机代理访问网络的配置记录
+---
+
 # VMware 虚拟机复用 Windows 宿主机代理教程
 
 > 本文档用于说明如何让 **VMware 中的 Ubuntu 虚拟机** 复用 **Windows 宿主机上的代理软件**，从而访问 GitHub 等默认无法直接访问的网站。  

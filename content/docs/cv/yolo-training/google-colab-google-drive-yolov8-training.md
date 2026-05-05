@@ -1,3 +1,8 @@
+---
+title: Google Colab + Google Drive 训练 YOLOv8 指南
+description: 使用 Google Colab 和 Google Drive 训练 YOLOv8 的流程记录
+---
+
 # Google Colab + Google Drive 训练 YOLOv8 指南
 
 > 本文档用于说明如何在 **Google Colab** 中挂载 **Google Drive**、解压项目、配置环境、训练 YOLOv8 模型，并通过 TensorBoard 查看训练日志，最后导出训练得到的 `best.pt`。  

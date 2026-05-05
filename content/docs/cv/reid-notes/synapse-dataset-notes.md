@@ -1,3 +1,8 @@
+---
+title: Synapse 数据集预处理笔记
+description: 仿照 Synapse 结构整理医学图像数据集预处理流程
+---
+
 ## 1. 数据集预处理
 
 思路是仿照一个结构和`Synapse`相似的数据集。

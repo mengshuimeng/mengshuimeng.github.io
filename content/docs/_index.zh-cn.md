@@ -19,5 +19,5 @@ title: 技术文档
 ## 推荐阅读
 
 - [Windows + WSL2 + Ubuntu 22.04 + ROS 2 Humble 运行 Intel RealSense D435i 维护记录](/docs/robotics/realsense/realsense-d435i-wsl2-ros2-humble/)
-- [Conda 使用指南](/docs/environment/conda-guide/conda使用指南/)
+- [Conda 使用指南](/docs/environment/conda-guide/conda-guide/)
 - [YOLO 本地测试与服务器训练完整流程](/docs/cv/yolo-training/)

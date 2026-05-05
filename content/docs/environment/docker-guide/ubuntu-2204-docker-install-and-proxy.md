@@ -1,3 +1,8 @@
+---
+title: Ubuntu 22.04 Docker 安装与代理配置指南
+description: Ubuntu 22.04 与 WSL 环境下安装 Docker、配置代理和验证容器网络的记录
+---
+
 # Ubuntu 22.04 Docker 安装与代理配置指南
 
 > 本文档用于在 Ubuntu 22.04 / WSL Ubuntu 中安装 Docker，并完成基础验证、非 root 用户使用配置，以及代理设置。  
@@ -82,11 +87,11 @@ docker run hello-world
 
 1. 下载 [Docker Desktop](https://docs.docker.com/desktop/features/wsl/#turn-on-docker-desktop-wsl-2) 并按照安装说明进行操作。
 
-2. 安装后，启动 Docker Desktop，然后从任务栏的隐藏图标菜单中选择 Docker 图标。 右键单击图标以显示 Docker 命令菜单，然后选择“设置”。![image-20260313233749676](./assets/image-20260313233749676.png)
+2. 安装后，启动 Docker Desktop，然后从任务栏的隐藏图标菜单中选择 Docker 图标。右键单击图标以显示 Docker 命令菜单，然后选择“设置”。
 
-3. 确保在**“设置**>”中选中“使用基于 WSL 2 的引擎”。![image-20260313233811795](./assets/image-20260313233811795.png)
+3. 确保在“设置”中选中“使用基于 WSL 2 的引擎”。
 
-4. 通过转到 **“设置**>**资源**>**WSL 集成**”，从要启用 Docker 集成的已安装 WSL 2 分发版中进行选择。![image-20260313234030203](./assets/image-20260313234030203.png)
+4. 通过“设置” -> “资源” -> “WSL 集成”，从要启用 Docker 集成的已安装 WSL 2 分发版中进行选择。
 
 5. 在 Windows 里把 WSL 关掉再进
 

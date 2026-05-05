@@ -1,3 +1,8 @@
+---
+title: Ubuntu 基础命令与终端使用
+description: Ubuntu 与 WSL 终端基础命令入门记录
+---
+
 # Ubuntu 基础命令与终端使用
 
 > 本文档用于介绍 Ubuntu / WSL 中最常用的基础操作，包括系统架构判断、系统更新、终端快捷键、`nano` 编辑器使用等内容。  

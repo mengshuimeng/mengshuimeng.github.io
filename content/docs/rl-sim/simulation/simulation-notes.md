@@ -1,4 +1,9 @@
-请你阅读这个文件夹中的四个.py文件，并详细告诉我这四个文件的作用。请再详细告诉我`legged_robot_config.py`中的参数都有什么作用。
+---
+title: Legged Robot 仿真代码阅读笔记
+description: legged robot 仿真配置、环境、奖励和训练入口的代码阅读记录
+---
+
+这篇笔记整理 legged robot 仿真代码中的主要文件职责，并重点记录 `legged_robot_config.py` 中参数的作用。
 
 ```shell
 PS D:\code\python\legged_gym\legged_gym\envs\base> dir

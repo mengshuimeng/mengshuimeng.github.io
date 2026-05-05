@@ -1,4 +1,9 @@
-以后你就把它当成一个 **WSL 里的后台服务** 用，思路很简单：
+---
+title: OpenClaw 网关服务使用记录
+description: 在 WSL 中启动、停止和管理 OpenClaw gateway 后台服务的命令记录
+---
+
+OpenClaw gateway 可以当成一个 **WSL 里的后台服务** 使用，基本思路如下：
 
 ### 开启
 

@@ -1,4 +1,9 @@
-windows上
+---
+title: D435i 错误记录
+description: Intel RealSense D435i 在 Windows、WSL 和 ROS 2 环境中的报错与排查记录
+---
+
+Windows 上：
 
 ```
 (base) PS C:\Users\32020> wsl --shutdown

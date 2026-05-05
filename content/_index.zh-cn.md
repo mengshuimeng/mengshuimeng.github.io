@@ -31,7 +31,11 @@ toc: false
   <p style="margin: 0; font-size: 1.05rem; opacity: 0.85;">
     新疆大学 · 计算机科学与技术本科生
   </p>
-  
+
+  <p style="margin: 0; max-width: 46rem; opacity: 0.75; line-height: 1.8;">
+    关注计算机视觉、行人重识别、机器人视觉感知与边缘部署，<br>
+    希望把算法、设备和系统展示打通，做出可运行、可复现、可落地的工程作品。
+  </p>
 
   <div
     style="
@@ -125,4 +129,12 @@ toc: false
   {{< card link="/resume" title="个人简历" subtitle="教育背景、技术栈与竞赛经历" icon="document-text" >}}
   {{< card link="/projects" title="项目经历" subtitle="科研、竞赛与系统实现" icon="collection" >}}
   {{< card link="/blog" title="技术博客" subtitle="部署记录、踩坑总结与学习笔记" icon="book-open" >}}
+{{< /cards >}}
+
+## 代表方向
+
+{{< cards cols="3" >}}
+  {{< card link="/docs/cv/" title="计算机视觉" subtitle="YOLO、ReID、数据标注与训练流程" icon="camera" >}}
+  {{< card link="/docs/robotics/" title="机器人视觉" subtitle="RealSense、Jetson、OpenMV 与设备联调" icon="chip" >}}
+  {{< card link="/docs/environment/" title="环境部署" subtitle="WSL、Docker、Conda、Git 与服务器训练" icon="terminal" >}}
 {{< /cards >}}

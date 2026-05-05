@@ -1,3 +1,8 @@
+---
+title: VS Code 配置 C/C++ 开发环境
+description: Windows + MinGW-w64 下 VS Code C/C++ 环境配置记录
+---
+
 # VS Code 配置 C/C++ 开发环境（Windows + MinGW-w64）
 
 > 本文档用于在 Windows 上使用 **VS Code + MinGW-w64** 搭建 C/C++ 开发环境，并解决常见的中文乱码问题。  

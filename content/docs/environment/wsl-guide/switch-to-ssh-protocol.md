@@ -1,3 +1,8 @@
+---
+title: Git 远程地址切换到 SSH 协议
+description: 将 GitHub 远程仓库从 HTTPS 切换到 SSH 的操作记录
+---
+
 ### **切换到 SSH 协议**
 
 HTTPS 推送大文件经常遇到 408/504 超时，而 SSH 通常不会。

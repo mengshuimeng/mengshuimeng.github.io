@@ -1,3 +1,8 @@
+---
+title: Windows + WSL2 + Ubuntu 22.04 + ROS 2 Humble 运行 Intel RealSense D435i 维护记录
+description: RealSense D435i 在 Windows、WSL2、Ubuntu 22.04 和 ROS 2 Humble 环境中的配置与维护记录
+---
+
 # Windows + WSL2 + Ubuntu 22.04 + ROS 2 Humble 运行 Intel RealSense D435i 维护记录
 
 > 适用对象：需要在 **Windows 主机 + WSL2 Ubuntu 22.04 + ROS 2 Humble** 环境中运行 **Intel RealSense D435i** 的开发者。

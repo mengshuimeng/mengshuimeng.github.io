@@ -1,3 +1,8 @@
+---
+title: Ubuntu 开发环境安装指南
+description: Ubuntu / WSL 中常用开发工具和基础环境安装记录
+---
+
 # Ubuntu 开发环境安装指南
 
 > 本文档用于在 Ubuntu / WSL 中搭建基础 Python 开发环境，内容包括 Miniconda 安装、VS Code 安装，以及 OpenCV 环境配置。  

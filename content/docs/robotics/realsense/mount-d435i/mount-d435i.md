@@ -1,4 +1,9 @@
-### 挂载摄像头D435i
+---
+title: 挂载摄像头 D435i
+description: Intel RealSense D435i 挂载、安装和启动记录
+---
+
+### 挂载摄像头 D435i
 
 [Intel RealSense SDK+WSL2+ROS2兼容性问题_wsl realsense-CSDN博客](https://blog.csdn.net/qq_33173089/article/details/146930744)
 

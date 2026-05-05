@@ -1,3 +1,8 @@
+---
+title: 进入虚拟机与端口转发记录
+description: 使用 SSH 和端口转发进入虚拟机的简短命令记录
+---
+
 ```bash
 powellshell
 

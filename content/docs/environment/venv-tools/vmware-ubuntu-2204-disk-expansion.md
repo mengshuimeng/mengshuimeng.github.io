@@ -1,3 +1,8 @@
+---
+title: VMware Ubuntu 22.04 虚拟机硬盘扩容教程
+description: VMware 中 Ubuntu 22.04 虚拟机磁盘扩容和分区调整记录
+---
+
 ## VMware Ubuntu 22.04 虚拟机硬盘扩容教程
 
 > 本文档用于说明如何在 **VMware** 中为 **Ubuntu 22.04 虚拟机** 扩展硬盘容量，并在 Ubuntu 系统内完成分区扩容。  

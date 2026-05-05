@@ -1,3 +1,8 @@
+---
+title: WSL 路径机制
+description: Windows 与 WSL 之间路径、挂载和文件访问方式说明
+---
+
 ## 3. WSL 的路径机制
 
 这一部分是最容易混乱的。

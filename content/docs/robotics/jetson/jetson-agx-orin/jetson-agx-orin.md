@@ -1,4 +1,9 @@
-# 🚀 一、Jetson AGX Orin 内核定制与烧录指南（基于 R36.4.3）
+---
+title: Jetson AGX Orin 内核定制与烧录指南
+description: 基于 R36.4.3 的 Jetson AGX Orin 内核定制、烧录和 PyTorch 安装记录
+---
+
+# Jetson AGX Orin 内核定制与烧录指南（基于 R36.4.3）
 
 ---
 
@@ -10,7 +15,7 @@
 > ⚠️ **注意版本匹配！**  
 > 如图所示，当前手册版本为 **36.4.3**，请务必使用对应版本的手册与工具包，不同版本间存在关键性操作差异，即便是相近版本也不可忽略。
 
-![版本确认](assets/1.png)
+> 原始版本确认截图未随仓库提交。请以 NVIDIA 官方开发者手册页面显示的 R36.4.3 版本为准。
 
 ---
 
@@ -18,12 +23,11 @@
 
 在手册多个位置均提供 SDK 下载链接。可通过如下方式跳转获取：
 
-![跳转位置1](assets/2.png)  
-![跳转位置2](assets/3.png)
+> 原始跳转位置截图未随仓库提交。建议根据官方手册页面中的 SDK 下载入口查找对应文件。
 
 请下载下图中圈选的 **三个软件包**：
 
-![需下载的软件包](assets/4.png)
+> 原始软件包截图未随仓库提交。下载前请核对驱动包、Sample RootFS 和公开源码包是否与 L4T 版本匹配。
 
 ---
 
@@ -102,8 +106,7 @@ cp kernel-devicetree/generic-dts/dtbs/* <install-path>/Linux_for_Tegra/kernel/dt
 > 请根据 Quick Start 指南中的指令操作。  
 > 推荐使用以下方法进入 **Recovery 模式**：
 
-![进入Recovery方式1](assets/5.png)  
-![进入Recovery方式2](assets/6.png)
+> 原始 Recovery 接线截图未随仓库提交。后续补图时请放入本文同级 `assets/` 目录。
 
 在 **R36.4.3** 版本下，执行以下命令进行烧录：
 

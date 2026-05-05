@@ -1,4 +1,9 @@
-记得，你那个应该是 **DeepSeek-OCR-2**，不是 ORC。现在你已经在 **Jetson Orin Nano + Ubuntu 22.04** 上装好了系统，下一步最重要的不是急着跑项目，而是**先把机器的硬件、CUDA、GPU、JetPack 环境摸清楚**。这一步很关键，不然后面装 PyTorch、TensorRT、ONNX Runtime 时很容易踩坑。
+---
+title: Jetson Orin Nano DeepSeek OCR 2 部署排查清单
+description: Jetson Orin Nano + Ubuntu 22.04 上部署 DeepSeek OCR 2 的环境检查和排错记录
+---
+
+这篇记录面向 **Jetson Orin Nano + Ubuntu 22.04** 上部署 **DeepSeek OCR 2** 的场景。系统装好后，不要急着跑项目，先把硬件、CUDA、GPU 和 JetPack 环境摸清楚，否则后续安装 PyTorch、TensorRT、ONNX Runtime 时很容易踩坑。
 
 你直接按下面查就行。
 

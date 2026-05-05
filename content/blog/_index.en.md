@@ -7,8 +7,8 @@ This area keeps looser notes, campus reminders, resource collections, and writin
 ## Sections
 
 {{< cards cols="2" >}}
-  {{< card link="/blog/campus/" title="Campus Notes" subtitle="School reminders and administrative notes" icon="academic-cap" >}}
-  {{< card link="/blog/competition-notes/" title="Competition Notes" subtitle="Loose problem-solving notes from competitions" icon="lightning-bolt" >}}
-  {{< card link="/blog/resources/" title="Resources" subtitle="Link collections and lightweight references" icon="bookmark" >}}
-  {{< card link="/blog/writing/" title="Writing Templates" subtitle="Templates for outreach and applications" icon="document-text" >}}
+  {{< card link="/en/blog/campus/" title="Campus Notes" subtitle="School reminders and administrative notes" icon="academic-cap" >}}
+  {{< card link="/en/blog/competition-notes/" title="Competition Notes" subtitle="Loose problem-solving notes from competitions" icon="lightning-bolt" >}}
+  {{< card link="/en/blog/resources/" title="Resources" subtitle="Link collections and lightweight references" icon="bookmark" >}}
+  {{< card link="/en/blog/writing/" title="Writing Templates" subtitle="Templates for outreach and applications" icon="document-text" >}}
 {{< /cards >}}

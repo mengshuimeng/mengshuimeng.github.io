@@ -1,3 +1,8 @@
+---
+title: 从当前环境生成 requirements.txt
+description: 从 Python 当前环境导出依赖文件的命令记录
+---
+
 # 从当前环境生成 `requirements.txt`
 
 > 更新时间：2026-03-09

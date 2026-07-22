@@ -28,7 +28,7 @@ WSL 会将 Windows 的磁盘自动挂载到 Linux 文件系统中。默认情况
 例如：
 
 ```text
-C:\Users\32020
+C:\Users\<username>
 ```
 
 在 WSL 中通常对应：

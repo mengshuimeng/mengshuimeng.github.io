@@ -9,4 +9,5 @@ title: 强化学习与仿真
 {{< cards cols="2" >}}
   {{< card link="/docs/rl-sim/isaac-lab/" title="Isaac Lab" subtitle="环境搭建、运行记录与实验准备" icon="cube-transparent" >}}
   {{< card link="/docs/rl-sim/simulation/" title="仿真基础" subtitle="仿真、配置与实验拆解" icon="collection" >}}
+  {{< card link="/docs/rl-sim/reinforcement-learning/" title="强化学习" subtitle="MDP、价值函数与深度强化学习算法笔记" icon="academic-cap" >}}
 {{< /cards >}}

@@ -199,7 +199,7 @@ description: RealSense D435i 在 Windows、WSL2、Ubuntu 22.04 和 ROS 2 Humble 
 现象：
 
 - `colcon build` 日志里调用的是：
-  - `/home/jj/miniconda3/envs/.../python3`
+  - `/home/<username>/miniconda3/envs/.../python3`
 - 结果缺少 `em` 模块，`rosidl_adapter` 失败
 
 原因：

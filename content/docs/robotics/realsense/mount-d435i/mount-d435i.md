@@ -64,7 +64,7 @@ Windows 宿主 -> WSL2 虚拟机 -> Docker 容器 的三层穿透。
    ```
 
    ```
-   (base) PS C:\Users\32020> usbipd list
+   (base) PS C:\Users\<username>> usbipd list
    Connected:
    BUSID  VID:PID    DEVICE                                                        STATE
    2-1    8086:0b3a  Intel(R) RealSense(TM) Depth Camera 435i Depth, Intel(R) ...  Not shared
@@ -235,8 +235,8 @@ enable_gyro: false
 ```bash
 jj@Jiang:~$ docker compose -f docker/docker-compose.yml down
 docker compose -f docker/docker-compose.yml up --build -d
-open /home/jj/docker/docker-compose.yml: no such file or directory
-open /home/jj/docker/docker-compose.yml: no such file or directory
+open /home/<username>/docker/docker-compose.yml: no such file or directory
+open /home/<username>/docker/docker-compose.yml: no such file or directory
 jj@Jiang:~$ docker ps
 CONTAINER ID   IMAGE                  COMMAND                  CREATED          STATUS          PORTS     NAMES
 63f4d166c7e2   docker-rc_vision_dev   "/entrypoint.sh /bin…"   18 minutes ago   Up 18 minutes             rc_vision_dev
@@ -277,7 +277,7 @@ ros2 launch realsense2_camera rs_launch.py \
 
 
 ```
-```(base) PS C:\Users\32020> usbipd list
+```(base) PS C:\Users\<username>> usbipd list
 Connected:
 BUSID  VID:PID    DEVICE                                                        STATE
 2-1    8086:0b3a  Intel(R) RealSense(TM) Depth Camera 435i Depth, Intel(R) ...  Shared
@@ -289,13 +289,13 @@ BUSID  VID:PID    DEVICE                                                        
 Persisted:
 GUID                                  DEVICE
 
-(base) PS C:\Users\32020> usbipd bind --busid 2-1
+(base) PS C:\Users\<username>> usbipd bind --busid 2-1
 usbipd: info: Device with busid '2-1' was already shared.
-(base) PS C:\Users\32020> usbipd attach --wsl --busid 2-1
+(base) PS C:\Users\<username>> usbipd attach --wsl --busid 2-1
 usbipd: info: Using WSL distribution 'Ubuntu' to attach; the device will be available in all WSL 2 distributions.
 usbipd: info: Detected networking mode 'mirrored'.
 usbipd: info: Using IP address 127.0.0.1 to reach the host.
-(base) PS C:\Users\32020>```     ```jj@Jiang:~$ lsusb
+(base) PS C:\Users\<username>>```     ```jj@Jiang:~$ lsusb
 Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
 Bus 001 Device 003: ID 8086:0b3a Intel Corp. Intel(R) RealSense(TM) Depth Camera 435i
 Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
@@ -333,7 +333,7 @@ ros2 launch realsense2_camera rs_launch.py \
   pointcloud.enable:=false \
   enable_accel:=false \
   enable_gyro:=false
-[INFO] [launch]: All log files can be found below /home/jj/.ros/log/2026-03-14-19-22-22-071705-Jiang-33905
+[INFO] [launch]: All log files can be found below /home/<username>/.ros/log/2026-03-14-19-22-22-071705-Jiang-33905
 [INFO] [launch]: Default logging verbosity is set to INFO
 [INFO] [launch.user]: 🚀 Launching as Normal ROS Node
 [INFO] [realsense2_camera_node-1]: process started with pid [33906]

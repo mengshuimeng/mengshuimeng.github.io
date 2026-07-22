@@ -6,8 +6,8 @@ description: Intel RealSense D435i 在 Windows、WSL 和 ROS 2 环境中的报�
 Windows 上：
 
 ```
-(base) PS C:\Users\32020> wsl --shutdown
-(base) PS C:\Users\32020> usbipd list
+(base) PS C:\Users\<username>> wsl --shutdown
+(base) PS C:\Users\<username>> usbipd list
 Connected:
 BUSID  VID:PID    DEVICE                                                        STATE
 4-2    046d:c53f  LIGHTSPEED Receiver, USB 输入设备                             Not shared
@@ -19,7 +19,7 @@ Persisted:
 GUID                                  DEVICE
 beb64852-c032-424d-ab41-d3b1be8f86dc  Intel(R) RealSense(TM) Depth Camera 435i Depth, Intel(R) ...l
 
-(base) PS C:\Users\32020> usbipd list
+(base) PS C:\Users\<username>> usbipd list
 Connected:
 BUSID  VID:PID    DEVICE                                                        STATE
 2-1    8086:0b3a  Intel(R) RealSense(TM) Depth Camera 435i Depth, Intel(R) ...  Shared
@@ -31,14 +31,14 @@ BUSID  VID:PID    DEVICE                                                        
 Persisted:
 GUID                                  DEVICE
 
-(base) PS C:\Users\32020> usbipd bind --busid 2-1
+(base) PS C:\Users\<username>> usbipd bind --busid 2-1
 usbipd: info: Device with busid '2-1' was already shared.
-(base) PS C:\Users\32020> usbipd attach --wsl --busid 2-1
+(base) PS C:\Users\<username>> usbipd attach --wsl --busid 2-1
 usbipd: info: Using WSL distribution 'Ubuntu' to attach; the device will be available in all WSL 2 distributions.
 usbipd: info: Loading vhci_hcd module.
 usbipd: info: Detected networking mode 'mirrored'.
 usbipd: info: Using IP address 127.0.0.1 to reach the host.
-(base) PS C:\Users\32020>
+(base) PS C:\Users\<username>>
 ```
 
 wsl上
@@ -123,7 +123,7 @@ ros2 launch realsense2_camera rs_launch.py \
   pointcloud.enable:=false \
   enable_accel:=false \
   enable_gyro:=false
-[INFO] [launch]: All log files can be found below /home/jj/.ros/log/2026-03-14-21-55-23-674500-Jiang-1509
+[INFO] [launch]: All log files can be found below /home/<username>/.ros/log/2026-03-14-21-55-23-674500-Jiang-1509
 [INFO] [launch]: Default logging verbosity is set to INFO
 [INFO] [launch.user]: 🚀 Launching as Normal ROS Node
 [INFO] [realsense2_camera_node-1]: process started with pid [1510]

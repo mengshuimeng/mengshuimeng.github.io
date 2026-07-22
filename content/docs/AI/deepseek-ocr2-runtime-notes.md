@@ -1,4 +1,4 @@
-﻿---
+---
 title: DeepSeek OCR 2 运行记录
 description: DeepSeek OCR 2 的运行过程与命令记录
 slug: deepseek-ocr2-runtime-notes
@@ -11,7 +11,7 @@ aliases:
  **DeepSeek-OCR-2**
 
 ```shell
-root@Jiang:/home/jj/DeepSeek-OCR-2# su - jj
+root@Jiang:/home/<username>/DeepSeek-OCR-2# su - jj
 (base) jj@Jiang:~$ conda env liost
 usage: conda env [-h] command ...
 conda env: error: argument command: invalid choice: 'liost' (choose from config, create, export, list, remove, update)
@@ -21,10 +21,10 @@ conda env: error: argument command: invalid choice: 'liost' (choose from config,
 #
 # * -> active
 # + -> frozen
-base                 *   /home/jj/miniconda3
-deepseek-ocr2            /home/jj/miniconda3/envs/deepseek-ocr2
-deepseek-stable          /home/jj/miniconda3/envs/deepseek-stable
-math-video               /home/jj/miniconda3/envs/math-video
+base                 *   /home/<username>/miniconda3
+deepseek-ocr2            /home/<username>/miniconda3/envs/deepseek-ocr2
+deepseek-stable          /home/<username>/miniconda3/envs/deepseek-stable
+math-video               /home/<username>/miniconda3/envs/math-video
 
 (base) jj@Jiang:~$ conda activate deepseek-stable
 (deepseek-stable) jj@Jiang:~$ ls
@@ -37,9 +37,9 @@ LICENSE.txt              cuda-keyring_1.1-1_all.deb  test.py           vllm-0.8.
 (deepseek-stable) jj@Jiang:~/DeepSeek-OCR-2$ python video_math_solver_final.py videos/4.mp
  *  History restored 
 
-root@Jiang:/home/jj/DeepSeek-OCR-2# *
+root@Jiang:/home/<username>/DeepSeek-OCR-2# *
 DeepSeek-OCR2-master: command not found
-root@Jiang:/home/jj/DeepSeek-OCR-2# 
+root@Jiang:/home/<username>/DeepSeek-OCR-2#
 ```
 
 

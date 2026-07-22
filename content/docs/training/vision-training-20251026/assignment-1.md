@@ -1,4 +1,4 @@
-﻿---
+---
 title: 2025-10-26 视觉培训作业 1
 description: 第一次视觉培训作业要求
 slug: assignment-1
@@ -97,7 +97,7 @@ origin	object		来源出处
     "recommendedReason": "",
     "cacheAt": "2025-03-08T23:24:41.066150166"
   },
-  "token": "IkH7PCZQeST4T3j3LvfS/1f8iBw0Xgt",
+  "token": "<REDACTED_TOKEN>",
   "warning": null
 }
 ```
@@ -211,7 +211,7 @@ class HitokotoBot:
 # ========== 程序入口 ==========
 if __name__ == "__main__":
     # 学生在这里填写自己的API Key
-    bot1 = HitokotoBot(api_key="738b541a5f7a")
+    bot1 = HitokotoBot(api_key="<REDACTED_API_KEY>")
     bot2 = HitokotoBot(api_key="7")
     # 启动Bot
     bot.run()

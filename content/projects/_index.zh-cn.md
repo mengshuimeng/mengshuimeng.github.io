@@ -7,6 +7,7 @@ title: 项目
 ## 项目列表
 
 {{< cards cols="2" >}}
+  {{< card link="/projects/web-reid-system-defense/" title="Web 行人重识别系统" subtitle="系统架构、算法设计与答辩讲稿" icon="camera" >}}
   {{< card link="/projects/student-management-system/" title="学生成绩管理系统" subtitle="C 语言课程项目与功能扩展需求" icon="collection" >}}
   {{< card link="/projects/software-engineering-course/" title="软件工程课程汇报" subtitle="课程展示稿与内容整理" icon="presentation-chart-line" >}}
   {{< card link="/projects/papers-and-writing/" title="论文写作备忘" subtitle="LaTeX 与写作格式备忘" icon="document-report" >}}

@@ -7,5 +7,6 @@ title: 资源整理
 ## 内容导航
 
 {{< cards cols="2" >}}
+  {{< card link="/blog/resources/algorithm-links/" title="算法链接整理" subtitle="算法、竞赛与编程学习入口" icon="code" >}}
   {{< card link="/blog/resources/windows-desktop-software/" title="Windows 常用桌面软件清单" subtitle="常用工具及本地安装版本的截图备忘" icon="desktop-computer" >}}
 {{< /cards >}}

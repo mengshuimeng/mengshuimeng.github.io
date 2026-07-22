@@ -1,0 +1,19 @@
+﻿---
+title: 算法链接整理
+description: 常用算法、竞赛与编程学习入口整理
+slug: algorithm-links
+aliases:
+  - /blog/resources/算法链接/
+---
+
+常用算法、竞赛与编程学习入口整理。
+
+- https://roadmap.sh/
+- https://juejin.cn/post/7418134213654642688#heading-0
+- https://www.codelicence.cn/d/392634632388083712
+- https://oi.wiki/contest/
+- https://github.com/walter201230/Python
+- https://csdiy.wiki/
+- https://m.runoob.com/cprogramming/
+- https://www.luogu.com.cn/
+- https://codeforces.com/

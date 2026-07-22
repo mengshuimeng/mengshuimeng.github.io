@@ -1,4 +1,4 @@
-﻿---
+---
 title: 算法链接整理
 description: 常用算法、竞赛与编程学习入口整理
 slug: algorithm-links

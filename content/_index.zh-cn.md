@@ -124,11 +124,13 @@ toc: false
 
 ## 快速入口
 
-{{< cards cols="2" >}}
+{{< cards cols="3" >}}
   {{< card link="/about" title="关于我" subtitle="方向、经历与兴趣" icon="user" >}}
   {{< card link="/resume" title="个人简历" subtitle="教育背景、技术栈与竞赛经历" icon="document-text" >}}
   {{< card link="/projects" title="项目经历" subtitle="科研、竞赛与系统实现" icon="collection" >}}
   {{< card link="/blog" title="技术博客" subtitle="部署记录、踩坑总结与学习笔记" icon="book-open" >}}
+  {{< card link="/docs" title="技术文档" subtitle="按知识体系整理的教程与实践记录" icon="terminal" >}}
+  {{< card link="/tags" title="标签索引" subtitle="按主题发现相关内容" icon="tag" >}}
 {{< /cards >}}
 
 ## 代表方向

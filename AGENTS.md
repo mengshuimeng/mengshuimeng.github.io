@@ -11,7 +11,7 @@
 - Local dev server: `hugo server --logLevel debug --disableFastRender -p 1313`.
 - CI-style production check: `hugo --gc --minify --baseURL "https://mengshuimeng.github.io/"`.
 - Theme update flow: `hugo mod get -u` then `hugo mod tidy`.
-- Required toolchain is Hugo extended `0.156.0` and Go `1.26`; the devcontainer installs these, but this workspace may not have `hugo` on PATH.
+- Required toolchain is Hugo extended `0.164.0` (tracked in `.hugo-version`) and Go `1.26`; the devcontainer installs these, but this workspace may not have `hugo` on PATH.
 
 ## Content Conventions
 - Default language is `zh-cn`; English pages use `.en.md`, Chinese pages use `.zh-cn.md` or the unsuffixed default-language file pattern already present in a section.
@@ -22,8 +22,8 @@
 - Avoid introducing new case variants such as `AI` vs `ai`; prefer lowercase paths for new content and links.
 
 ## Navigation And Deployment
-- Main navigation is defined per language in `hugo.yaml`; Chinese `Projects` and `Blog` menu items are currently commented out even though pages and homepage cards exist.
-- GitHub Pages deploys from `.github/workflows/pages.yaml` on pushes to `main` using Hugo `0.156.0`, Go `1.26`, `--gc --minify`, and a Pages-provided base URL.
+- Main navigation is defined per language in `hugo.yaml`; keep Chinese and English entries aligned when adding or reordering sections.
+- GitHub Pages deploys from `.github/workflows/pages.yaml` on pushes to `main` using the Hugo version in `.hugo-version`, Go `1.26`, `--gc --minify`, and a Pages-provided base URL.
 - Netlify uses `netlify.toml` with `hugo --gc --minify -b ${DEPLOY_PRIME_URL}` and publishes `public/`.
 
 ## Generated Or Ignored Files

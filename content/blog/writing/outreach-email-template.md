@@ -1,6 +1,7 @@
-﻿---
+---
 title: 套磁信模板
 description: 套磁、推荐和申请相关写作模板
+tags: [学术写作, 申请]
 slug: outreach-email-template
 aliases:
   - /blog/writing/套磁信/

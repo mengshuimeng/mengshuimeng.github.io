@@ -1,6 +1,7 @@
-﻿---
+---
 title: 助学金提示
 description: 助学金申报与困难认定相关提醒
+tags: [校园, 申请]
 slug: grant-reminder
 aliases:
   - /blog/campus/助学金提示/

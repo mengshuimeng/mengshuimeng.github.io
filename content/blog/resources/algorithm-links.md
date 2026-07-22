@@ -1,6 +1,7 @@
 ---
 title: 算法链接整理
 description: 常用算法、竞赛与编程学习入口整理
+tags: [算法, 学习资源]
 slug: algorithm-links
 aliases:
   - /blog/resources/算法链接/

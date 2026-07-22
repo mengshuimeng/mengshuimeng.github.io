@@ -91,9 +91,11 @@ toc: false
 
 ## Quick Links
 
-{{< cards cols="2" >}}
+{{< cards cols="3" >}}
   {{< card link="/en/about" title="About Me" subtitle="My direction, experience, and interests" icon="user" >}}
   {{< card link="/en/resume" title="Resume" subtitle="Education, skills, competitions, and project experience" icon="document-text" >}}
   {{< card link="/en/projects" title="Projects" subtitle="Research, competitions, and system implementation" icon="collection" >}}
   {{< card link="/en/blog" title="Blog" subtitle="Deployment notes, debugging logs, and learning records" icon="book-open" >}}
+  {{< card link="/en/docs" title="Technical Docs" subtitle="Tutorials and practical notes organized by topic" icon="terminal" >}}
+  {{< card link="/en/tags" title="Tags" subtitle="Browse related content by topic" icon="tag" >}}
 {{< /cards >}}

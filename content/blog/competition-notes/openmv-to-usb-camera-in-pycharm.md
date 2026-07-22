@@ -1,6 +1,7 @@
 ---
 title: OpenMV 代码改为 PyCharm + USB 摄像头方案
 description: 将 OpenMV/K230 风格视觉代码迁移到电脑端 Python + OpenCV 的思路
+tags: [OpenMV, OpenCV, Python, 计算机视觉]
 ---
 
 ## 背景

@@ -1,6 +1,6 @@
 # Hugo output
 public/
-resources/
+/resources/
 .hugo_build.lock
 
 # Editor

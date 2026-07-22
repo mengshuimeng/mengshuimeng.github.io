@@ -124,6 +124,8 @@ tlmgr --version
 
 如果都能正常输出版本号，说明 TeX Live 本体已经装好了。
 
+![TeX Live 安装与命令验证结果](./assets/image-20260328203909328.png)
+
 ### 5.1 验证结果示例
 
 ```powershell

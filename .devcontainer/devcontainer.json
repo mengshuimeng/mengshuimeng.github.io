@@ -20,7 +20,16 @@
       ]
     }
   },
+  "remoteUser": "vscode",
+  "postCreateCommand": "git config --global core.autocrlf input && git config --global --add safe.directory ${containerWorkspaceFolder}",
+  "postStartCommand": "nohup hugo server --renderToMemory --logLevel debug --disableFastRender --bind 0.0.0.0 -p 1313 > /tmp/hugo-server.log 2>&1 &",
   "forwardPorts": [
     1313
-  ]
+  ],
+  "portsAttributes": {
+    "1313": {
+      "label": "Hugo preview",
+      "onAutoForward": "openBrowser"
+    }
+  }
 }

@@ -6,6 +6,16 @@ Pre-requisites: [Hugo](https://gohugo.io/getting-started/installing/), [Go](http
 
 This project expects Go 1.26 or newer. If you use the included devcontainer, rebuild the container after pulling changes so it picks up the newer Go and Hugo toolchain.
 
+### VS Code Dev Container
+
+1. Start Docker Desktop.
+2. Open this repository in VS Code.
+3. Run `Dev Containers: Reopen in Container` from the Command Palette.
+
+The container installs the required Hugo Extended, Go, and Node versions. It also starts the Hugo development server automatically and opens the forwarded preview at `http://localhost:1313/`.
+
+If VS Code reports a missing WSL bind mount after a Docker or WSL change, run `Dev Containers: Rebuild Container` instead of reopening the old container.
+
 ```shell
 hugo mod tidy
 hugo server --logLevel debug --disableFastRender -p 1313

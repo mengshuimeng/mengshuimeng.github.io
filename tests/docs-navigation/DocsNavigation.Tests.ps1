@@ -47,7 +47,14 @@ Describe 'documentation hub template contract' {
         @('quick', 'solve', 'study') | ForEach-Object {
             $template | Should Match ([regex]::Escape(('"key" "{0}"' -f $_)))
         }
-        ([regex]::Matches($routeBlock, '"link"\s+"docs/').Count) | Should Be 18
+        $routeDefinitions = [regex]::Matches(
+            $routeBlock,
+            '(?s)\(dict "key" "(quick|solve|study)".*?"destinations" \(slice(?<destinations>.*?)\r?\n    \)\)'
+        )
+        $routeDefinitions.Count | Should Be 6
+        foreach ($routeDefinition in $routeDefinitions) {
+            ([regex]::Matches($routeDefinition.Groups['destinations'].Value, '"link"\s+"docs/').Count) | Should Be 3
+        }
     }
 
     It 'maps every existing top-level documentation domain' {
@@ -109,6 +116,7 @@ Describe 'documentation navigation visual contract' {
 
     It 'supports keyboard focus and Hextra dark mode' {
         $styles | Should Match ':focus-visible'
+        $styles | Should Match '\.docs-hub__route:focus-within'
         $styles | Should Match 'html\.dark\s+\.docs-hub'
         $styles | Should Match 'html\.dark\s+\.docs-section-overview'
     }

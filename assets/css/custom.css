@@ -661,6 +661,11 @@
   outline-offset: 3px;
 }
 
+.docs-hub__route:focus-within {
+  border-color: color-mix(in srgb, var(--route-accent) 42%, var(--docs-border));
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--route-accent) 14%, transparent);
+}
+
 @media (hover: hover) {
   .docs-hub__route:hover,
   .docs-hub__domain:hover,

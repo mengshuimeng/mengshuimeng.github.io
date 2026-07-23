@@ -20,6 +20,26 @@ $ErrorActionPreference = 'Stop'
 
 Import-Module (Join-Path $PSScriptRoot 'SyncMarkdown.psm1') -Force
 
+function Get-SyncFileHash {
+    param([Parameter(Mandatory = $true)][string]$Path)
+
+    if ([IO.Path]::GetExtension($Path) -ieq '.md') {
+        $text = [IO.File]::ReadAllText($Path).
+            Replace("`r`n", "`n").
+            Replace("`r", "`n")
+        $bytes = (New-Object Text.UTF8Encoding($false)).GetBytes($text)
+        $sha256 = [Security.Cryptography.SHA256]::Create()
+        try {
+            return [BitConverter]::ToString($sha256.ComputeHash($bytes)).Replace('-', '')
+        }
+        finally {
+            $sha256.Dispose()
+        }
+    }
+
+    return (Get-FileHash -LiteralPath $Path -Algorithm SHA256).Hash
+}
+
 function Get-DirectoryFingerprint {
     param([Parameter(Mandatory = $true)][string]$Path)
 
@@ -36,7 +56,7 @@ function Get-DirectoryFingerprint {
             [IO.Path]::DirectorySeparatorChar,
             [IO.Path]::AltDirectorySeparatorChar
         ).Replace('\', '/')
-        $hash = (Get-FileHash -LiteralPath $file.FullName -Algorithm SHA256).Hash
+        $hash = Get-SyncFileHash -Path $file.FullName
         "$relative`:$hash"
     }
 

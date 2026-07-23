@@ -98,6 +98,22 @@ Describe 'sync-markdown.ps1' {
         $after | Should Be $before
     }
 
+    It 'treats CRLF and LF Markdown as the same generated content' {
+        $fixture = New-SyncFixture
+        Write-SyncManifest -Fixture $fixture
+        $null = Invoke-TestSync -Fixture $fixture
+        $indexPath = Join-Path $fixture.Destination 'index.md'
+        $markdown = [IO.File]::ReadAllText($indexPath).
+            Replace("`r`n", "`n").
+            Replace("`r", "`n").
+            Replace("`n", "`r`n")
+        [IO.File]::WriteAllText($indexPath, $markdown, (New-Object Text.UTF8Encoding($false)))
+
+        $result = Invoke-TestSync -Fixture $fixture -DryRun
+
+        $result.Changed | Should Be $false
+    }
+
     It 'ignores disabled entries' {
         $fixture = New-SyncFixture
         Write-SyncManifest -Fixture $fixture -Enabled $false

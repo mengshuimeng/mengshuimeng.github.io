@@ -85,4 +85,24 @@ Describe 'publish-markdown.ps1 policy' {
             $env:LOCALAPPDATA = $previousLocalAppData
         }
     }
+
+    It 'logs blank lines emitted by external commands' {
+        $tokens = $null
+        $parseErrors = $null
+        $ast = [Management.Automation.Language.Parser]::ParseFile(
+            $scriptPath,
+            [ref]$tokens,
+            [ref]$parseErrors
+        )
+        $functionAst = $ast.Find({
+            param($node)
+            $node -is [Management.Automation.Language.FunctionDefinitionAst] -and
+                $node.Name -eq 'Write-RunLog'
+        }, $true)
+        . ([scriptblock]::Create($functionAst.Extent.Text))
+        $script:LogPath = Join-Path $TestDrive 'publisher.log'
+
+        { Write-RunLog '' } | Should Not Throw
+        Test-Path -LiteralPath $script:LogPath | Should Be $true
+    }
 }

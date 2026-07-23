@@ -63,7 +63,11 @@ if ($PlanOnly) {
 }
 
 function Write-RunLog {
-    param([Parameter(Mandatory = $true)][string]$Message)
+    param(
+        [Parameter(Mandatory = $true)]
+        [AllowEmptyString()]
+        [string]$Message
+    )
 
     $line = '{0} {1}' -f (Get-Date -Format 'yyyy-MM-dd HH:mm:ss'), $Message
     Add-Content -LiteralPath $script:LogPath -Value $line -Encoding UTF8

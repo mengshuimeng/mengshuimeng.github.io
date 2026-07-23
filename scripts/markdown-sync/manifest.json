@@ -1,0 +1,69 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "source": "第二月第二周周报：深入拆解 Locomotion 任务机制/第二月第二周周报：深入拆解 Locomotion 任务机制.md",
+      "destination": "content/docs/rl-sim/locomotion/anymal-c-locomotion-mechanics",
+      "title": "第二月第二周周报：深入拆解 Locomotion 任务机制",
+      "date": "2026-07-23",
+      "authors": [
+        "梦水盟"
+      ],
+      "tags": [
+        "强化学习",
+        "机器人",
+        "ANYmal C"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "第二月第三周：搭建与配置 ANYmal C 环境/第二月第三周：搭建与配置 ANYmal C 环境.md",
+      "destination": "content/docs/rl-sim/locomotion/anymal-c-environment-setup",
+      "title": "第二月第三周：搭建与配置 ANYmal C 环境",
+      "date": "2026-07-23",
+      "authors": [
+        "梦水盟"
+      ],
+      "tags": [
+        "强化学习",
+        "机器人",
+        "ANYmal C"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "第二月第四周：ANYmal C 完整训练、调试与复现/第二月第四周：ANYmal C 完整训练、调试与复现.md",
+      "destination": "content/docs/rl-sim/locomotion/anymal-c-training-debugging-reproduction",
+      "title": "第二月第四周：ANYmal C 完整训练、调试与复现",
+      "date": "2026-07-23",
+      "authors": [
+        "梦水盟"
+      ],
+      "tags": [
+        "强化学习",
+        "机器人",
+        "ANYmal C"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "第三期 结营作业 MotrixArena S1 越障导航/第三期 结营作业 MotrixArena S1 越障导航.md",
+      "destination": "content/docs/rl-sim/locomotion/motrixarena-s1-obstacle-navigation",
+      "title": "第三期 结营作业 MotrixArena S1 越障导航",
+      "date": "2026-07-23",
+      "authors": [
+        "梦水盟"
+      ],
+      "tags": [
+        "强化学习",
+        "机器人",
+        "MotrixArena"
+      ],
+      "enabled": true,
+      "delete": false
+    }
+  ]
+}

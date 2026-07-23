@@ -5,3 +5,6 @@ public/
 
 # Editor
 .vscode/
+
+# Local implementation worktrees
+.worktrees/

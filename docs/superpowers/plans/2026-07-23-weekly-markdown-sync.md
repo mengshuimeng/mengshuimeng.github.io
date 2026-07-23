@@ -4,7 +4,7 @@
 
 **Goal:** Build and install a safe Windows weekly workflow that synchronizes whitelisted Markdown documents and images into the Hugo site, validates the site, and publishes successful changes to `main`.
 
-**Architecture:** Pure PowerShell transformation functions are tested with Pester and used by a deterministic sync command. A publishing wrapper works in an isolated detached Git worktree, builds with the pinned official Hugo container, and performs a fast-forward push. A separate installer registers the Sunday 22:00 Windows scheduled task.
+**Architecture:** Pure PowerShell transformation functions are tested with Pester and used by a deterministic sync command. A publishing wrapper works in an isolated disposable Git clone, builds with the pinned official Hugo container, and performs a fast-forward push. A separate installer registers the Sunday 22:00 Windows scheduled task.
 
 **Tech Stack:** PowerShell 7, Pester 3.4-compatible tests, Git, Docker Desktop, Hugo Extended 0.164.0, Windows Task Scheduler, Hugo/Hextra.
 
@@ -172,7 +172,7 @@ git commit -m "feat: add idempotent markdown sync"
 
 - [ ] **Step 1: Write failing publisher policy tests**
 
-Test command construction and policy helpers: no force push, detached worktree
+Test command construction and policy helpers: no force push, detached clone
 starts at `origin/main`, only managed paths are staged, no-change exits before
 commit, and failures write `last-run.json`.
 
@@ -182,19 +182,20 @@ Expected: FAIL because publisher helpers do not exist.
 
 - [ ] **Step 3: Implement publisher**
 
-Acquire `Global\MengshuimengMarkdownSync`, fetch `origin main`, create a
-temporary detached worktree, invoke sync, run `git diff --check`, build with:
+Acquire `Global\MengshuimengMarkdownSync`, create a temporary clone from
+`origin`, check out `origin/main` detached, invoke sync, run `git diff --check`,
+and build with:
 
 ```powershell
 docker run --rm --user root `
-  --mount "type=bind,source=$worktree,target=/project" `
+  --mount "type=bind,source=$clone,target=/project" `
   --workdir /project `
   ghcr.io/gohugoio/hugo:v0.164.0 `
   --gc --minify --baseURL https://mengshuimeng.github.io/ --destination /tmp/site
 ```
 
 Stage explicit managed paths, commit, and push `HEAD:main` without force. Always
-remove the temporary worktree in `finally`, release the mutex, and write the run
+remove the temporary clone in `finally`, release the mutex, and write the run
 result.
 
 - [ ] **Step 4: Run tests and verify GREEN**
@@ -205,7 +206,7 @@ Expected: policy tests pass without contacting the remote.
 
 ```powershell
 git add scripts/markdown-sync/publish-markdown.ps1 tests/markdown-sync/Publish.Tests.ps1
-git commit -m "feat: publish markdown from isolated worktree"
+git commit -m "feat: publish markdown from isolated clone"
 ```
 
 ### Task 5: Windows scheduler installer
@@ -336,7 +337,7 @@ git add README.md AGENTS.md .gitignore docs/superpowers/plans/2026-07-23-weekly-
 git commit -m "docs: explain weekly markdown publishing"
 ```
 
-### Task 8: Integrate, install, and publish
+### Task 8: Integrate, publish, and install
 
 **Files:**
 - No additional source files expected
@@ -351,7 +352,19 @@ workflow-owned file.
 Fast-forward or merge the implementation branch into `main` without discarding
 unrelated user changes.
 
-- [ ] **Step 3: Install scheduled task**
+- [ ] **Step 3: Push main**
+
+```powershell
+git push origin main
+```
+
+- [ ] **Step 4: Verify GitHub Pages and live HTTP**
+
+Wait for the workflow run for the pushed commit to conclude `success`, then
+request `https://mengshuimeng.github.io/` and each new article URL. Expected:
+HTTP 200.
+
+- [ ] **Step 5: Install scheduled task**
 
 ```powershell
 pwsh -NoProfile -File scripts/markdown-sync/install-scheduled-task.ps1 `
@@ -361,19 +374,7 @@ pwsh -NoProfile -File scripts/markdown-sync/install-scheduled-task.ps1 `
 
 Expected: task trigger is Sunday 22:00 and `StartWhenAvailable` is true.
 
-- [ ] **Step 4: Run the task once manually**
+- [ ] **Step 6: Run the task once manually**
 
 Start the registered task, wait for completion, inspect `last-run.json`, and
 confirm the active checkout remains clean.
-
-- [ ] **Step 5: Push main**
-
-```powershell
-git push origin main
-```
-
-- [ ] **Step 6: Verify GitHub Pages and live HTTP**
-
-Wait for the workflow run for the pushed commit to conclude `success`, then
-request `https://mengshuimeng.github.io/` and each new article URL. Expected:
-HTTP 200.

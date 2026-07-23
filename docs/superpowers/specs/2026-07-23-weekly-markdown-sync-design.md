@@ -2,7 +2,7 @@
 
 ## Goal
 
-Synchronize approved Markdown documents and their local images from
+Synchronize approved Markdown documents and their local media from
 `D:\msm\Markdown` into the Hugo site once per week, validate the complete site,
 and publish successful changes to `main` without touching the user's active
 website checkout.
@@ -18,7 +18,7 @@ The workflow:
 - processes only entries listed in a repository-owned publication manifest;
 - creates or updates Hugo page bundles and their local `assets` directories;
 - applies deterministic Markdown and front matter normalization;
-- resolves images from the source document's directory, adjacent attachment
+- resolves images and linked videos from the source document's directory, adjacent attachment
   directories, and `D:\msm\Markdown\assets`;
 - blocks publication when a source document, image, target, or site build is
   invalid;
@@ -64,7 +64,7 @@ sources, duplicate destinations, and destinations outside `content/`.
   represented in front matter;
 - normalization of line endings and final newline;
 - extraction, decoding, resolution, copying, and rewriting of local Markdown
-  image references;
+  image and linked-video references;
 - rejection of unresolved local image references and unsupported absolute local
   paths;
 - comparison and transactional replacement of generated page bundles.
@@ -95,17 +95,17 @@ produces no second Git diff.
 
 1. acquires a named mutex so only one run can execute;
 2. verifies Docker, Git, the source root, the manifest, and Git credentials;
-3. fetches `origin/main`;
-4. creates a disposable detached Git worktree from the current `origin/main`;
-5. runs the sync command in that worktree;
-6. validates generated image references and repository whitespace;
+3. resolves the configured `origin` URL;
+4. creates a disposable clone and checks out `origin/main` detached;
+5. runs the sync command in that clone;
+6. validates generated media references and repository whitespace;
 7. builds the complete site with Hugo Extended 0.164.0 in the official
    `ghcr.io/gohugoio/hugo:v0.164.0` container;
 8. exits without a commit when the generated tree is unchanged;
-9. stages only manifest-owned content plus workflow-owned metadata;
-10. commits with `docs: weekly markdown sync YYYY-MM-DD`;
+9. stages only manifest-owned content paths;
+10. commits with `docs: sync Markdown YYYY-MM-DD`;
 11. pushes the detached commit to `origin/main` as a normal fast-forward update;
-12. removes the disposable worktree and releases the mutex.
+12. removes the disposable clone and releases the mutex.
 
 If the remote changes after the initial fetch, the push is rejected normally.
 The workflow never retries with force; the next scheduled or manual run starts
@@ -134,8 +134,8 @@ Logs are written to:
 `%LOCALAPPDATA%\MengshuimengMarkdownSync\logs`
 
 Each run receives a timestamped log. The latest result is also written to
-`last-run.json` with start time, finish time, result, changed entries, commit
-hash, and error summary. Logs and credentials are never committed.
+`last-run.json` with start time, finish time, result, changed state, commit hash,
+and error summary. Logs and credentials are never committed.
 
 ## Initial publication set
 
@@ -169,9 +169,9 @@ The entire run fails before commit and push when:
 - the Hugo production build fails;
 - Git cannot create a commit or perform a normal fast-forward push.
 
-Because all generated changes occur in a disposable worktree, failures do not
-dirty the user's active checkout. Cleanup failures are logged and retried by the
-installer's maintenance path without deleting any source documents.
+Because all generated changes occur in a disposable clone, failures do not
+dirty the user's active checkout. Cleanup never targets a path outside the
+workflow state directory and never deletes source documents.
 
 ## Testing
 
@@ -194,7 +194,7 @@ Integration verification uses temporary fixture directories, then runs:
 
 - all Pester tests;
 - a dry run against the real manifest;
-- a real synchronization into a disposable worktree;
+- a real synchronization into a disposable clone;
 - the pinned Hugo production build;
 - one manual invocation of the registered scheduled task;
 - Git status and remote commit verification;

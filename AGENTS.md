@@ -29,3 +29,11 @@
 ## Generated Or Ignored Files
 - `.gitignore` excludes `public/`, `resources/`, `.hugo_build.lock`, and `.vscode/`; do not rely on changes there unless the user explicitly asks.
 - `scripts/create-docs-structure.ps1` creates documentation directories and placeholder `_index.zh-cn.md` / `_index.en.md` files; inspect before running because it can add many TODO pages.
+
+## Markdown Sync Workflow
+- `scripts/markdown-sync/manifest.json` is the only publication whitelist for `D:\msm\Markdown`; never auto-discover and publish arbitrary notes.
+- `sync-markdown.ps1` must remain deterministic and read-only toward the source directory. Managed destinations are page bundles below `content/`.
+- Local images and linked videos are copied into each bundle's `assets/` directory with normalized ASCII names. Missing local media must fail before replacement.
+- `publish-markdown.ps1` builds in a disposable clone, stages only manifest-managed content paths, and performs an ordinary `HEAD:main` push. Do not add force-push behavior or stage the active checkout.
+- The Windows task `Mengshuimeng Weekly Markdown Sync` runs Sunday at 22:00 for the current interactive user and starts when available after a missed run.
+- Workflow tests are under `tests/markdown-sync/` and remain compatible with Windows PowerShell Pester 3.4.

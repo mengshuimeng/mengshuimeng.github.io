@@ -44,3 +44,46 @@ hugo server --disableFastRender --renderStaticToDisk -p 1313
 hugo mod get -u
 hugo mod tidy
 ```
+
+## Weekly Markdown Publishing
+
+The repository synchronizes approved documents from `D:\msm\Markdown` every
+Sunday at 22:00. Only entries in `scripts/markdown-sync/manifest.json` are
+published, and source documents are never modified.
+
+Validate the whitelist and referenced local media without changing the site:
+
+```powershell
+pwsh -NoProfile -File .\scripts\markdown-sync\sync-markdown.ps1 `
+  -SourceRoot 'D:\msm\Markdown' -RepositoryRoot $PWD -DryRun
+```
+
+Run the isolated build-and-publish workflow manually:
+
+```powershell
+pwsh -NoProfile -File .\scripts\markdown-sync\publish-markdown.ps1 `
+  -SourceRoot 'D:\msm\Markdown' -RepositoryRoot $PWD
+```
+
+Install or update the current-user scheduled task:
+
+```powershell
+pwsh -NoProfile -File .\scripts\markdown-sync\install-scheduled-task.ps1 `
+  -Install -SourceRoot 'D:\msm\Markdown' -RepositoryRoot $PWD
+```
+
+Inspect or remove the task:
+
+```powershell
+pwsh -NoProfile -File .\scripts\markdown-sync\install-scheduled-task.ps1 -Show
+pwsh -NoProfile -File .\scripts\markdown-sync\install-scheduled-task.ps1 -Uninstall
+```
+
+Logs are stored at `%LOCALAPPDATA%\MengshuimengMarkdownSync\logs`; the latest
+result is `%LOCALAPPDATA%\MengshuimengMarkdownSync\last-run.json`. A failed run
+does not force-push or modify the active checkout. Correct the source/media,
+Docker, build, or Git error in the log, then run the publisher again.
+
+To publish another document, add one explicit manifest entry with a unique
+source and a lowercase English kebab-case destination below `content/`. Run the
+dry run and production build before committing the manifest change.

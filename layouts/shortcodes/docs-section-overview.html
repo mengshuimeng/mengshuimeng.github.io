@@ -1,0 +1,113 @@
+{{- $page := .Page -}}
+{{- $isZH := eq $page.Language.Lang "zh-cn" -}}
+{{- $copy := cond $isZH
+  (dict
+    "overview" "本分类内容概览"
+    "sectionsTitle" "下一级专题"
+    "sectionsIntro" "先选择一个专题，继续沿知识结构深入。"
+    "articlesTitle" "本分类文章"
+    "articlesIntro" "这些文章直接归属于当前分类。"
+    "articles" "篇文章"
+    "subtopics" "个子专题"
+    "openSection" "进入专题"
+    "readArticle" "阅读全文"
+    "updated" "更新于"
+    "emptyTitle" "内容正在整理"
+    "emptyText" "这个分类已经建立，后续文档会陆续归档到这里。"
+  )
+  (dict
+    "overview" "Category content overview"
+    "sectionsTitle" "Child topics"
+    "sectionsIntro" "Choose a topic and continue through the knowledge structure."
+    "articlesTitle" "Articles in this category"
+    "articlesIntro" "These articles belong directly to the current category."
+    "articles" "articles"
+    "subtopics" "subtopics"
+    "openSection" "Open topic"
+    "readArticle" "Read article"
+    "updated" "Updated"
+    "emptyTitle" "Content is being organized"
+    "emptyText" "This category is ready and new documents will be filed here."
+  )
+-}}
+{{- $sections := .Page.Sections.ByTitle -}}
+{{- $articles := .Page.RegularPages.ByTitle -}}
+
+<section class="docs-section-overview not-prose" aria-label="{{ $copy.overview }}">
+  {{- if $sections }}
+    <div class="docs-section-overview__group">
+      <header class="docs-section-overview__heading">
+        <span class="docs-section-overview__number" aria-hidden="true">01</span>
+        <div>
+          <h2>{{ $copy.sectionsTitle }}</h2>
+          <p>{{ $copy.sectionsIntro }}</p>
+        </div>
+      </header>
+      <div class="docs-section-overview__sections">
+        {{- range $sections }}
+          <a class="docs-section-card" href="{{ .RelPermalink }}">
+            <span class="docs-section-card__topline">
+              <strong>{{ .Title }}</strong>
+              <span>{{ len .RegularPagesRecursive }} {{ $copy.articles }}</span>
+            </span>
+            {{- with .Description }}
+              <span class="docs-section-card__description">{{ . }}</span>
+            {{- else }}
+              {{- with .Summary }}
+                <span class="docs-section-card__description">{{ . | plainify | truncate 120 }}</span>
+              {{- end }}
+            {{- end }}
+            <span class="docs-section-card__children">
+              {{- if .Sections }}
+                {{- range first 3 .Sections.ByTitle }}
+                  <span>{{ .Title }}</span>
+                {{- end }}
+              {{- else }}
+                {{- range first 3 .RegularPages.ByTitle }}
+                  <span>{{ .Title }}</span>
+                {{- end }}
+              {{- end }}
+            </span>
+            <span class="docs-section-card__action">{{ $copy.openSection }} <span aria-hidden="true">→</span></span>
+          </a>
+        {{- end }}
+      </div>
+    </div>
+  {{- end }}
+
+  {{- if $articles }}
+    <div class="docs-section-overview__group">
+      <header class="docs-section-overview__heading">
+        <span class="docs-section-overview__number" aria-hidden="true">{{ cond (gt (len $sections) 0) "02" "01" }}</span>
+        <div>
+          <h2>{{ $copy.articlesTitle }}</h2>
+          <p>{{ $copy.articlesIntro }}</p>
+        </div>
+      </header>
+      <div class="docs-section-overview__articles">
+        {{- range $articles }}
+          <article class="docs-article-card">
+            <a href="{{ .RelPermalink }}">
+              <span class="docs-article-card__meta">{{ $copy.updated }} {{ .Lastmod.Format "2006-01-02" }}</span>
+              <strong>{{ .Title }}</strong>
+              {{- with .Summary }}
+                <span class="docs-article-card__summary">{{ . | plainify | truncate 150 }}</span>
+              {{- end }}
+              <span class="docs-article-card__action">{{ $copy.readArticle }} <span aria-hidden="true">→</span></span>
+            </a>
+          </article>
+        {{- end }}
+      </div>
+    </div>
+  {{- end }}
+
+  {{- if and (not $sections) (not $articles) }}
+    <div class="docs-section-overview__empty">
+      <span aria-hidden="true">＋</span>
+      <div>
+        <h2>{{ $copy.emptyTitle }}</h2>
+        <p>{{ $copy.emptyText }}</p>
+      </div>
+    </div>
+  {{- end }}
+</section>

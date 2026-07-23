@@ -306,6 +306,7 @@ function Convert-SyncDocument {
         $inFence = $false
         $fenceMarker = ''
         $imagePattern = '!\[(?<alt>[^\]]*)\]\((?<target>[^)]+)\)'
+        $linkedMediaPattern = '(?<!!)\[(?<alt>[^\]]*)\]\((?<target>[^)]+)\)'
 
         for ($lineIndex = 0; $lineIndex -lt $lines.Count; $lineIndex++) {
             $trimmed = $lines[$lineIndex].TrimStart()
@@ -360,6 +361,49 @@ function Convert-SyncDocument {
                 }
 
                 return '![' + $match.Groups['alt'].Value + '](assets/' + $assetName + ')'
+            })
+
+            $lines[$lineIndex] = [regex]::Replace($lines[$lineIndex], $linkedMediaPattern, {
+                param($match)
+
+                $target = $match.Groups['target'].Value.Trim()
+                if (
+                    $target -match '^(?i:https?://|data:|//|#)' -or
+                    $target.StartsWith('/')
+                ) {
+                    return $match.Value
+                }
+
+                $decodedTarget = [Uri]::UnescapeDataString($target)
+                $extension = [IO.Path]::GetExtension($decodedTarget).ToLowerInvariant()
+                if ($extension -notin @('.mp4', '.webm', '.mov', '.m4v')) {
+                    return $match.Value
+                }
+
+                $resolvedMedia = Find-LocalImage `
+                    -Target $target `
+                    -SourceDirectory $sourceDirectory `
+                    -SourceRoot $SourceRoot `
+                    -SharedAssetsRoot $SharedAssetsRoot
+
+                if ($sourceToName.ContainsKey($resolvedMedia)) {
+                    $assetName = $sourceToName[$resolvedMedia]
+                }
+                else {
+                    $candidateName = ConvertTo-AssetFileName -FileName ([IO.Path]::GetFileName($resolvedMedia))
+                    $baseName = [IO.Path]::GetFileNameWithoutExtension($candidateName)
+                    $assetExtension = [IO.Path]::GetExtension($candidateName)
+                    $assetName = $candidateName
+                    $suffix = 2
+                    while (-not $usedNames.Add($assetName)) {
+                        $assetName = "$baseName-$suffix$assetExtension"
+                        $suffix++
+                    }
+                    $sourceToName[$resolvedMedia] = $assetName
+                    Copy-Item -LiteralPath $resolvedMedia -Destination (Join-Path $assetsPath $assetName)
+                }
+
+                return '[' + $match.Groups['alt'].Value + '](assets/' + $assetName + ')'
             })
         }
 

@@ -142,6 +142,27 @@ Describe 'Convert-SyncDocument' {
         $markdown | Should Match '!\[Remote\]\(https://example\.com/image\.png\)'
     }
 
+    It 'copies and rewrites a linked local video asset' {
+        $roots = New-TransformRoots
+        $attachmentFolder = -join ([char[]](0x56FE, 0x7247, 0x548C, 0x9644, 0x4EF6))
+        $attachmentRoot = Join-Path (Join-Path $roots.SourceRoot 'notes') $attachmentFolder
+        New-Item -ItemType Directory -Path $attachmentRoot -Force | Out-Null
+        [IO.File]::WriteAllBytes((Join-Path $attachmentRoot 'result video.mp4'), [byte[]](1, 2, 3))
+        $source = Join-Path $roots.SourceRoot 'notes\article.md'
+        @(
+            '# Test article'
+            ''
+            ('[Result video](' + $attachmentFolder + '/result%20video.mp4)')
+        ) | Set-Content -LiteralPath $source -Encoding UTF8
+        $entry = New-TransformEntry
+
+        $result = Convert-SyncDocument -Entry $entry -SourceRoot $roots.SourceRoot -OutputRoot $roots.OutputRoot -SharedAssetsRoot $roots.SharedAssetsRoot
+        $markdown = Get-Content -LiteralPath $result.IndexPath -Raw -Encoding UTF8
+
+        $markdown | Should Match '\[Result video\]\(assets/result-video\.mp4\)'
+        Test-Path -LiteralPath (Join-Path $result.BundlePath 'assets\result-video.mp4') | Should Be $true
+    }
+
     It 'fails before writing a bundle when a local image is missing' {
         $roots = New-TransformRoots
         $source = Join-Path $roots.SourceRoot 'notes\article.md'

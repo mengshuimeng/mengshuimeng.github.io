@@ -1,0 +1,193 @@
+{{- $page := .Page -}}
+{{- $isZH := eq $page.Language.Lang "zh-cn" -}}
+{{- $copy := cond $isZH
+  (dict
+    "eyebrow" "个人技术知识库"
+    "heading" "从目标出发，更快找到需要的内容"
+    "intro" "按当前任务选择入口，或继续浏览下方完整技术领域地图。"
+    "articles" "篇文档"
+    "sections" "个主题"
+    "search" "提示：也可以使用右上角搜索，直接定位命令、设备或报错关键词。"
+    "routesTitle" "你现在想做什么？"
+    "domainsTitle" "技术领域地图"
+    "domainsIntro" "保留完整知识结构，并自动显示每个领域的内容规模与下一级主题。"
+    "featuredTitle" "建议从这里开始"
+    "recentTitle" "最近更新"
+    "viewDomain" "进入领域"
+    "viewArticle" "阅读全文"
+    "noChildren" "内容持续整理中"
+  )
+  (dict
+    "eyebrow" "Personal Technical Knowledge Base"
+    "heading" "Start with your goal and find the right note faster"
+    "intro" "Choose an intent-based route, or browse the complete technical domain map below."
+    "articles" "articles"
+    "sections" "topics"
+    "search" "Tip: use the search control in the top navigation to jump to a command, device, or error message."
+    "routesTitle" "What do you want to do?"
+    "domainsTitle" "Technical domain map"
+    "domainsIntro" "The complete knowledge structure, with live content counts and immediate child topics."
+    "featuredTitle" "Good places to start"
+    "recentTitle" "Recently updated"
+    "viewDomain" "Open domain"
+    "viewArticle" "Read article"
+    "noChildren" "More notes are being organized"
+  )
+-}}
+
+{{- $routes := cond $isZH
+  (slice
+    (dict "key" "quick" "icon" "01" "title" "快速开始" "description" "先把开发环境、工具链与基础工作流搭稳。" "link" "docs/environment/" "action" "从环境配置开始")
+    (dict "key" "solve" "icon" "02" "title" "解决问题" "description" "按设备、视觉任务与常见工程场景查找排障记录。" "link" "docs/robotics/" "action" "查看工程排障笔记")
+    (dict "key" "study" "icon" "03" "title" "专题学习" "description" "沿着概念、方法与实验记录系统学习一个方向。" "link" "#docs-domain-map" "action" "浏览全部专题")
+  )
+  (slice
+    (dict "key" "quick" "icon" "01" "title" "Quick Start" "description" "Build a dependable development environment, toolchain, and workflow first." "link" "docs/environment/" "action" "Start with environment setup")
+    (dict "key" "solve" "icon" "02" "title" "Solve a Problem" "description" "Find debugging records by device, vision task, or engineering scenario." "link" "docs/robotics/" "action" "Browse troubleshooting notes")
+    (dict "key" "study" "icon" "03" "title" "Study a Topic" "description" "Follow concepts, methods, and experiments to learn a domain systematically." "link" "#docs-domain-map" "action" "Explore every topic")
+  )
+-}}
+
+{{- $domains := cond $isZH
+  (slice
+    (dict "slug" "ai" "icon" "AI" "title" "AI 与大模型" "description" "提示词、模型理解与 AI 工具实践。" "accent" "violet")
+    (dict "slug" "environment" "icon" "EN" "title" "环境与部署" "description" "WSL、Docker、Conda、Git 与开发工具链。" "accent" "emerald")
+    (dict "slug" "robotics" "icon" "RO" "title" "机器人与设备" "description" "ROS 2、RealSense、Jetson 与视觉系统调试。" "accent" "cyan")
+    (dict "slug" "cv" "icon" "CV" "title" "计算机视觉" "description" "YOLO、ReID、数据标注与视觉工作流。" "accent" "blue")
+    (dict "slug" "fundamentals" "icon" "FN" "title" "基础概念" "description" "API、张量、广播、自由度等核心知识。" "accent" "amber")
+    (dict "slug" "rl-sim" "icon" "RL" "title" "强化学习与仿真" "description" "Isaac Lab、仿真环境与运动控制实验。" "accent" "rose")
+    (dict "slug" "training" "icon" "TR" "title" "培训与讲义" "description" "课程材料、实践任务与教学沉淀。" "accent" "orange")
+  )
+  (slice
+    (dict "slug" "ai" "icon" "AI" "title" "AI and LLMs" "description" "Prompting, model notes, and AI-assisted workflows." "accent" "violet")
+    (dict "slug" "environment" "icon" "EN" "title" "Environment" "description" "WSL, Docker, Conda, Git, and development toolchains." "accent" "emerald")
+    (dict "slug" "robotics" "icon" "RO" "title" "Robotics" "description" "ROS 2, RealSense, Jetson, and vision-system debugging." "accent" "cyan")
+    (dict "slug" "cv" "icon" "CV" "title" "Computer Vision" "description" "YOLO, ReID, annotation, and visual workflows." "accent" "blue")
+    (dict "slug" "fundamentals" "icon" "FN" "title" "Fundamentals" "description" "APIs, tensors, broadcasting, DOF, and core concepts." "accent" "amber")
+    (dict "slug" "rl-sim" "icon" "RL" "title" "RL and Simulation" "description" "Isaac Lab, simulation environments, and locomotion experiments." "accent" "rose")
+    (dict "slug" "training" "icon" "TR" "title" "Training Notes" "description" "Course materials, practical tasks, and teaching records." "accent" "orange")
+  )
+-}}
+
+{{- $featured := cond $isZH
+  (slice
+    (dict "title" "先搭好 WSL 开发环境" "description" "从 Windows、WSL 到常用命令的基础路径。" "link" "docs/environment/wsl-guide/")
+    (dict "title" "调试 RealSense 与 ROS 2" "description" "按设备与系统层级定位相机问题。" "link" "docs/robotics/realsense/")
+    (dict "title" "进入 YOLO 训练工作流" "description" "连接数据、训练、测试与部署步骤。" "link" "docs/cv/yolo-training/")
+  )
+  (slice
+    (dict "title" "Set up a WSL workstation" "description" "A practical path from Windows and WSL to daily tools." "link" "docs/environment/wsl-guide/")
+    (dict "title" "Debug RealSense with ROS 2" "description" "Trace camera problems across device and system layers." "link" "docs/robotics/realsense/")
+    (dict "title" "Enter the YOLO workflow" "description" "Connect data, training, testing, and deployment." "link" "docs/cv/yolo-training/")
+  )
+-}}
+
+{{- $articleCount := len $page.RegularPagesRecursive -}}
+{{- $sectionCount := len $page.Sections -}}
+{{- $recent := first 4 ($page.RegularPagesRecursive.ByLastmod.Reverse) -}}
+
+<section class="docs-hub not-prose" aria-labelledby="docs-hub-title">
+  <header class="docs-hub__hero">
+    <div class="docs-hub__hero-copy">
+      <p class="docs-hub__eyebrow">{{ $copy.eyebrow }}</p>
+      <h2 id="docs-hub-title">{{ $copy.heading }}</h2>
+      <p>{{ $copy.intro }}</p>
+    </div>
+    <dl class="docs-hub__stats" aria-label="{{ $copy.eyebrow }}">
+      <div><dt>{{ $copy.articles }}</dt><dd>{{ $articleCount }}</dd></div>
+      <div><dt>{{ $copy.sections }}</dt><dd>{{ $sectionCount }}</dd></div>
+    </dl>
+    <p class="docs-hub__search-hint">{{ $copy.search }}</p>
+  </header>
+
+  <div class="docs-hub__block">
+    <div class="docs-hub__section-heading">
+      <p class="docs-hub__section-kicker">01</p>
+      <h3>{{ $copy.routesTitle }}</h3>
+    </div>
+    <div class="docs-hub__routes">
+      {{- range $routes }}
+        {{- $href := cond (hasPrefix .link "#") .link (.link | relLangURL) -}}
+        <a class="docs-hub__route docs-hub__route--{{ .key }}" href="{{ $href }}">
+          <span class="docs-hub__route-index" aria-hidden="true">{{ .icon }}</span>
+          <span class="docs-hub__route-title">{{ .title }}</span>
+          <span class="docs-hub__route-description">{{ .description }}</span>
+          <span class="docs-hub__route-action">{{ .action }} <span aria-hidden="true">→</span></span>
+        </a>
+      {{- end }}
+    </div>
+  </div>
+
+  <div class="docs-hub__block" id="docs-domain-map">
+    <div class="docs-hub__section-heading">
+      <p class="docs-hub__section-kicker">02</p>
+      <div>
+        <h3>{{ $copy.domainsTitle }}</h3>
+        <p>{{ $copy.domainsIntro }}</p>
+      </div>
+    </div>
+    <div class="docs-hub__domains">
+      {{- range $domains }}
+        {{- $domain := . -}}
+        {{- with $page.GetPage $domain.slug }}
+          <a class="docs-hub__domain docs-hub__domain--{{ $domain.accent }}" href="{{ .RelPermalink }}">
+            <span class="docs-hub__domain-icon" aria-hidden="true">{{ $domain.icon }}</span>
+            <span class="docs-hub__domain-body">
+              <span class="docs-hub__domain-heading">
+                <strong>{{ $domain.title }}</strong>
+                <span>{{ len .RegularPagesRecursive }} {{ $copy.articles }}</span>
+              </span>
+              <span class="docs-hub__domain-description">{{ $domain.description }}</span>
+              <span class="docs-hub__domain-children">
+                {{- if .Sections }}
+                  {{- range first 3 .Sections.ByTitle }}
+                    <span>{{ .Title }}</span>
+                  {{- end }}
+                {{- else }}
+                  <span>{{ $copy.noChildren }}</span>
+                {{- end }}
+              </span>
+              <span class="docs-hub__domain-action">{{ $copy.viewDomain }} <span aria-hidden="true">→</span></span>
+            </span>
+          </a>
+        {{- end }}
+      {{- end }}
+    </div>
+  </div>
+
+  <div class="docs-hub__reading">
+    <section class="docs-hub__reading-panel" aria-labelledby="docs-featured-title">
+      <div class="docs-hub__section-heading docs-hub__section-heading--compact">
+        <p class="docs-hub__section-kicker">03</p>
+        <h3 id="docs-featured-title">{{ $copy.featuredTitle }}</h3>
+      </div>
+      <ol class="docs-hub__reading-list">
+        {{- range $featured }}
+          <li>
+            <a href="{{ .link | relLangURL }}">
+              <strong>{{ .title }}</strong>
+              <span>{{ .description }}</span>
+            </a>
+          </li>
+        {{- end }}
+      </ol>
+    </section>
+
+    <section class="docs-hub__reading-panel" aria-labelledby="docs-recent-title">
+      <div class="docs-hub__section-heading docs-hub__section-heading--compact">
+        <p class="docs-hub__section-kicker">04</p>
+        <h3 id="docs-recent-title">{{ $copy.recentTitle }}</h3>
+      </div>
+      <ol class="docs-hub__reading-list docs-hub__reading-list--recent">
+        {{- range $recent }}
+          <li>
+            <a href="{{ .RelPermalink }}">
+              <strong>{{ .Title }}</strong>
+              <span>{{ .Lastmod.Format "2006-01-02" }} · {{ $copy.viewArticle }}</span>
+            </a>
+          </li>
+        {{- end }}
+      </ol>
+    </section>
+  </div>
+</section>

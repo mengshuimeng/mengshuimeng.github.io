@@ -38,9 +38,10 @@ Describe 'documentation hub template contract' {
         $template = Read-RepositoryFile 'layouts\shortcodes\docs-hub.html'
 
         $template | Should Match 'class="docs-hub not-prose"'
-        $template | Should Match 'docs-hub__route--quick'
-        $template | Should Match 'docs-hub__route--solve'
-        $template | Should Match 'docs-hub__route--study'
+        $template | Should Match 'docs-hub__route--\{\{ \.key \}\}'
+        @('quick', 'solve', 'study') | ForEach-Object {
+            $template | Should Match ([regex]::Escape(('"key" "{0}"' -f $_)))
+        }
     }
 
     It 'maps every existing top-level documentation domain' {

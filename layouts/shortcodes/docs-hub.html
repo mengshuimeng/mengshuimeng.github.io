@@ -6,6 +6,7 @@
     "heading" "从目标出发，更快找到需要的内容"
     "intro" "按当前任务选择入口，或继续浏览下方完整技术领域地图。"
     "articles" "篇文档"
+    "articleSingular" "篇文档"
     "sections" "个主题"
     "search" "提示：也可以使用右上角搜索，直接定位命令、设备或报错关键词。"
     "routesTitle" "你现在想做什么？"
@@ -22,6 +23,7 @@
     "heading" "Start with your goal and find the right note faster"
     "intro" "Choose an intent-based route, or browse the complete technical domain map below."
     "articles" "articles"
+    "articleSingular" "article"
     "sections" "topics"
     "search" "Tip: use the search control in the top navigation to jump to a command, device, or error message."
     "routesTitle" "What do you want to do?"
@@ -37,14 +39,38 @@
 
 {{- $routes := cond $isZH
   (slice
-    (dict "key" "quick" "icon" "01" "title" "快速开始" "description" "先把开发环境、工具链与基础工作流搭稳。" "link" "docs/environment/" "action" "从环境配置开始")
-    (dict "key" "solve" "icon" "02" "title" "解决问题" "description" "按设备、视觉任务与常见工程场景查找排障记录。" "link" "docs/robotics/" "action" "查看工程排障笔记")
-    (dict "key" "study" "icon" "03" "title" "专题学习" "description" "沿着概念、方法与实验记录系统学习一个方向。" "link" "#docs-domain-map" "action" "浏览全部专题")
+    (dict "key" "quick" "icon" "01" "title" "快速开始" "description" "先把开发环境、工具链与基础工作流搭稳。" "destinations" (slice
+      (dict "title" "配置 WSL 开发环境" "link" "docs/environment/wsl-guide/")
+      (dict "title" "管理 Conda 环境" "link" "docs/environment/conda-guide/")
+      (dict "title" "建立 Git 工作流" "link" "docs/environment/git-guide/")
+    ))
+    (dict "key" "solve" "icon" "02" "title" "解决问题" "description" "按设备、视觉任务与常见工程场景查找排障记录。" "destinations" (slice
+      (dict "title" "调试 RealSense 与 ROS 2" "link" "docs/robotics/realsense/")
+      (dict "title" "排查 Jetson 部署" "link" "docs/robotics/jetson/")
+      (dict "title" "进入 YOLO 训练流程" "link" "docs/cv/yolo-training/")
+    ))
+    (dict "key" "study" "icon" "03" "title" "专题学习" "description" "沿着概念、方法与实验记录系统学习一个方向。" "destinations" (slice
+      (dict "title" "补齐基础概念" "link" "docs/fundamentals/")
+      (dict "title" "学习强化学习与仿真" "link" "docs/rl-sim/")
+      (dict "title" "浏览培训与讲义" "link" "docs/training/")
+    ))
   )
   (slice
-    (dict "key" "quick" "icon" "01" "title" "Quick Start" "description" "Build a dependable development environment, toolchain, and workflow first." "link" "docs/environment/" "action" "Start with environment setup")
-    (dict "key" "solve" "icon" "02" "title" "Solve a Problem" "description" "Find debugging records by device, vision task, or engineering scenario." "link" "docs/robotics/" "action" "Browse troubleshooting notes")
-    (dict "key" "study" "icon" "03" "title" "Study a Topic" "description" "Follow concepts, methods, and experiments to learn a domain systematically." "link" "#docs-domain-map" "action" "Explore every topic")
+    (dict "key" "quick" "icon" "01" "title" "Quick Start" "description" "Build a dependable development environment, toolchain, and workflow first." "destinations" (slice
+      (dict "title" "Set up a WSL workstation" "link" "docs/environment/wsl-guide/")
+      (dict "title" "Manage Conda environments" "link" "docs/environment/conda-guide/")
+      (dict "title" "Build a Git workflow" "link" "docs/environment/git-guide/")
+    ))
+    (dict "key" "solve" "icon" "02" "title" "Solve a Problem" "description" "Find debugging records by device, vision task, or engineering scenario." "destinations" (slice
+      (dict "title" "Debug RealSense and ROS 2" "link" "docs/robotics/realsense/")
+      (dict "title" "Troubleshoot Jetson deployment" "link" "docs/robotics/jetson/")
+      (dict "title" "Enter the YOLO workflow" "link" "docs/cv/yolo-training/")
+    ))
+    (dict "key" "study" "icon" "03" "title" "Study a Topic" "description" "Follow concepts, methods, and experiments to learn a domain systematically." "destinations" (slice
+      (dict "title" "Strengthen fundamentals" "link" "docs/fundamentals/")
+      (dict "title" "Study RL and simulation" "link" "docs/rl-sim/")
+      (dict "title" "Browse training notes" "link" "docs/training/")
+    ))
   )
 -}}
 
@@ -107,13 +133,16 @@
     </div>
     <div class="docs-hub__routes">
       {{- range $routes }}
-        {{- $href := cond (hasPrefix .link "#") .link (.link | relLangURL) -}}
-        <a class="docs-hub__route docs-hub__route--{{ .key }}" href="{{ $href }}">
+        <article class="docs-hub__route docs-hub__route--{{ .key }}">
           <span class="docs-hub__route-index" aria-hidden="true">{{ .icon }}</span>
           <span class="docs-hub__route-title">{{ .title }}</span>
           <span class="docs-hub__route-description">{{ .description }}</span>
-          <span class="docs-hub__route-action">{{ .action }} <span aria-hidden="true">→</span></span>
-        </a>
+          <ul class="docs-hub__route-links">
+            {{- range .destinations }}
+              <li><a href="{{ .link | relLangURL }}">{{ .title }} <span aria-hidden="true">→</span></a></li>
+            {{- end }}
+          </ul>
+        </article>
       {{- end }}
     </div>
   </div>
@@ -130,12 +159,14 @@
       {{- range $domains }}
         {{- $domain := . -}}
         {{- with $page.GetPage $domain.slug }}
+          {{- $domainCount := len .RegularPagesRecursive -}}
+          {{- $domainUnit := cond (and (not $isZH) (eq $domainCount 1)) $copy.articleSingular $copy.articles -}}
           <a class="docs-hub__domain docs-hub__domain--{{ $domain.accent }}" href="{{ .RelPermalink }}">
             <span class="docs-hub__domain-icon" aria-hidden="true">{{ $domain.icon }}</span>
             <span class="docs-hub__domain-body">
               <span class="docs-hub__domain-heading">
                 <strong>{{ $domain.title }}</strong>
-                <span>{{ len .RegularPagesRecursive }} {{ $copy.articles }}</span>
+                <span>{{ $domainCount }} {{ $domainUnit }}</span>
               </span>
               <span class="docs-hub__domain-description">{{ $domain.description }}</span>
               <span class="docs-hub__domain-children">

@@ -34,14 +34,20 @@ Describe 'documentation hub content contract' {
 }
 
 Describe 'documentation hub template contract' {
-    It 'defines the hub component and all three intent routes' {
+    It 'defines all three intent routes with three destinations per language' {
         $template = Read-RepositoryFile 'layouts\shortcodes\docs-hub.html'
+        $routeBlock = $template.Substring(
+            $template.IndexOf('{{- $routes :='),
+            $template.IndexOf('{{- $domains :=') - $template.IndexOf('{{- $routes :=')
+        )
 
         $template | Should Match 'class="docs-hub not-prose"'
         $template | Should Match 'docs-hub__route--\{\{ \.key \}\}'
+        $template | Should Match 'range \.destinations'
         @('quick', 'solve', 'study') | ForEach-Object {
             $template | Should Match ([regex]::Escape(('"key" "{0}"' -f $_)))
         }
+        ([regex]::Matches($routeBlock, '"link"\s+"docs/').Count) | Should Be 18
     }
 
     It 'maps every existing top-level documentation domain' {
@@ -60,6 +66,8 @@ Describe 'documentation hub template contract' {
         $template | Should Match '\.Sections'
         $template | Should Match 'ByLastmod\.Reverse'
         $template | Should Match 'relLangURL'
+        $template | Should Match '"articleSingular"'
+        $template | Should Match 'eq \$domainCount 1'
     }
 }
 
@@ -81,6 +89,8 @@ Describe 'documentation section hierarchy contract' {
         $template | Should Match '\.Summary'
         $template | Should Match '\.Lastmod'
         $template | Should Match 'docs-section-overview__empty'
+        $template | Should Match '"articleSingular"'
+        $template | Should Match 'eq \$articleCount 1'
     }
 }
 
@@ -94,6 +104,7 @@ Describe 'documentation navigation visual contract' {
         $styles | Should Match '\.docs-section-overview'
         $styles | Should Match '\.docs-hub__routes'
         $styles | Should Match '\.docs-hub__domains'
+        $styles | Should Not Match '(?m)^\.(docs-section-card|docs-article-card)'
     }
 
     It 'supports keyboard focus and Hextra dark mode' {

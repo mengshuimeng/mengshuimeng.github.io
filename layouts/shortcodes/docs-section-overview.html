@@ -8,6 +8,7 @@
     "articlesTitle" "本分类文章"
     "articlesIntro" "这些文章直接归属于当前分类。"
     "articles" "篇文章"
+    "articleSingular" "篇文章"
     "subtopics" "个子专题"
     "openSection" "进入专题"
     "readArticle" "阅读全文"
@@ -22,6 +23,7 @@
     "articlesTitle" "Articles in this category"
     "articlesIntro" "These articles belong directly to the current category."
     "articles" "articles"
+    "articleSingular" "article"
     "subtopics" "subtopics"
     "openSection" "Open topic"
     "readArticle" "Read article"
@@ -45,10 +47,12 @@
       </header>
       <div class="docs-section-overview__sections">
         {{- range $sections }}
+          {{- $articleCount := len .RegularPagesRecursive -}}
+          {{- $articleUnit := cond (and (not $isZH) (eq $articleCount 1)) $copy.articleSingular $copy.articles -}}
           <a class="docs-section-card" href="{{ .RelPermalink }}">
             <span class="docs-section-card__topline">
               <strong>{{ .Title }}</strong>
-              <span>{{ len .RegularPagesRecursive }} {{ $copy.articles }}</span>
+              <span>{{ $articleCount }} {{ $articleUnit }}</span>
             </span>
             {{- with .Description }}
               <span class="docs-section-card__description">{{ . }}</span>

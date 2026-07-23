@@ -405,6 +405,10 @@ function Convert-SyncDocument {
 
                 return '[' + $match.Groups['alt'].Value + '](assets/' + $assetName + ')'
             })
+
+            if ($lines[$lineIndex] -match '^\s*>\s+$') {
+                $lines[$lineIndex] = $lines[$lineIndex].TrimEnd()
+            }
         }
 
         $frontMatter = New-Object 'System.Collections.Generic.List[string]'

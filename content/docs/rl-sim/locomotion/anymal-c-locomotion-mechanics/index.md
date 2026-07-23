@@ -443,8 +443,8 @@ uv run tensorboard --logdir runs/anymal_c_navigation_flat
 因此，第二周训练结果应表述为：
 
 > PPO 训练链路已经跑通，策略开始学习并获得更高奖励；SKRL 5000\-step 快速训练尚未稳定收敛，RSL\-RL 长训练表现出更高奖励，但仍需通过独立回放和成功率指标确认真实导航能力。
-> 
-> 
+>
+>
 
 ### 5\.7 训练产物与复现
 

@@ -46,6 +46,7 @@ Describe 'Convert-SyncDocument' {
             '# Test article'
             ''
             'Body text.'
+            '> '
         ) | Set-Content -LiteralPath $source -Encoding UTF8
         $entry = New-TransformEntry
 
@@ -56,7 +57,9 @@ Describe 'Convert-SyncDocument' {
         $markdown | Should Match 'authors:\n  - "Mengshuimeng"'
         $markdown | Should Match 'tags:\n  - "robotics"\n  - "test"'
         $markdown | Should Not Match '(?m)^# Test article$'
-        $markdown | Should Match 'Body text\.\n$'
+        $markdown | Should Match 'Body text\.'
+        $markdown | Should Match '>\n$'
+        $markdown | Should Not Match '(?m)^> +$'
     }
 
     It 'rewrites a percent-encoded image from the adjacent Chinese attachment directory' {

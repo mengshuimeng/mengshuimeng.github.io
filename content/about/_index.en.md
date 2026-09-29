@@ -1,42 +1,34 @@
 ---
 title: About Me
-description: Profile, technical interests, and project directions of Mengshuimeng
+description: Shuhao Jiang's research interests, projects, and recent work
+lastmod: 2026-09-29
 ---
 
-> I focus on computer vision, person re-identification, robotics perception, and edge deployment, with an emphasis on turning algorithms into runnable and presentable systems.
+## Hi, I am Shuhao Jiang
 
-## Hi, I am Mengshuimeng
+I am a Computer Science and Technology undergraduate at Xinjiang University. My interests are robotics vision, reinforcement learning, and embodied intelligence.
 
-I am an undergraduate student in Computer Science and Technology at Xinjiang University. My current interests center on computer vision, person re-identification, robotics vision, and edge deployment.
+I lead a national undergraduate innovation project on person re-identification and the vision team for RoboCon quadruped robots. My work includes object detection, person re-identification, ROS 2 vision nodes, and model deployment on Jetson.
 
-Rather than stopping at model metrics, I care about whether an algorithm can be deployed on real devices, run reliably in practical scenarios, and become a reproducible system that can be demonstrated and improved.
+## Recent Work
 
-## Focus Areas
+- RoboCon 2026 quadruped robot challenge: first prize in the obstacle race and third prize in the task race.
+- **SafeRecovery** accepted at ICIC 2026 for an oral presentation; third author.
+- Contributor to three software systems with copyright registrations.
 
-- **Computer vision and deep learning**: detection, feature extraction, attention mechanisms, metric learning, and training workflows.
-- **Person re-identification**: experiments and notes around ResNet50, PCBNet, Triplet Loss, and ID Loss.
-- **Robotics vision**: visual recognition tasks for robotics competitions and how perception connects to decision-making.
-- **Edge deployment**: deploying models on Jetson, Raspberry Pi, Orange Pi, and similar constrained devices.
-- **System implementation**: backend services, frontend presentation, APIs, data flow, and end-to-end demos.
+[Full resume and awards](/en/resume/) · [Download resume (Chinese, PDF)](/files/resume-zh-cn.pdf)
 
-## Representative Work
+## Technical Notes
+
+I document environment setup, training experiments, and device debugging so that the work can be reproduced and shared with teammates.
 
 {{< cards cols="2" >}}
-  {{< card link="/en/projects/student-management-system/" title="Student Management System" subtitle="A C-language course project covering data structures, persistence, statistics, and CLI interaction" icon="collection" >}}
-  {{< card link="/en/docs/cv/yolo-training/" title="YOLO Training Workflow" subtitle="Notes from local validation to server-side training and result export" icon="camera" >}}
-  {{< card link="/en/docs/robotics/realsense/" title="RealSense Debugging" subtitle="WSL2, ROS 2, USB passthrough, and camera bring-up notes" icon="chip" >}}
-  {{< card link="/en/docs/training/" title="Vision Training" subtitle="Training materials for AI tools, Python, coding style, and practical tasks" icon="academic-cap" >}}
+  {{< card link="/en/docs/cv/" title="Computer Vision" subtitle="Detection, re-identification, and training workflows" icon="camera" >}}
+  {{< card link="/en/docs/rl-sim/" title="Reinforcement Learning and Simulation" subtitle="Robot simulation, training, and debugging" icon="chip" >}}
+  {{< card link="/en/docs/robotics/realsense/" title="Robotics Vision" subtitle="RealSense, ROS 2, and device integration" icon="terminal" >}}
+  {{< card link="/en/docs/training/" title="Vision Team Training" subtitle="Technical notes and practical tasks for new members" icon="academic-cap" >}}
 {{< /cards >}}
 
-## Technical Stack
+## Contact
 
-- **Languages and frameworks**: Python, C, PyTorch.
-- **Vision**: YOLOv8, ResNet50, PCBNet, Triplet Loss, ID Loss, annotation, training, and evaluation workflows.
-- **Backend and systems**: Flask, basic API development, and model-serving workflows.
-- **Frontend and presentation**: Vue, ECharts, and Hugo-based static sites.
-- **Environment and tooling**: Linux, Ubuntu, WSL, Docker, Conda, and Git.
-- **Edge platforms**: Jetson, Raspberry Pi, Orange Pi, and related deployment practice.
-
-## This Website
-
-This site collects my project experience, technical notes, deployment records, training materials, and personal profile. It is both a public portfolio and a place where I organize reusable engineering knowledge.
+[GitHub](https://github.com/mengshuimeng) · [Email](mailto:mengshuimeng@gmail.com)

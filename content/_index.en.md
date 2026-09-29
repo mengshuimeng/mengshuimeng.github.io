@@ -17,7 +17,7 @@ toc: false
 >
   <img
     src="/avatar.webp"
-    alt="avatar"
+    alt="Mengshuimeng's avatar"
     style="
       width: 8rem;
       height: 8rem;
@@ -35,8 +35,8 @@ toc: false
   </p>
 
   <p style="margin: 0; max-width: 46rem; opacity: 0.75; line-height: 1.8;">
-    Focused on computer vision, person re-identification, robotics vision, and edge deployment,<br>
-    with a strong interest in building systems that are runnable, presentable, and practical.
+    Interested in robotics vision, reinforcement learning, and embodied intelligence.<br>
+    Sharing project notes on person re-identification, robot perception, and system deployment.
   </p>
 
 
@@ -83,10 +83,10 @@ toc: false
 ## Highlights
 
 {{< cards cols="2" >}}
-  {{< card title="A Young RCer" subtitle="Member of the Hurricane Team at Xinjiang University, focusing on vision for bionic quadruped robotics" icon="sparkles" >}}
-  {{< card title="Computer Science Major" subtitle="Building a solid foundation through coursework, competitions, and engineering practice" icon="academic-cap" >}}
-  {{< card title="Research Directions" subtitle="Computer vision, person re-identification, robotics vision, and edge deployment" icon="collection" >}}
-  {{< card title="Engineering Interests" subtitle="System building, deployment, debugging, frontend presentation, and practical implementation" icon="book-open" >}}
+  {{< card link="/en/resume/#competition-awards-and-honors" title="RoboCon 2026" subtitle="National first prize in obstacle racing and third prize in task challenge" icon="sparkles" >}}
+  {{< card link="/en/resume/#education" title="Education and Qualification" subtitle="GPA 4.44/5.00 · Ranked 1/116 · Software Designer (Intermediate)" icon="academic-cap" >}}
+  {{< card link="/en/resume/#research" title="ICIC 2026" subtitle="SafeRecovery accepted · Third author · Oral presentation" icon="collection" >}}
+  {{< card link="/en/resume/#research" title="Software Copyrights" subtitle="Contributed to 3 registrations in computer vision and fault diagnosis" icon="document-text" >}}
 {{< /cards >}}
 
 ## Quick Links

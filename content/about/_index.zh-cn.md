@@ -1,50 +1,34 @@
 ---
 title: 关于我
-description: 萌睡梦的个人介绍、技术方向与学习经历
+description: 姜树豪的研究方向、项目实践与个人介绍
+lastmod: 2026-09-29
 ---
-
-> 关注计算机视觉、行人重识别、机器人视觉感知与边缘部署，努力把算法方案真正做成可运行、可展示、可落地的系统。
 
 ## 你好，我是小姜
 
-我目前是新疆大学计算机科学与技术专业本科生，主要关注计算机视觉、行人重识别、机器人视觉感知与边缘部署方向。
+我叫姜树豪，是新疆大学计算机科学与技术专业本科生，关注机器人视觉、强化学习与具身智能。
 
-相比只停留在模型指标层面的研究，我更在意一套算法能不能真正部署到设备上，能不能在真实场景中稳定运行，最终能不能形成一个可展示、可复现、可应用的系统。对我来说，技术的价值不只是“跑出来”，更在于“用起来”。
+目前主持国家级大学生创新训练项目“景区行人重识别系统”，并担任 RoboCon 仿生足式机器人视觉组负责人。主要实践包括目标检测、行人重识别、ROS 2 视觉节点开发和 Jetson 模型部署。
 
-## 我在关注什么
+## 近期成果
 
-- **计算机视觉与深度学习**：目标检测、特征提取、注意力机制、度量学习与模型训练流程。
-- **行人重识别（Person Re-ID）**：围绕 ResNet50、PCBNet、Triplet Loss、ID Loss 等方法做过系统学习和实验整理。
-- **机器人视觉感知**：参与机器人任务赛相关视觉识别工作，关注识别结果如何进入决策与系统协同。
-- **边缘设备部署**：尝试将算法部署到 Jetson、树莓派、香橙派等平台，关注实时性、资源约束和工程可行性。
-- **系统化实现**：除了模型本身，也关注前后端展示、接口设计、数据流转和整体系统搭建。
+- RoboCon 2026 仿生足式机器人挑战赛：障碍赛一等奖、任务赛三等奖。
+- ICIC 2026 论文 **SafeRecovery** 录用，第三作者，口头报告。
+- 参与开发的 3 项软件完成著作权登记。
 
-## 我做过什么
+[查看完整简历与获奖记录](/resume/) · [下载简历（PDF）](/files/resume-zh-cn.pdf)
+
+## 学习与实践记录
+
+我会把环境配置、训练实验和设备调试过程整理成文档，便于复现和团队交接。
 
 {{< cards cols="2" >}}
-  {{< card link="/projects/student-management-system/" title="学生成绩管理系统" subtitle="C 语言课程项目，覆盖数据结构、文件持久化、统计分析与命令行交互" icon="collection" >}}
-  {{< card link="/docs/cv/yolo-training/" title="YOLO 训练流程整理" subtitle="从本地验证、服务器训练到结果导出的视觉训练工作流" icon="camera" >}}
-  {{< card link="/docs/robotics/realsense/" title="RealSense 与机器人调试" subtitle="记录 WSL2、ROS2、USB 设备透传和相机挂载问题" icon="chip" >}}
-  {{< card link="/docs/training/" title="视觉组培训资料" subtitle="面向新成员的 AI 工具、Python、代码规范和实践任务资料" icon="academic-cap" >}}
+  {{< card link="/projects/web-reid-system-defense/" title="行人重识别系统" subtitle="算法设计、系统架构与答辩资料" icon="camera" >}}
+  {{< card link="/docs/rl-sim/" title="强化学习与仿真" subtitle="机器人仿真、训练与调试记录" icon="chip" >}}
+  {{< card link="/docs/robotics/realsense/" title="机器人视觉调试" subtitle="RealSense、ROS 2 与设备联调" icon="terminal" >}}
+  {{< card link="/docs/training/" title="视觉组培训" subtitle="面向新成员的技术资料与实践任务" icon="academic-cap" >}}
 {{< /cards >}}
 
-## 我的技术栈
+## 联系方式
 
-- **编程与算法框架**：Python、C、PyTorch。
-- **视觉方向**：YOLOv8、ResNet50、PCBNet、Triplet Loss、ID Loss、数据标注与训练评估流程。
-- **后端与系统实现**：Flask、基础接口开发、模型服务化思路。
-- **前端展示**：Vue、ECharts、Hugo 静态站点维护。
-- **开发环境与工具**：Linux、Ubuntu、WSL、Docker、Conda、Git。
-- **边缘计算平台**：Jetson、树莓派、香橙派等设备上的环境配置与部署实践。
-
-相比技术名词本身，我更关心的是：这个工具是否真正解决了问题，是否适合当前场景，是否能稳定交付结果。
-
-## 我的学习方式
-
-我更偏向一种务实、工程化的学习路径：先理解问题，再拆分任务，然后通过实验、调试和迭代把方案一步步落地。
-
-相比只追求表面上的“新”和“多”，我更重视系统的完整性、实现的可靠性，以及最终能否真正服务于实际需求。我相信，真正有竞争力的能力，不是短期堆出来的标签，而是在持续做项目、打比赛、写材料、复盘问题的过程中慢慢沉淀出来的。
-
-## 关于这个网站
-
-这个网站主要用来整理和展示我在学习、项目与竞赛过程中的积累，包括项目经历、技术学习笔记、部署调试记录、个人简历与方向介绍。它既是一个对外展示窗口，也是我持续梳理自己、沉淀方法和记录成长的地方。
+[GitHub](https://github.com/mengshuimeng) · [邮箱](mailto:mengshuimeng@gmail.com)

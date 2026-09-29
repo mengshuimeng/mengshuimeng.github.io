@@ -17,7 +17,7 @@ toc: false
 >
   <img
     src="/avatar.webp"
-    alt="avatar"
+    alt="萌睡梦的头像"
     style="
       width: 8rem;
       height: 8rem;
@@ -33,8 +33,8 @@ toc: false
   </p>
 
   <p style="margin: 0; max-width: 46rem; opacity: 0.75; line-height: 1.8;">
-    关注计算机视觉、行人重识别、机器人视觉感知与边缘部署，<br>
-    希望把算法、设备和系统展示打通，做出可运行、可复现、可落地的工程作品。
+    关注机器人视觉、强化学习与具身智能。<br>
+    记录行人重识别、机器人感知与系统部署的项目实践。
   </p>
 
   <div
@@ -113,13 +113,13 @@ toc: false
   </div>
 </div>
 
-## 亮点标签
+## 近期成果
 
 {{< cards cols="2" >}}
-  {{< card title="一个小小的 RCer" subtitle="新疆大学 Hurricane 战队 · 仿生足式视觉组" icon="sparkles" >}}
-  {{< card title="计算机科学与技术" subtitle="本科在读，持续通过课程、竞赛和项目积累能力" icon="academic-cap" >}}
-  {{< card title="研究与实践方向" subtitle="计算机视觉、ReID、机器人视觉感知与边缘部署" icon="collection" >}}
-  {{< card title="工程兴趣" subtitle="系统实现、部署调试、前后端展示与完整落地" icon="book-open" >}}
+  {{< card link="/resume/#竞赛与荣誉" title="RoboCon 2026" subtitle="仿生足式机器人障碍赛全国一等奖、任务赛全国三等奖" icon="sparkles" >}}
+  {{< card link="/resume/#教育背景" title="学业与资格" subtitle="GPA 4.44/5.00 · 专业排名 1/116 · 软件设计师（中级）" icon="academic-cap" >}}
+  {{< card link="/resume/#科研成果" title="ICIC 2026" subtitle="SafeRecovery 论文录用 · 第三作者 · 口头报告" icon="collection" >}}
+  {{< card link="/resume/#科研成果" title="软件著作权" subtitle="参与完成 3 项软件著作权登记，涵盖视觉与故障诊断" icon="document-text" >}}
 {{< /cards >}}
 
 ## 快速入口

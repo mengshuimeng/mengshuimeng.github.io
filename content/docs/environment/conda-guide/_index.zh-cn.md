@@ -1,4 +1,4 @@
 ---
-title: Conda 基础使用指南
+title: Conda 
 description: Conda 快速入门
 ---

@@ -3,8 +3,6 @@ title: Ubuntu 22.04 Docker 安装与代理配置指南
 description: Ubuntu 22.04 与 WSL 环境下安装 Docker、配置代理和验证容器网络的记录
 ---
 
-# Ubuntu 22.04 Docker 安装与代理配置指南
-
 > 本文档用于在 Ubuntu 22.04 / WSL Ubuntu 中安装 Docker，并完成基础验证、非 root 用户使用配置，以及代理设置。  
 >
 > 适用对象：需要使用容器环境进行开发、部署、实验的同学  

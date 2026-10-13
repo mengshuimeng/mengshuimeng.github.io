@@ -1,74 +1,142 @@
 ---
-title: ""
-description: 萌睡梦的个人主页，记录机器人视觉、强化学习与具身智能的学习和实践。
+title:
 toc: false
-profile:
-  name: 萌睡梦
-  eyebrow: 学习 · 实践 · 分享
-  tagline: 探索视觉感知，走进真实世界。
-  description: 新疆大学计算机科学与技术本科生。关注机器人视觉、强化学习与具身智能，在项目中探索，也把过程写成可以复现的技术笔记。
-  projectsLabel: 查看项目
-  resumeLabel: 个人简历
-  contactLabel: 联系与社交
-  emailLabel: 邮箱
-  identityLabel: 关于我
-  avatarAlt: 萌睡梦的头像
-  realName: 姜树豪 / SHUHAO JIANG
-  university: 新疆大学 · 计算机科学与技术
-  focusLabel: 正在探索
-  focus: [机器人视觉, 强化学习, 具身智能]
-  highlightsLabel: 近期成果
-  highlights:
-    - label: 学业表现
-      value: "1"
-      suffix: / 116
-      detail: 专业排名 · GPA 4.44 / 5.00
-    - label: RoboCon 2026
-      value: 全国一等奖
-      detail: 仿生足式机器人障碍赛
-    - label: ICIC 2026
-      value: SafeRecovery
-      detail: 论文录用 · 第三作者 · 口头报告
-  workKicker: PROJECTS & PRACTICE
-  workTitle: 在实践中，连接想法与实现
-  allProjects: 全部项目
-  featured:
-    - title: 行人重识别系统
-      category: 国家级大学生创新训练项目
-      description: 从目标检测到身份匹配，整理景区行人重识别系统的算法设计、架构与实现。
-      page: /projects/web-reid-system-defense
-      icon: camera
-      accent: blue
-      tags: [YOLOv8, ResNet50, ReID]
-      action: 查看项目记录
-    - title: 机器人视觉与感知
-      category: RoboCon · 视觉组实践
-      description: 用 RealSense 获取空间信息，串联 ROS 2 视觉节点与 Jetson 部署，记录设备联调过程。
-      page: /docs/robotics/realsense
-      icon: chip
-      accent: teal
-      tags: [RealSense, ROS 2, Jetson]
-      action: 浏览视觉笔记
-    - title: 强化学习与仿真
-      category: 学习与实验
-      description: 从 Isaac Lab 环境搭建到足式机器人训练，把仿真实验、调试过程和复现经验沉淀下来。
-      page: /docs/rl-sim
-      icon: cube
-      accent: violet
-      tags: [Isaac Lab, Locomotion, RL]
-      action: 探索仿真实践
-  notesKicker: NOTES & KNOWLEDGE
-  notesTitle: 把踩过的坑，变成下一步的路
-  notesDescription: 环境配置、模型训练、设备调试与学习记录。按主题整理，方便查找，也方便再次出发。
-  topics:
-    - page: /docs/cv
-    - page: /docs/robotics
-    - page: /docs/environment
-    - page: /docs/rl-sim
-  allNotes: 进入技术知识库
-  recentLabel: 最近更新
-  signoff: 保持好奇，持续构建。
-  sayHello: 聊聊想法
 ---
 
-{{< home-profile >}}
+<div
+  style="
+    min-height: 70dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 0.9rem;
+    padding: 3rem 1rem 2rem 1rem;
+  "
+>
+  <img
+    src="/avatar.webp"
+    alt="萌睡梦的头像"
+    style="
+      width: 8rem;
+      height: 8rem;
+      display: block;
+      border-radius: 9999px;
+      object-fit: cover;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    "
+  />
+  <h1 class="home-title-with-breathing" style="margin: 0; line-height: 1.15;"><span class="home-breathing-dot" aria-hidden="true"></span>萌睡梦</h1>
+  <p style="margin: 0; font-size: 1.05rem; opacity: 0.85;">
+    新疆大学 · 计算机科学与技术本科生
+  </p>
+
+  <p style="margin: 0; max-width: 46rem; opacity: 0.75; line-height: 1.8;">
+    关注机器人视觉、强化学习与具身智能。<br>
+    记录行人重识别、机器人感知与系统部署的项目实践。
+  </p>
+
+  <div
+    style="
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.8rem;
+      margin-top: 0.9rem;
+    "
+  >
+    <a
+      href="/projects"
+      style="
+        display: inline-block;
+        padding: 0.7rem 1.1rem;
+        border-radius: 0.9rem;
+        text-decoration: none;
+        font-weight: 600;
+        background: #2563eb;
+        color: white;
+      "
+    >查看项目</a>
+    <a
+      href="/resume"
+      style="
+        display: inline-block;
+        padding: 0.7rem 1.1rem;
+        border-radius: 0.9rem;
+        text-decoration: none;
+        font-weight: 600;
+        border: 1px solid rgba(128,128,128,0.35);
+        color: inherit;
+        background: transparent;
+      "
+    >个人简历</a>
+  </div>
+
+  <div
+    style="
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 0.9rem;
+    "
+  >
+    <a
+      href="https://github.com/mengshuimeng"
+      aria-label="GitHub"
+      target="_blank"
+      rel="noreferrer"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+      </svg>
+    </a>
+    <a href="mailto:mengshuimeng@gmail.com" aria-label="Email">
+      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/>
+        <rect x="2" y="4" width="20" height="16" rx="2"/>
+      </svg>
+    </a>
+    <a
+      href="https://space.bilibili.com/401797885"
+      aria-label="Bilibili"
+      target="_blank"
+      rel="noreferrer"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M17.813 4.653h.854q2.266.08 3.773 1.574Q23.946 7.72 24 9.987v7.36q-.054 2.266-1.56 3.773c-1.506 1.507-2.262 1.524-3.773 1.56H5.333q-2.266-.054-3.773-1.56C.053 19.614.036 18.858 0 17.347v-7.36q.054-2.267 1.56-3.76t3.773-1.574h.774l-1.174-1.12a1.23 1.23 0 0 1-.373-.906q0-.534.373-.907l.027-.027q.4-.373.92-.373t.92.373L9.653 4.44q.107.106.187.213h4.267a.8.8 0 0 1 .16-.213l2.853-2.747q.4-.373.92-.373c.347 0 .662.151.929.4s.391.551.391.907q0 .532-.373.906zM5.333 7.24q-1.12.027-1.88.773q-.76.748-.786 1.894v7.52q.026 1.146.786 1.893t1.88.773h13.334q1.12-.026 1.88-.773t.786-1.893v-7.52q-.026-1.147-.786-1.894t-1.88-.773zM8 11.107q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q0-.56.386-.947q.387-.386.947-.386m8 0q.56 0 .933.373q.375.374.4.96v1.173q-.025.586-.4.96q-.373.375-.933.374c-.56-.001-.684-.125-.933-.374q-.375-.373-.4-.96V12.44q.025-.586.4-.96q.373-.373.933-.373"/>
+      </svg>
+    </a>
+  </div>
+</div>
+
+## 近期成果
+
+{{< cards cols="2" >}}
+  {{< card link="/resume/#竞赛与荣誉" title="RoboCon 2026" subtitle="仿生足式机器人障碍赛全国一等奖、任务赛全国三等奖" icon="sparkles" >}}
+  {{< card link="/resume/#教育背景" title="学业与资格" subtitle="GPA 4.44/5.00 · 专业排名 1/116 · 软件设计师（中级）" icon="academic-cap" >}}
+  {{< card link="/resume/#科研成果" title="ICIC 2026" subtitle="SafeRecovery 论文录用 · 第三作者 · 口头报告" icon="collection" >}}
+  {{< card link="/resume/#科研成果" title="软件著作权" subtitle="参与完成 3 项软件著作权登记，涵盖视觉与故障诊断" icon="document-text" >}}
+{{< /cards >}}
+
+## 快速入口
+
+{{< cards cols="3" >}}
+  {{< card link="/about" title="关于我" subtitle="方向、经历与兴趣" icon="user" >}}
+  {{< card link="/resume" title="个人简历" subtitle="教育背景、技术栈与竞赛经历" icon="document-text" >}}
+  {{< card link="/projects" title="项目经历" subtitle="科研、竞赛与系统实现" icon="collection" >}}
+  {{< card link="/blog" title="技术博客" subtitle="部署记录、踩坑总结与学习笔记" icon="book-open" >}}
+  {{< card link="/docs" title="技术文档" subtitle="按知识体系整理的教程与实践记录" icon="terminal" >}}
+  {{< card link="/tags" title="标签索引" subtitle="按主题发现相关内容" icon="tag" >}}
+{{< /cards >}}
+
+## 代表方向
+
+{{< cards cols="3" >}}
+  {{< card link="/docs/cv/" title="计算机视觉" subtitle="YOLO、ReID、数据标注与训练流程" icon="camera" >}}
+  {{< card link="/docs/robotics/" title="机器人视觉" subtitle="RealSense、Jetson、OpenMV 与设备联调" icon="chip" >}}
+  {{< card link="/docs/environment/" title="环境部署" subtitle="WSL、Docker、Conda、Git 与服务器训练" icon="terminal" >}}
+{{< /cards >}}

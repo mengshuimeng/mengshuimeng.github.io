@@ -2,12 +2,234 @@
   "version": 1,
   "entries": [
     {
-      "source": "第二月第二周周报：深入拆解 Locomotion 任务机制/第二月第二周周报：深入拆解 Locomotion 任务机制.md",
+      "source": "projects/web-reid-system-defense.md",
+      "destination": "content/projects/web-reid-system-defense",
+      "title": "基于 Web 的智能行人重识别系统答辩讲稿",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "ReID",
+        "项目答辩"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "blog/resources/bilibili-m4s-to-mp4-reference.md",
+      "destination": "content/blog/resources/bilibili-m4s-to-mp4-reference",
+      "title": "Bilibili 缓存 m4s 转 MP4 参考链接",
+      "date": "2026-08-09",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "视频工具",
+        "参考资料"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "docs/environment/venv-tools/vscode-latex-overleaf-local-compilation.md",
+      "destination": "content/docs/environment/venv-tools/vscode-latex-overleaf-local-compilation",
+      "title": "在 VS Code 中本地编译 Overleaf 项目",
+      "date": "2026-08-06",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "LaTeX",
+        "VS Code"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "docs/cv/reid-notes/adjustable-multi-view-person-reid-device.md",
+      "destination": "content/docs/cv/reid-notes/adjustable-multi-view-person-reid-device",
+      "title": "可调节多视角行人重识别装置设想",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "ReID",
+        "项目设计"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "docs/environment/venv-tools/latex-to-word-bithesis.md",
+      "destination": "content/docs/environment/venv-tools/latex-to-word-bithesis",
+      "title": "使用 BIThesis 将 LaTeX 文档转换为 Word",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "LaTeX",
+        "文档工具"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "docs/environment/wsl-guide/check-proxy-environment.md",
+      "destination": "content/docs/environment/wsl-guide/check-proxy-environment",
+      "title": "检查 Ubuntu 与 WSL 的代理配置",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "WSL",
+        "网络代理"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "docs/cv/yolo-training/custom-dataset-training-workflow.md",
+      "destination": "content/docs/cv/yolo-training/custom-dataset-training-workflow",
+      "title": "自定义 YOLO 数据集与服务器训练流程",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "YOLO",
+        "数据集"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "docs/ai/prompting-comparison-study.md",
+      "destination": "content/docs/ai/prompting-comparison-study",
+      "title": "提示词对比学习记录",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "提示词",
+        "AI"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "docs/training/vision-training-20251026/vision-training-slides.md",
+      "destination": "content/docs/training/vision-training-20251026/vision-training-slides",
+      "title": "2025-10-26 视觉培训讲义",
+      "date": "2025-10-26",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "视觉培训",
+        "AI"
+      ],
+      "enabled": true,
+      "delete": false,
+      "aliases": [
+        "/docs/training/vision-training-20251026/20251026视觉培训讲义/"
+      ]
+    },
+    {
+      "source": "docs/training/vision-training-20251026/assignment-1.md",
+      "destination": "content/docs/training/vision-training-20251026/assignment-1",
+      "title": "2025-10-26 视觉培训作业 1",
+      "date": "2025-10-26",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "视觉培训",
+        "Python"
+      ],
+      "enabled": true,
+      "delete": false,
+      "aliases": [
+        "/docs/training/vision-training-20251026/20251026视觉培训作业1/"
+      ]
+    },
+    {
+      "source": "docs/training/vision-training-20251026/assignment-2.md",
+      "destination": "content/docs/training/vision-training-20251026/assignment-2",
+      "title": "2025-10-26 视觉培训作业 2",
+      "date": "2025-10-26",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "视觉培训",
+        "Python"
+      ],
+      "enabled": true,
+      "delete": false,
+      "aliases": [
+        "/docs/training/vision-training-20251026/20251026视觉培训作业2/"
+      ]
+    },
+    {
+      "source": "docs/training/vision-training-20251129/training-notes.md",
+      "destination": "content/docs/training/vision-training-20251129/training-notes",
+      "title": "2025-11-29 视觉培训记录",
+      "date": "2025-11-29",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "视觉培训",
+        "YOLO"
+      ],
+      "enabled": true,
+      "delete": false,
+      "aliases": [
+        "/docs/training/vision-training-20251129/20251129视觉培训/"
+      ]
+    },
+    {
+      "source": "docs/environment/venv-tools/ubuntu-2404-apt-mirror.md",
+      "destination": "content/docs/environment/venv-tools/ubuntu-2404-apt-mirror",
+      "title": "Ubuntu 24.04 APT 软件源备份与换源",
+      "date": "2026-09-23",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "Ubuntu",
+        "软件源"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "docs/cv/labelimg/annotate-top-surface-only.md",
+      "destination": "content/docs/cv/labelimg/annotate-top-surface-only",
+      "title": "目标检测标注：只标箱体可见上表面",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "目标检测",
+        "数据标注"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "docs/rl-sim/locomotion/anymal-c-locomotion-mechanics.md",
       "destination": "content/docs/rl-sim/locomotion/anymal-c-locomotion-mechanics",
       "title": "第二月第二周周报：深入拆解 Locomotion 任务机制",
       "date": "2026-07-23",
       "authors": [
-        "梦水盟"
+        "萌睡梦"
       ],
       "tags": [
         "强化学习",
@@ -18,12 +240,12 @@
       "delete": false
     },
     {
-      "source": "第二月第三周：搭建与配置 ANYmal C 环境/第二月第三周：搭建与配置 ANYmal C 环境.md",
+      "source": "docs/rl-sim/locomotion/anymal-c-environment-setup.md",
       "destination": "content/docs/rl-sim/locomotion/anymal-c-environment-setup",
       "title": "第二月第三周：搭建与配置 ANYmal C 环境",
       "date": "2026-07-23",
       "authors": [
-        "梦水盟"
+        "萌睡梦"
       ],
       "tags": [
         "强化学习",
@@ -34,12 +256,12 @@
       "delete": false
     },
     {
-      "source": "第二月第四周：ANYmal C 完整训练、调试与复现/第二月第四周：ANYmal C 完整训练、调试与复现.md",
+      "source": "docs/rl-sim/locomotion/anymal-c-training-debugging-reproduction.md",
       "destination": "content/docs/rl-sim/locomotion/anymal-c-training-debugging-reproduction",
       "title": "第二月第四周：ANYmal C 完整训练、调试与复现",
       "date": "2026-07-23",
       "authors": [
-        "梦水盟"
+        "萌睡梦"
       ],
       "tags": [
         "强化学习",
@@ -50,12 +272,27 @@
       "delete": false
     },
     {
-      "source": "第三期 结营作业 MotrixArena S1 越障导航/第三期 结营作业 MotrixArena S1 越障导航.md",
+      "source": "docs/rl-sim/simulation/trajectory-planning-weekly-report.md",
+      "destination": "content/docs/rl-sim/simulation/trajectory-planning-weekly-report",
+      "title": "轨迹规划学习周报",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "机器人",
+        "轨迹规划"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "docs/rl-sim/locomotion/motrixarena-s1-obstacle-navigation.md",
       "destination": "content/docs/rl-sim/locomotion/motrixarena-s1-obstacle-navigation",
       "title": "第三期 结营作业 MotrixArena S1 越障导航",
       "date": "2026-07-23",
       "authors": [
-        "梦水盟"
+        "萌睡梦"
       ],
       "tags": [
         "强化学习",
@@ -64,6 +301,1379 @@
       ],
       "enabled": true,
       "delete": false
+    },
+    {
+      "source": "docs/rl-sim/reinforcement-learning/deep-rl-weekly-report.md",
+      "destination": "content/docs/rl-sim/reinforcement-learning/deep-rl-weekly-report",
+      "title": "深度强化学习学习周报",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "强化学习",
+        "PPO"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "docs/environment/docker-guide/douyin-chat-export-tool.md",
+      "destination": "content/docs/environment/docker-guide/douyin-chat-export-tool",
+      "title": "抖音聊天记录导出工具启动与关闭指南",
+      "date": "2026-09-21",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "Docker",
+        "工具使用"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "docs/rl-sim/simulation/simulation-notes.md",
+      "destination": "content/docs/rl-sim/simulation/simulation-notes",
+      "title": "Legged Robot 仿真代码阅读笔记",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "机器人仿真",
+        "代码阅读"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "docs/robotics/vision-system/placement-chain-implementation-notes.md",
+      "destination": "content/docs/robotics/vision-system/placement-chain-implementation-notes",
+      "title": "机器人放置视觉链改造方案",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "ROS 2",
+        "YOLO",
+        "机器人视觉"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "docs/robotics/vision-system/robot-vision-control-workflow.md",
+      "destination": "content/docs/robotics/vision-system/robot-vision-control-workflow",
+      "title": "机器人主控与视觉链路工作流",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "ROS 2",
+        "机器人视觉"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "docs/robotics/realsense/mount-d435i/mount-d435i.md",
+      "destination": "content/docs/robotics/realsense/mount-d435i/mount-d435i",
+      "title": "挂载摄像头 D435i",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "RealSense",
+        "WSL",
+        "ROS 2"
+      ],
+      "enabled": true,
+      "delete": false,
+      "translations": [
+        {
+          "source": "docs/robotics/realsense/mount-d435i/mount-d435i.en.md",
+          "language": "en",
+          "title": "Mounting RealSense D435i"
+        }
+      ]
+    },
+    {
+      "source": "docs/cv/workflow/cmyk-vs-rgb-and-printing.md",
+      "destination": "content/docs/cv/workflow/cmyk-vs-rgb-and-printing",
+      "title": "CMYK、RGB 与印刷基础",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "图像处理",
+        "颜色空间"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "projects/internet-plus.md",
+      "destination": "content/projects/internet-plus",
+      "title": "互联网+ 资料整理",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "竞赛",
+        "项目资料"
+      ],
+      "enabled": true,
+      "delete": false,
+      "translations": [
+        {
+          "source": "projects/internet-plus.en.md",
+          "language": "en",
+          "title": "Internet Plus Competition Materials"
+        }
+      ]
+    },
+    {
+      "source": "docs/fundamentals/api/jimeng-api-notes.md",
+      "destination": "content/docs/fundamentals/api/jimeng-api-notes",
+      "title": "即梦 API 需求整理",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "API",
+        "图像生成"
+      ],
+      "enabled": true,
+      "delete": false,
+      "aliases": [
+        "/docs/fundamentals/api/即梦api/"
+      ]
+    },
+    {
+      "source": "docs/environment/wsl-guide/enter-vm.md",
+      "destination": "content/docs/environment/wsl-guide/enter-vm",
+      "title": "进入虚拟机与端口转发记录",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "SSH",
+        "虚拟机"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "docs/robotics/realsense/mount-d435i/camera-imu-orientation-notes.md",
+      "destination": "content/docs/robotics/realsense/mount-d435i/camera-imu-orientation-notes",
+      "title": "RealSense 镜头姿态与 IMU 数据记录",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "RealSense",
+        "IMU"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "docs/cv/reid-notes/reid-tmux-sshfs-session-management.md",
+      "destination": "content/docs/cv/reid-notes/reid-tmux-sshfs-session-management",
+      "title": "ReID 服务器训练与 tmux、SSHFS 会话维护",
+      "date": "2026-10-01",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "ReID",
+        "tmux",
+        "SSHFS"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "docs/environment/wsl-guide/ubuntu-apt-installation-log.md",
+      "destination": "content/docs/environment/wsl-guide/ubuntu-apt-installation-log",
+      "title": "Ubuntu 软件安装与 APT 排障记录",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "Ubuntu",
+        "APT"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "docs/environment/venv-tools/latex-two-column-figures.md",
+      "destination": "content/docs/environment/venv-tools/latex-two-column-figures",
+      "title": "LaTeX 跨双栏图片排版",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "LaTeX",
+        "论文排版"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "projects/papers-and-writing.md",
+      "destination": "content/projects/papers-and-writing",
+      "title": "论文写作备忘",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "LaTeX",
+        "论文写作"
+      ],
+      "enabled": true,
+      "delete": false,
+      "translations": [
+        {
+          "source": "projects/papers-and-writing.en.md",
+          "language": "en",
+          "title": "Papers and Writing Notes"
+        }
+      ]
+    },
+    {
+      "source": "docs/robotics/vision-system/end-effector-vision-workflow.md",
+      "destination": "content/docs/robotics/vision-system/end-effector-vision-workflow",
+      "title": "末端 RealSense 抓取视觉链路整理",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "RealSense",
+        "ROS 2",
+        "机器人视觉"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "docs/environment/wsl-guide/switch-to-ssh-protocol.md",
+      "destination": "content/docs/environment/wsl-guide/switch-to-ssh-protocol",
+      "title": "Git 远程地址切换到 SSH 协议",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "Git",
+        "SSH"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "docs/robotics/vision-system/robocon-task-vision-plan.md",
+      "destination": "content/docs/robotics/vision-system/robocon-task-vision-plan",
+      "title": "RoboCon 任务赛视觉识别方案",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "RoboCon",
+        "机器人视觉"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "docs/robotics/realsense/mount-d435i/camera-downward-orientation-check.md",
+      "destination": "content/docs/robotics/realsense/mount-d435i/camera-downward-orientation-check",
+      "title": "判断 RealSense 摄像头是否朝下",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "RealSense",
+        "IMU"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "docs/robotics/vision-system/usb-camera-corner-laser-detection.md",
+      "destination": "content/docs/robotics/vision-system/usb-camera-corner-laser-detection",
+      "title": "USB 摄像头角点与激光点实时检测",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "OpenCV",
+        "视觉检测"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "projects/software-engineering-course.md",
+      "destination": "content/projects/software-engineering-course",
+      "title": "软件工程课程汇报",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "软件工程",
+        "课程项目"
+      ],
+      "enabled": true,
+      "delete": false,
+      "translations": [
+        {
+          "source": "projects/software-engineering-course.en.md",
+          "language": "en",
+          "title": "Software Engineering Course Presentation"
+        }
+      ]
+    },
+    {
+      "source": "docs/fundamentals/software-designer-english-vocabulary.md",
+      "destination": "content/docs/fundamentals/software-designer-english-vocabulary",
+      "title": "软件设计师专业英语词汇整理",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "软件设计师",
+        "英语词汇"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "docs/environment/venv-tools/set-global-package-mirror.md",
+      "destination": "content/docs/environment/venv-tools/set-global-package-mirror",
+      "title": "设置全局镜像源",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "Python",
+        "pip"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "docs/fundamentals/dof/what-is-dof.md",
+      "destination": "content/docs/fundamentals/dof/what-is-dof",
+      "title": "什么是 DOF",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "机器人",
+        "自由度"
+      ],
+      "enabled": true,
+      "delete": false,
+      "translations": [
+        {
+          "source": "docs/fundamentals/dof/what-is-dof.en.md",
+          "language": "en",
+          "title": "What Is DOF"
+        }
+      ],
+      "aliases": [
+        "/docs/fundamentals/dof/什么是-dof/"
+      ]
+    },
+    {
+      "source": "docs/fundamentals/tensor/what-is-broadcasting.md",
+      "destination": "content/docs/fundamentals/tensor/what-is-broadcasting",
+      "title": "什么是广播 Broadcasting",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "PyTorch",
+        "张量"
+      ],
+      "enabled": true,
+      "delete": false,
+      "translations": [
+        {
+          "source": "docs/fundamentals/tensor/what-is-broadcasting.en.md",
+          "language": "en",
+          "title": "What Is Broadcasting"
+        }
+      ],
+      "aliases": [
+        "/docs/fundamentals/tensor/什么是广播broadcasting/"
+      ]
+    },
+    {
+      "source": "docs/fundamentals/api/what-is-api.md",
+      "destination": "content/docs/fundamentals/api/what-is-api",
+      "title": "什么是 API",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "API",
+        "基础概念"
+      ],
+      "enabled": true,
+      "delete": false,
+      "translations": [
+        {
+          "source": "docs/fundamentals/api/what-is-api.en.md",
+          "language": "en",
+          "title": "What Is API"
+        }
+      ],
+      "aliases": [
+        "/docs/fundamentals/api/什么是api/"
+      ]
+    },
+    {
+      "source": "docs/environment/venv-tools/generate-requirements-from-current-env.md",
+      "destination": "content/docs/environment/venv-tools/generate-requirements-from-current-env",
+      "title": "从当前环境生成 requirements.txt",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "Python",
+        "依赖管理"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "docs/ai/codex-experiment-session-recovery.md",
+      "destination": "content/docs/ai/codex-experiment-session-recovery",
+      "title": "Codex 实验会话恢复与状态交接记录",
+      "date": "2026-10-13",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "Codex",
+        "实验管理"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "docs/robotics/vision-system/robot-grasp-vision-architecture.md",
+      "destination": "content/docs/robotics/vision-system/robot-grasp-vision-architecture",
+      "title": "机器人抓取视觉系统架构与工作流",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "ROS 2",
+        "机器人视觉"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "docs/robotics/vision-system/robot-placement-vision-workflow.md",
+      "destination": "content/docs/robotics/vision-system/robot-placement-vision-workflow",
+      "title": "机器人放置区视觉识别流程",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "YOLO",
+        "ROS 2"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "docs/training/arithmetic-recognition-task.md",
+      "destination": "content/docs/training/arithmetic-recognition-task",
+      "title": "四则运算识别任务记录",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "RoboCon",
+        "视觉识别"
+      ],
+      "enabled": true,
+      "delete": false,
+      "aliases": [
+        "/docs/cv/workflow/四则运算/"
+      ]
+    },
+    {
+      "source": "blog/resources/algorithm-links.md",
+      "destination": "content/blog/resources/algorithm-links",
+      "title": "算法链接整理",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "算法",
+        "参考资料"
+      ],
+      "enabled": true,
+      "delete": false,
+      "aliases": [
+        "/blog/resources/算法链接/"
+      ]
+    },
+    {
+      "source": "docs/ai/prompting-notes.md",
+      "destination": "content/docs/ai/prompting-notes",
+      "title": "提示词备忘",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "提示词",
+        "AI"
+      ],
+      "enabled": true,
+      "delete": false,
+      "translations": [
+        {
+          "source": "docs/ai/prompting-notes.en.md",
+          "language": "en",
+          "title": "Prompting Notes"
+        }
+      ],
+      "aliases": [
+        "/docs/ai/提示词/",
+        "/docs/AI/提示词/"
+      ]
+    },
+    {
+      "source": "docs/robotics/vision-system/problem-recognition-ros2-integration.md",
+      "destination": "content/docs/robotics/vision-system/problem-recognition-ros2-integration",
+      "title": "题目识别模块与 ROS 2 集成记录",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "ROS 2",
+        "OCR",
+        "机器人视觉"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "projects/student-management-system.md",
+      "destination": "content/projects/student-management-system",
+      "title": "学生成绩管理系统",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "C语言",
+        "课程项目"
+      ],
+      "enabled": true,
+      "delete": false,
+      "translations": [
+        {
+          "source": "projects/student-management-system.en.md",
+          "language": "en",
+          "title": "Student Management System"
+        }
+      ]
+    },
+    {
+      "source": "projects/fire-inspection-document-review.md",
+      "destination": "content/projects/fire-inspection-document-review",
+      "title": "校园消防巡检机器人项目文档审查",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "机器人",
+        "项目文档"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "docs/environment/git-guide/github-cli-setup.md",
+      "destination": "content/docs/environment/git-guide/github-cli-setup",
+      "title": "GitHub CLI 安装与登录准备",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "Git",
+        "GitHub CLI"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "docs/ai/codex-vscode-ubuntu-reference.md",
+      "destination": "content/docs/ai/codex-vscode-ubuntu-reference",
+      "title": "在 Ubuntu 中使用 VS Code 与 Codex 参考资料",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "Codex",
+        "VS Code",
+        "参考资料"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "docs/rl-sim/isaac-lab/run-isaac-lab-in-the-cloud.md",
+      "destination": "content/docs/rl-sim/isaac-lab/run-isaac-lab-in-the-cloud",
+      "title": "在云中运行 Isaac Lab",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "Isaac Lab",
+        "机器人仿真"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "blog/competition-notes/openmv-to-usb-camera-in-pycharm.md",
+      "destination": "content/blog/competition-notes/openmv-to-usb-camera-in-pycharm",
+      "title": "OpenMV 代码改为 PyCharm + USB 摄像头方案",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "OpenMV",
+        "OpenCV"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "projects/web-reid-midterm-defense.md",
+      "destination": "content/projects/web-reid-midterm-defense",
+      "title": "行人重识别系统中期答辩准备",
+      "date": "2026-05-20",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "ReID",
+        "项目答辩"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "projects/math-modeling/paper-figures-overview.md",
+      "destination": "content/projects/math-modeling/paper-figures-overview",
+      "title": "数学建模论文 v2 图片体系总览",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "数学建模",
+        "论文写作"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "projects/math-modeling/problem-selection-notes.md",
+      "destination": "content/projects/math-modeling/problem-selection-notes",
+      "title": "数学建模赛题选择与方案比较",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "数学建模",
+        "方案设计"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "projects/math-modeling/paper-figures-review.md",
+      "destination": "content/projects/math-modeling/paper-figures-review",
+      "title": "B 题论文图片体系审查与配图建议",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "数学建模",
+        "论文配图"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "docs/ai/claude-code-configuration.md",
+      "destination": "content/docs/ai/claude-code-configuration",
+      "title": "Claude Code 安装与模型服务配置",
+      "date": "2026-05-16",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "Claude Code",
+        "开发工具"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "docs/environment/conda-guide/conda-guide.md",
+      "destination": "content/docs/environment/conda-guide/conda-guide",
+      "title": "Conda 基础使用指南",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "Conda",
+        "Python"
+      ],
+      "enabled": true,
+      "delete": false,
+      "translations": [
+        {
+          "source": "docs/environment/conda-guide/conda-guide.en.md",
+          "language": "en",
+          "title": "Conda Quick Start"
+        }
+      ]
+    },
+    {
+      "source": "docs/robotics/realsense/mount-d435i/d435i-yolo-integration.md",
+      "destination": "content/docs/robotics/realsense/mount-d435i/d435i-yolo-integration",
+      "title": "RealSense D435i 与 YOLO 联调记录",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "RealSense",
+        "YOLO"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "docs/robotics/realsense/mount-d435i/d435i-error-notes.md",
+      "destination": "content/docs/robotics/realsense/mount-d435i/d435i-error-notes",
+      "title": "D435i 错误记录",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "RealSense",
+        "WSL"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "docs/ai/deepseek-ocr2-setup.md",
+      "destination": "content/docs/ai/deepseek-ocr2-setup",
+      "title": "DeepSeek OCR 2 安装记录",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "DeepSeek OCR",
+        "部署"
+      ],
+      "enabled": true,
+      "delete": false,
+      "aliases": [
+        "/docs/ai/deepseekorc/",
+        "/docs/AI/deepseekORC/"
+      ]
+    },
+    {
+      "source": "docs/ai/deepseek-ocr2-runtime-notes.md",
+      "destination": "content/docs/ai/deepseek-ocr2-runtime-notes",
+      "title": "DeepSeek OCR 2 运行记录",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "DeepSeek OCR",
+        "部署"
+      ],
+      "enabled": true,
+      "delete": false,
+      "aliases": [
+        "/docs/ai/deepseekorc1/",
+        "/docs/AI/deepseekORC1/",
+        "/docs/AI/DeepseekORC11/"
+      ]
+    },
+    {
+      "source": "docs/environment/docker-guide/docker-desktop-wsl-proxy.md",
+      "destination": "content/docs/environment/docker-guide/docker-desktop-wsl-proxy",
+      "title": "Docker Desktop 与 WSL 代理配置",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "Docker",
+        "WSL"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "docs/environment/docker-guide/rc-vision-container-shell.md",
+      "destination": "content/docs/environment/docker-guide/rc-vision-container-shell",
+      "title": "RC Vision 容器启动与环境验证",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "Docker",
+        "ROS 2"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "docs/environment/git-guide/git-usage-guide.md",
+      "destination": "content/docs/environment/git-guide/git-usage-guide",
+      "title": "Git 使用指南",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "Git",
+        "版本管理"
+      ],
+      "enabled": true,
+      "delete": false,
+      "translations": [
+        {
+          "source": "docs/environment/git-guide/git-usage-guide.en.md",
+          "language": "en",
+          "title": "Git Usage Guide"
+        }
+      ]
+    },
+    {
+      "source": "docs/cv/yolo-training/google-colab-google-drive-yolov8-training.md",
+      "destination": "content/docs/cv/yolo-training/google-colab-google-drive-yolov8-training",
+      "title": "Google Colab + Google Drive 训练 YOLOv8 指南",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "YOLO",
+        "Colab"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "projects/ict.md",
+      "destination": "content/projects/ict",
+      "title": "ICT 项目设想",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "项目设计",
+        "交互设计"
+      ],
+      "enabled": true,
+      "delete": false,
+      "translations": [
+        {
+          "source": "projects/ict.en.md",
+          "language": "en",
+          "title": "ICT Project Concept"
+        }
+      ]
+    },
+    {
+      "source": "docs/rl-sim/isaac-lab/isaac-lab-overview.md",
+      "destination": "content/docs/rl-sim/isaac-lab/isaac-lab-overview",
+      "title": "Isaac Lab 概览",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "Isaac Lab",
+        "机器人仿真"
+      ],
+      "enabled": true,
+      "delete": false,
+      "translations": [
+        {
+          "source": "docs/rl-sim/isaac-lab/isaac-lab-overview.en.md",
+          "language": "en",
+          "title": "Isaac Lab Overview"
+        }
+      ]
+    },
+    {
+      "source": "docs/fundamentals/java-exercises.md",
+      "destination": "content/docs/fundamentals/java-exercises",
+      "title": "Java 面向对象上机练习",
+      "date": "2026-06-25",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "Java",
+        "面向对象"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "docs/robotics/jetson/jetson-agx-orin/jetson-agx-orin.md",
+      "destination": "content/docs/robotics/jetson/jetson-agx-orin/jetson-agx-orin",
+      "title": "Jetson AGX Orin 内核定制与烧录指南",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "Jetson",
+        "嵌入式"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "docs/robotics/jetson/jetson-orin-nano-checklist/jetson-orin-nano-checklist.md",
+      "destination": "content/docs/robotics/jetson/jetson-orin-nano-checklist/jetson-orin-nano-checklist",
+      "title": "Jetson Orin Nano DeepSeek OCR 2 部署排查清单",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "Jetson",
+        "DeepSeek OCR"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "docs/cv/labelimg/labelimg-dataset-annotation.md",
+      "destination": "content/docs/cv/labelimg/labelimg-dataset-annotation",
+      "title": "LabelImg 数据集标注流程",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "LabelImg",
+        "数据标注"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "docs/ai/opencode-session-export-recovery.md",
+      "destination": "content/docs/ai/opencode-session-export-recovery",
+      "title": "OpenCode 会话导出与恢复记录",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "OpenCode",
+        "会话管理"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "docs/robotics/vision-system/openclaw.md",
+      "destination": "content/docs/robotics/vision-system/openclaw",
+      "title": "OpenClaw 网关服务使用记录",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "OpenClaw",
+        "开发工具"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "docs/ai/openclaw-auth-session-maintenance.md",
+      "destination": "content/docs/ai/openclaw-auth-session-maintenance",
+      "title": "OpenClaw 登录会话与令牌续期检查",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "OpenClaw",
+        "会话管理"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "docs/robotics/vision-system/openmv.md",
+      "destination": "content/docs/robotics/vision-system/openmv",
+      "title": "OpenMV 代码注释与理解记录",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "OpenMV",
+        "视觉检测"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "docs/robotics/vision-system/rc-vision.md",
+      "destination": "content/docs/robotics/vision-system/rc-vision",
+      "title": "RC 视觉系统记录",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "ROS 2",
+        "机器人视觉"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "docs/cv/reid-notes/reid-notes-overview.md",
+      "destination": "content/docs/cv/reid-notes/reid-notes-overview",
+      "title": "ReID 项目流程总览",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "ReID",
+        "视觉检索"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "docs/cv/reid-notes/seam-carving-and-reid.md",
+      "destination": "content/docs/cv/reid-notes/seam-carving-and-reid",
+      "title": "Seam Carving 与 ReID 图像处理笔记",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "ReID",
+        "图像处理"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "docs/cv/reid-notes/synapse-dataset-notes.md",
+      "destination": "content/docs/cv/reid-notes/synapse-dataset-notes",
+      "title": "Synapse 数据集预处理笔记",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "数据集",
+        "图像处理"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "docs/environment/venv-tools/export-project-structure-and-source.md",
+      "destination": "content/docs/environment/venv-tools/export-project-structure-and-source",
+      "title": "导出项目目录结构与源码文本",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "开发工具",
+        "项目整理"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "docs/environment/docker-guide/ubuntu-2204-docker-install-and-proxy.md",
+      "destination": "content/docs/environment/docker-guide/ubuntu-2204-docker-install-and-proxy",
+      "title": "Ubuntu 22.04 Docker 安装与代理配置指南",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "Docker",
+        "Ubuntu"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "docs/environment/wsl-guide/ubuntu-basics-and-terminal.md",
+      "destination": "content/docs/environment/wsl-guide/ubuntu-basics-and-terminal",
+      "title": "Ubuntu 基础命令与终端使用",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "Ubuntu",
+        "Linux"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "docs/environment/wsl-guide/ubuntu-development-environment-setup.md",
+      "destination": "content/docs/environment/wsl-guide/ubuntu-development-environment-setup",
+      "title": "Ubuntu 开发环境安装指南",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "Ubuntu",
+        "Python"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "docs/environment/wsl-guide/ubuntu-on-wsl.md",
+      "destination": "content/docs/environment/wsl-guide/ubuntu-on-wsl",
+      "title": "WSL 代理与 Clash 相关记录",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "WSL",
+        "网络代理"
+      ],
+      "enabled": true,
+      "delete": false,
+      "translations": [
+        {
+          "source": "docs/environment/wsl-guide/ubuntu-on-wsl.en.md",
+          "language": "en",
+          "title": "Ubuntu On WSL"
+        }
+      ]
+    },
+    {
+      "source": "docs/cv/yolo-training/ultralytics-module-source-notes.md",
+      "destination": "content/docs/cv/yolo-training/ultralytics-module-source-notes",
+      "title": "Ultralytics 网络模块源码阅读笔记",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "YOLO",
+        "代码阅读"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "docs/environment/wsl-guide/vmware-share-host-proxy.md",
+      "destination": "content/docs/environment/wsl-guide/vmware-share-host-proxy",
+      "title": "VMware 虚拟机复用 Windows 宿主机代理教程",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "VMware",
+        "网络代理"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "docs/environment/venv-tools/vmware-ubuntu-2204-disk-expansion.md",
+      "destination": "content/docs/environment/venv-tools/vmware-ubuntu-2204-disk-expansion",
+      "title": "VMware Ubuntu 22.04 虚拟机硬盘扩容教程",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "VMware",
+        "Ubuntu"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "docs/environment/venv-tools/vscode-c-cpp-environment-setup.md",
+      "destination": "content/docs/environment/venv-tools/vscode-c-cpp-environment-setup",
+      "title": "VS Code 配置 C/C++ 开发环境",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "VS Code",
+        "C语言"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "docs/robotics/realsense/realsense-d435i-wsl2-ros2-humble/windows-wsl2-ubuntu2204-ros2-humble-d435i-maintenance.md",
+      "destination": "content/docs/robotics/realsense/realsense-d435i-wsl2-ros2-humble/windows-wsl2-ubuntu2204-ros2-humble-d435i-maintenance",
+      "title": "Windows + WSL2 + Ubuntu 22.04 + ROS 2 Humble 运行 Intel RealSense D435i 维护记录",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "RealSense",
+        "WSL",
+        "ROS 2"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "docs/environment/wsl-guide/codex-cli-oh-my-codex.md",
+      "destination": "content/docs/environment/wsl-guide/codex-cli-oh-my-codex",
+      "title": "Windows + WSL2 使用 Codex CLI 与 Oh My Codex",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "Codex",
+        "WSL"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "docs/environment/wsl-guide/wsl-paths.md",
+      "destination": "content/docs/environment/wsl-guide/wsl-paths",
+      "title": "WSL 路径机制",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "WSL",
+        "Linux"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "docs/environment/wsl-guide/wsl-hostname-configuration.md",
+      "destination": "content/docs/environment/wsl-guide/wsl-hostname-configuration",
+      "title": "WSL 主机名修改记录",
+      "date": "2026-09-15",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "WSL",
+        "Linux"
+      ],
+      "enabled": true,
+      "delete": false
+    },
+    {
+      "source": "docs/cv/yolo-training/yolo-local-testing-and-server-training.md",
+      "destination": "content/docs/cv/yolo-training/yolo-local-testing-and-server-training",
+      "title": "YOLO 本地测试与服务器训练完整流程",
+      "date": "2026-05-05",
+      "authors": [
+        "萌睡梦"
+      ],
+      "tags": [
+        "YOLO",
+        "模型训练"
+      ],
+      "enabled": true,
+      "delete": false,
+      "translations": [
+        {
+          "source": "docs/cv/yolo-training/yolo-local-testing-and-server-training.en.md",
+          "language": "en",
+          "title": "YOLO Local Testing and Server Training"
+        }
+      ]
     }
   ]
 }

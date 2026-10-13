@@ -65,6 +65,19 @@ pwsh -NoProfile -File .\scripts\markdown-sync\publish-markdown.ps1 `
   -SourceRoot 'D:\msm\Markdown' -RepositoryRoot $PWD
 ```
 
+The organized source notes use lowercase kebab-case filenames beneath `docs/`,
+`projects/`, and `blog/`. Private material, duplicates, and incomplete notes stay
+under the source directory's `archive/`; that directory is not published.
+`D:\msm\Markdown\README.md` and `migration-map.csv` provide the local index and
+the old-to-new filename mapping.
+
+Only explicit entries in `manifest.json` are synchronized. An entry can retain
+legacy URLs with `aliases` and include existing translations with
+`translations: [{"source": "docs/example.en.md", "language": "en", "title": "Example"}]`.
+Translations and their local media are rendered into the same page bundle;
+missing media, duplicate languages, and source paths outside the configured root
+fail before replacement. The default Chinese page uses `index.md`.
+
 Install or update the current-user scheduled task:
 
 ```powershell

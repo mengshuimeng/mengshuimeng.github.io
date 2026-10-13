@@ -1,6 +1,11 @@
 ---
 title: "Docker Desktop 与 WSL 代理配置"
-description: "整理 Docker Desktop、WSL 和宿主机代理之间的配置关系与排查方法。"
+date: 2026-05-05
+authors:
+  - "萌睡梦"
+tags:
+  - "Docker"
+  - "WSL"
 ---
 
 docker desktop 配置代理 连wsl

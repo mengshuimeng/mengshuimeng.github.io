@@ -2,22 +2,22 @@
 title: "第三期 结营作业 MotrixArena S1 越障导航"
 date: 2026-07-23
 authors:
-  - "梦水盟"
+  - "萌睡梦"
 tags:
   - "强化学习"
   - "机器人"
   - "MotrixArena"
 ---
 
-# MotrixArena S1 越障导航 Section1 结营作业
+## MotrixArena S1 越障导航 Section1 结营作业
 
-## 一、任务目标
+### 一、任务目标
 
 本次实践基于谋先飞官方仓库 `MotrixArena-S1` 版本，完成越障导航赛段第一阶段的环境搭建、资产更新、任务机制修复、训练调试与结果复现。最终目标是使 VBot 机器狗到达 2026 平台，并提交运行录屏。
 
 本次结营作业已完成 Section1 到达任务。
 
-## 二、项目与资产
+### 二、项目与资产
 
 - 官方项目版本：`MotrixArena-S1`
 
@@ -45,9 +45,9 @@ tags:
 
 为避免影响原仓库中已经完成的 ANYmal\-C 周报实验，本次结营作业在官方 S1 标签上创建了独立工作树。
 
-## 三、资产集成过程
+### 三、资产集成过程
 
-### 3\.1 完成的目录与配置修改
+#### 3\.1 完成的目录与配置修改
 
 1. 将压缩包内的 VBot 导航资产集成到：
 
@@ -67,7 +67,7 @@ from . import basic, locomotion, manipulation, navigation  # noqa: F401
 
 5. `runs/vbot_navigation_section01/26-02-05_13-04-38-452638_PPO`
 
-### 3\.2 README 差异处理
+#### 3\.2 README 差异处理
 
 资产包 README 描述的压缩包结构与实际内容存在差异：
 
@@ -79,7 +79,7 @@ from . import basic, locomotion, manipulation, navigation  # noqa: F401
 
 - 原始 `cfgs.py` 注册了不存在的 `vbot_navigation_section02` 和 `vbot_navigation_section03`，已移除这两项无效配置，保证项目可以正常导入。
 
-## 四、0218 地图资产核验
+### 四、0218 地图资产核验
 
 整体地图入口为：
 
@@ -95,9 +95,9 @@ from . import basic, locomotion, manipulation, navigation  # noqa: F401
 
 其中 `0126_C_section01.xml` 是 0218 更新指定的第二赛段第一阶段碰撞模型。
 
-![屏幕截图 2026\-06\-09 174055\.png](assets/2026-06-09-174055.png)
+![屏幕截图 2026\-06\-09 174055\.png](assets/2026-06-09-174055-0fe6c0d2.png)
 
-## 五、任务机制修复
+### 五、任务机制修复
 
 资产包中的 `vbot_section01_np.py` 可以加载地图，但原始奖励固定为单元素零数组，终止条件也固定为 `False`，无法用于有效训练。同时，地形碰撞匹配字符串为 `C_`，无法匹配实际的 `C1_`、`C2_`、`C3_` 碰撞体。
 
@@ -117,9 +117,9 @@ from . import basic, locomotion, manipulation, navigation  # noqa: F401
 
 7. 增加 `distance_to_target`、`reached_target`、`progress` 与 `forward_velocity` 训练指标。
 
-## 六、非训练验证结果
+### 六、非训练验证结果
 
-### 6\.1 静态与加载验证
+#### 6\.1 静态与加载验证
 
 - Python 静态编译：通过
 
@@ -131,7 +131,7 @@ from . import basic, locomotion, manipulation, navigation  # noqa: F401
 
 - 碰撞终止检测对：6 组
 
-### 6\.2 短步进验证
+#### 6\.2 短步进验证
 
 使用 2 个环境进行 20 步零动作测试：
 
@@ -155,7 +155,7 @@ from . import basic, locomotion, manipulation, navigation  # noqa: F401
 
 人工将关节速度设置为终止阈值以上后，两个测试环境均正确触发终止，说明终止逻辑已生效。
 
-### 6\.3 第一次完整训练与奖励迭代
+#### 6\.3 第一次完整训练与奖励迭代
 
 2026 年 6 月 9 日使用 Windows/Torch、1024 个并行环境完成第一次 60000 步训练，耗时约 1 小时 32 分钟。训练目录为：
 
@@ -206,9 +206,7 @@ from . import basic, locomotion, manipulation, navigation  # noqa: F401
 
 因此第一次训练权重仅作为问题分析证据，不作为最终到达平台的验收权重。
 
-
-
-### 6\.4 第二次完整训练与无窗口验收
+#### 6\.4 第二次完整训练与无窗口验收
 
 根据奖励迭代结果重新训练，训练目录为：
 
@@ -243,11 +241,9 @@ from . import basic, locomotion, manipulation, navigation  # noqa: F401
 
 到达阈值为 `0.3 m`，因此无窗口验收已经满足 Section1 到达目标要求。随后使用同一权重进行可视化播放，并录制机器人到达 2026 平台的视频。
 
-![屏幕截图 2026\-06\-09 203419\.png](assets/2026-06-09-203419.png)
+![屏幕截图 2026\-06\-09 203419\.png](assets/2026-06-09-203419-85421437.png)
 
-
-
-### 6\.5 训练图表数据
+#### 6\.5 训练图表数据
 
 以下数据来自第二次训练的 TensorBoard 日志，可用于绘制训练曲线图。
 
@@ -286,7 +282,7 @@ from . import basic, locomotion, manipulation, navigation  # noqa: F401
 
 从图表数据可以看到，第二次训练后目标距离从约 `9.86 m` 降至约 `1.15 m`，到达率峰值达到约 `0.83`，并在无窗口验收中达到 `16/16`。
 
-## 七、已有预训练资产说明
+### 七、已有预训练资产说明
 
 压缩包提供了 JAX 格式的预训练权重：
 
@@ -304,23 +300,23 @@ from . import basic, locomotion, manipulation, navigation  # noqa: F401
 
 上述数据来自资产包提供的历史训练日志，不作为本人最终到达 2026 平台的录屏证明。
 
-## 八、关键运行命令
+### 八、关键运行命令
 
 以下命令均在 `D:\Documents\code\MotrixLab\motrixarena_s1` 下执行。
 
-### 8\.1 安装 Windows/Torch 运行依赖
+#### 8\.1 安装 Windows/Torch 运行依赖
 
 ```PowerShell
 uv sync --package motrix-rl --extra skrl-torch
 ```
 
-### 8\.2 可视化检查
+#### 8\.2 可视化检查
 
 ```PowerShell
 uv run scripts/view.py --env vbot_navigation_section01 --num-envs 1
 ```
 
-### 8\.3 Windows 使用 Torch 训练
+#### 8\.3 Windows 使用 Torch 训练
 
 当前 Windows 环境支持 Torch，不支持项目限定的 Linux/JAX 依赖。本次最终训练命令为：
 
@@ -336,7 +332,7 @@ uv run scripts/train.py `
 
 `runs/vbot_navigation_section01/26-06-09_20-34-43-384612_PPO`
 
-### 8\.4 播放本人训练的 Torch 权重
+#### 8\.4 播放本人训练的 Torch 权重
 
 ```PowerShell
 uv run scripts/play.py `
@@ -346,9 +342,7 @@ uv run scripts/play.py `
   --policy runs/vbot_navigation_section01/26-06-09_20-34-43-384612_PPO/checkpoints/best_agent.pt
 ```
 
-
-
-### 8\.5 Linux 使用资产包自带 JAX 权重
+#### 8\.5 Linux 使用资产包自带 JAX 权重
 
 首次运行前安装 Linux/JAX 后端：
 
@@ -364,7 +358,7 @@ uv run scripts/play.py \
   --policy runs/vbot_navigation_section01/26-02-05_13-04-38-452638_PPO/checkpoints/best_agent.pickle
 ```
 
-## 九、问题与解决方式
+### 九、问题与解决方式
 
 |问题|原因|解决方式|
 |---|---|---|
@@ -377,7 +371,7 @@ uv run scripts/play.py \
 |可视化播放出现 `wgpu Out of Memory`|场景阴影贴图为 8192，且性能渲染设置中仍强制开启阴影|关闭渲染阴影并降低 Section1 场景阴影尺寸|
 |Windows 无法播放自带 `.pickle`|S1 项目仅在 Linux 安装 JAX 依赖|Windows 使用 Torch 训练并播放 `.pt`；自带权重在 Linux 播放|
 
-## 十、最终结果
+### 十、最终结果
 
 目前已经完成官方 S1 环境搭建、0218 地图资产集成、Section1 环境注册、奖励与终止机制修复、两轮训练调试、无窗口策略验收与可视化录屏。
 
@@ -399,13 +393,9 @@ uv run scripts/play.py \
 
 本次结营作业完成了 MotrixArena S1 越障导航 Section1 阶段，机器人能够到达 2026 平台，满足本次结营作业“完成越障导航赛段第一阶段”的要求。
 
+[MotrixRender 2026\-06\-10 00\-05\-57\.mp4](assets/motrixrender-2026-06-10-00-05-57-0de4c2d0.mp4)
 
-
-[MotrixRender 2026\-06\-10 00\-05\-57\.mp4](assets/motrixrender-2026-06-10-00-05-57.mp4)
-
-
-
-## 十一、提交清单
+### 十一、提交清单
 
 - 作业说明文档：`D:\Documents\code\MotrixLab\task\结营作业-MotrixArena-S1越障导航Section1.md`
 

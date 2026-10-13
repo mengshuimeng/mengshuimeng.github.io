@@ -2,14 +2,14 @@
 title: "第二月第三周：搭建与配置 ANYmal C 环境"
 date: 2026-07-23
 authors:
-  - "梦水盟"
+  - "萌睡梦"
 tags:
   - "强化学习"
   - "机器人"
   - "ANYmal C"
 ---
 
-# 第 3 周周报：搭建与配置 ANYmal C 环境
+## 第 3 周周报：搭建与配置 ANYmal C 环境
 
 |项目|内容|
 |---|---|
@@ -24,7 +24,7 @@ tags:
 >
 >
 
-## 本周目标与完成情况
+### 本周目标与完成情况
 
 本周目标是理解 MotrixLab 如何组织 MuJoCo 风格 XML 机器人模型，并完成一个可被注册、加载、步进和训练框架调用的 ANYmal C 强化学习环境。
 
@@ -44,7 +44,7 @@ tags:
 
 7. 整理环境截图、训练命令、已知问题和后续改进方向。
 
-## 任务要求与仓库实现映射
+### 任务要求与仓库实现映射
 
 任务说明建议建立 navigation/anymal\_c/ 目录。MotrixLab 实际按照环境类型组织代码，因此本项目采用仓库原有规范路径：
 
@@ -78,7 +78,7 @@ motrix_envs/src/motrix_envs/locomotion/anymal_c/
 -> registry.make(...)
 ```
 
-### 2\.1 初步代码框架核验
+#### 2\.1 初步代码框架核验
 
 配置类通过注册装饰器挂载到环境名，并使用 field\(default\_factory=\.\.\.\) 创建独立的嵌套配置：
 
@@ -106,11 +106,9 @@ class AnymalCEnv(NpEnv):
 
 MotrixLab 使用 update\_state\(\) 汇总观测、奖励和终止计算，因此它承担了任务要求中 \_compute\_observation\(\) 的职责；终止检查方法则命名为 \_compute\_terminated\(\)。
 
-## 系统架构与职责划分
+### 系统架构与职责划分
 
-
-
-![image\.png](assets/image.png)
+![image\.png](assets/asset-71067479.png)
 
 ```Plain Text
 flowchart TD
@@ -134,9 +132,9 @@ flowchart TD
 
 该分层使环境逻辑不依赖具体强化学习算法，同一环境可以由不同训练框架复用。
 
-## 模型资产与来源核验
+### 模型资产与来源核验
 
-### 4\.1 本地资产统计
+#### 4\.1 本地资产统计
 
 对 xmls/ 目录进行核验后，得到以下结果：
 
@@ -155,21 +153,21 @@ flowchart TD
 
 - [MuJoCo Menagerie ANYmal C 模型](https://github.com/google-deepmind/mujoco_menagerie/tree/main/anybotics_anymal_c)
 
-### 4\.2 资产许可风险
+#### 4\.2 资产许可风险
 
 本地 anymal\_c/xmls/ 目录中未发现模型专属的 LICENSE 或 [README\.md](http://README.md)。因此，仅凭本地仓库无法完整证明资产来源及再分发许可。
 
 在内部学习与验证阶段可以继续使用；若后续需要公开发布、提交到外部仓库或用于商业分发，应补充原始模型的许可文件和来源说明，并再次核对网格与纹理文件的许可条件。
 
-## XML 模型机制拆解
+### XML 模型机制拆解
 
-### 5\.1 场景与机器人模型分离
+#### 5\.1 场景与机器人模型分离
 
 scene\.xml 是仿真入口，负责引入 anymal\_c\.xml 并添加平面地面、材质、天空盒、灯光和默认相机。anymal\_c\.xml 专注描述机器人本体。
 
 这种拆分方式可以在不修改机器人模型的情况下，将 ANYmal C 放入不同地形或任务场景。
 
-### 5\.2 XML 结构统计
+#### 5\.2 XML 结构统计
 
 |XML 元素|数量|作用|
 |---|---|---|
@@ -183,7 +181,7 @@ scene\.xml 是仿真入口，负责引入 anymal\_c\.xml 并添加平面地面�
 
 XML 中共有 13 个 \<position\> 标签，其中 1 个是默认模板，12 个是实际关节执行器。
 
-### 5\.3 Body 与 Joint
+#### 5\.3 Body 与 Joint
 
 ANYmal C 的根刚体为 base，包含自由关节，因此机器人能够在三维空间平移和旋转。四条腿以树状结构连接到基座：
 
@@ -203,7 +201,7 @@ base
 |广义速度维度 nv|18|
 |主动关节数|12|
 
-### 5\.4 Geom、Site 与 Sensor
+#### 5\.4 Geom、Site 与 Sensor
 
 视觉几何与碰撞几何在 XML 中分离：
 
@@ -224,7 +222,7 @@ base
 
 投影重力不直接来自传感器，而是根据根姿态四元数计算，用于描述机器人倾斜状态。
 
-### 5\.5 Actuator
+#### 5\.5 Actuator
 
 12 个主动关节分别由位置执行器控制。默认执行器参数如下：
 
@@ -237,13 +235,13 @@ base
 
 策略动作先被限制在 \[\-1, 1\]，再乘以 action\_scale = 0\.06，最后叠加到默认站姿关节角并写入执行器控制量。
 
-### 5\.6 Robot Viewer 辅助检查
+#### 5\.6 Robot Viewer 辅助检查
 
 原始任务推荐使用 [Robot Viewer](https://viewer.robotsfan.com/) 在线查看 \.urdf 或 \.obj 模型。它适合在资产接入前快速检查网格朝向、比例和层级，但不能替代 MotrixLab 中的场景加载与物理碰撞验证。
 
 本项目最终以 MotrixRender 加载 scene\.xml 的结果作为验收依据，因为该过程同时覆盖机器人模型、纹理、碰撞体、地面、执行器和任务标记。Robot Viewer 可作为单个 OBJ 网格异常时的辅助排查工具。
 
-## 配置类设计
+### 配置类设计
 
 环境使用 Python dataclass 和 field\(default\_factory=\.\.\.\) 管理嵌套配置：
 
@@ -272,7 +270,7 @@ field\(default\_factory=\.\.\.\) 可以确保每次创建环境配置时获得�
 |max\_episode\_steps|700|最大控制步数|
 |max\_dof\_vel|100 rad/s|关节速度终止阈值|
 
-## 环境核心闭环
+### 环境核心闭环
 
 任务要求中的核心方法与 MotrixLab 实际实现对应如下：
 
@@ -298,9 +296,9 @@ MotrixLab 基类 NpEnv\.step\(\) 的执行顺序为：
 
 update\_state\(\) 是该实现中的状态汇总入口，它依次读取仿真状态、更新导航命令、计算观测、奖励和终止条件。
 
-## 观测空间与动作空间
+### 观测空间与动作空间
 
-### 8\.1 动作空间
+#### 8\.1 动作空间
 
 ```Plain Text
 Box(-1.0, 1.0, (12,), float32)
@@ -315,7 +313,7 @@ LH_HAA, LH_HFE, LH_KFE,
 RH_HAA, RH_HFE, RH_KFE
 ```
 
-### 8\.2 观测空间
+#### 8\.2 观测空间
 
 ```Plain Text
 Box(-inf, inf, (54,), float32)
@@ -339,7 +337,7 @@ Box(-inf, inf, (54,), float32)
 
 该观测同时包含机器人本体状态、历史控制信息和导航目标信息，能够支持策略学习移动到目标点并停止。
 
-## 非训练环境验证
+### 非训练环境验证
 
 为避免把训练结果与环境正确性混淆，本周仅执行环境加载和零动作步进验证，没有运行训练。
 
@@ -382,13 +380,11 @@ Box(-inf, inf, (54,), float32)
 
 - 10 步内未发生异常终止；该验证只证明最小运行闭环可用，不代表策略已经训练完成。
 
-## 环境截图与查看命令
+### 环境截图与查看命令
 
 下图为仓库已有 ANYmal C 环境展示图的本地交付副本。截图窗口标题为 MotrixRender；画面中机器人模型、地面和导航标记均能正常显示，未见明显的模型穿透、资产缺失或加载报错。
 
-![image\.png](assets/image-1.png)
-
-
+![image\.png](assets/image-1-3bbf55dd.png)
 
 本地查看环境命令：
 
@@ -404,7 +400,7 @@ uv run scripts/bench.py --env anymal_c_navigation_flat --num_envs 256 --num_step
 
 以上命令用于查看或 benchmark，不会执行策略训练。
 
-## 训练命令（保留，未执行）
+### 训练命令（保留，未执行）
 
 按照任务要求保留训练命令，由使用者自行执行。本周报告没有运行以下命令，也没有将环境加载结果表述为训练结果。
 
@@ -422,7 +418,7 @@ uv run scripts/train.py --env anymal_c_navigation_flat --rllib rslrl --num-envs 
 
 训练前建议先执行单环境查看命令，确认显卡驱动、资产加载和机器人初始姿态正常，再根据设备显存调整并行环境数。
 
-## 实现检查与已知问题
+### 实现检查与已知问题
 
 |优先级|问题|影响与建议|
 |---|---|---|
@@ -432,7 +428,7 @@ uv run scripts/train.py --env anymal_c_navigation_flat --rllib rslrl --num-envs 
 |中|RewardConfig\.scales 已定义，但 \_compute\_reward\(\) 使用硬编码权重|调参需要改代码，建议统一读取配置|
 |中|缺少 ANYmal C 专项测试|建议增加空间维度、奖励、终止、重置和长步进测试|
 
-## 验收清单
+### 验收清单
 
 |原始任务要求|状态|交付证据|
 |---|---|---|
@@ -447,7 +443,7 @@ uv run scripts/train.py --env anymal_c_navigation_flat --rllib rslrl --num-envs 
 |列出 Observation Space 与 Action Space 维度明细|通过|第 8 节：54 维观测、12 维动作|
 |输出周报文档|通过|按用户要求输出本 Markdown 文档，而非 PDF|
 
-## 本周结论
+### 本周结论
 
 ANYmal C 环境已经形成完整的“XML 资产 \-\> 配置类 \-\> 环境实现 \-\> 注册系统 \-\> 强化学习适配”链路。非训练验证表明，环境可以正确注册、加载模型、创建 4 个并行实例，并以 54 维观测和 12 维动作连续步进。
 

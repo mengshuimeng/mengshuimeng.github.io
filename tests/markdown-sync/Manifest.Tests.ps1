@@ -65,6 +65,32 @@ Describe 'Read-SyncManifest' {
         Set-Content -LiteralPath (Join-Path $sourceRoot 'notes\article.md') -Value '# Article' -Encoding UTF8
     }
 
+    It 'loads an explicitly whitelisted English translation' {
+        Set-Content -LiteralPath (Join-Path $sourceRoot 'notes\article.en.md') -Value '# English article' -Encoding UTF8
+        $entry = New-TestEntry
+        $entry.translations = @(@{ source = 'notes\article.en.md'; language = 'en'; title = 'English article' })
+        Write-TestManifest -Entries @($entry) -Path $manifestPath
+        $loaded = @(Read-SyncManifest -Path $manifestPath -SourceRoot $sourceRoot -RepositoryRoot $repositoryRoot)
+        $loaded[0].Translations.Count | Should Be 1
+        $loaded[0].Translations[0].SourceRelative | Should Be 'notes\article.en.md'
+        $loaded[0].Translations[0].Language | Should Be 'en'
+    }
+
+    It 'rejects a translation outside the configured source root' {
+        $entry = New-TestEntry
+        $entry.translations = @(@{ source = '..\outside.md'; language = 'en'; title = 'English article' })
+        Write-TestManifest -Entries @($entry) -Path $manifestPath
+        { Read-SyncManifest -Path $manifestPath -SourceRoot $sourceRoot -RepositoryRoot $repositoryRoot } | Should Throw
+    }
+
+    It 'rejects a translation that duplicates the default Chinese language' {
+        Set-Content -LiteralPath (Join-Path $sourceRoot 'notes\article.zh-cn.md') -Value '# Duplicate article' -Encoding UTF8
+        $entry = New-TestEntry
+        $entry.translations = @(@{ source = 'notes\article.zh-cn.md'; language = 'zh-cn'; title = 'Duplicate article' })
+        Write-TestManifest -Entries @($entry) -Path $manifestPath
+        { Read-SyncManifest -Path $manifestPath -SourceRoot $sourceRoot -RepositoryRoot $repositoryRoot } | Should Throw
+    }
+
     It 'loads a valid manifest and resolves safe paths' {
         Write-TestManifest -Entries @(New-TestEntry) -Path $manifestPath
 

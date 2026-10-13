@@ -1,6 +1,11 @@
 ---
 title: "在 VS Code 中本地编译 Overleaf 项目"
-description: "在 Windows、VS Code 与 TeX Live 环境中迁移、编译和预览 Overleaf 项目的实践记录。"
+date: 2026-08-06
+authors:
+  - "萌睡梦"
+tags:
+  - "LaTeX"
+  - "VS Code"
 ---
 
 > 适用环境：Windows 11
@@ -12,8 +17,6 @@ description: "在 Windows、VS Code 与 TeX Live 环境中迁移、编译和预�
 ---
 
 参考连接
-
-- https://blog.csdn.net/weixin_57972634/article/details/148281818
 
 - [[科研实践\] VS Code (Copilot) + Overleaf (使用 Overleaf Workshop 插件)_cursor overleaf-CSDN博客](https://blog.csdn.net/weixin_57972634/article/details/148281818)
 
@@ -99,13 +102,13 @@ Overleaf 很适合轻量项目，但当论文进入正式写作阶段后，会�
 在镜像网站里下载iso文件：
 网址：[Acquiring TeX Live as an ISO image](https://tug.org/texlive/acquire-iso.html)
 
-![image-20260328203221175](./assets/image-20260328203221175.png)
+![image-20260328203221175](assets/image-20260328203221175-a2676fb6.png)
 
-![image-20260328203259525](./assets/image-20260328203259525.png)
+![image-20260328203259525](assets/image-20260328203259525-02f5b189.png)
 
 以管理员身份运行
 
-![image-20260328203538827](./assets/image-20260328203538827.png)
+![image-20260328203538827](assets/image-20260328203538827-4e8914cf.png)
 
 安装在：
 
@@ -123,8 +126,6 @@ tlmgr --version
 ```
 
 如果都能正常输出版本号，说明 TeX Live 本体已经装好了。
-
-![TeX Live 安装与命令验证结果](./assets/image-20260328203909328.png)
 
 ### 5.1 验证结果示例
 
@@ -202,7 +203,7 @@ spawn latexmk ENOENT
 
 [Overleaf-workshop/Overleaf-Workshop：在 vscode 中开放 Overleaf/ShareLaTex 项目，提供全面协作支持。](https://github.com/overleaf-workshop/overleaf-workshop#how-to-login-with-cookies)
 
-![image-20260328204035573](./assets/image-20260328204035573.png)
+![image-20260328204035573](assets/image-20260328204035573-aa787ccf.png)
 
 我后来还尝试过在 VS Code 中直接使用 Overleaf Workshop 打开的工程进行编译，结果出现问题。
 
@@ -720,6 +721,6 @@ latexmk (pdflatex)
 
 > 想在 VS Code 中高效替代 Overleaf，核心不是“装上 LaTeX”，而是“让本地编译器、项目目录、模板编译链、VS Code 配置四者完全对齐”。
 
-```
+```text
 如果你愿意，我下一步可以继续帮你把这篇文档再升级成更像博客文章的版本，比如加上“问题-原因-解决”小节、命令行块、注意事项和目录锚点。
 ```

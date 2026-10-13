@@ -1,6 +1,11 @@
 ---
 title: "判断 RealSense 摄像头是否朝下"
-description: "利用 IMU 加速度与坐标变换判断摄像头安装方向的方法。"
+date: 2026-05-05
+authors:
+  - "萌睡梦"
+tags:
+  - "RealSense"
+  - "IMU"
 ---
 
 ```bash
@@ -24,8 +29,6 @@ jj@Jiang:~/projects/tmp/Rc-Vision$ ros2 topic list --no-daemon | grep camera /ca
 camera/camera/imu  #3. 融合后的 IMU 话题
 ```
 
-## 如果你想“判断摄像头是不是朝下”
-
 现在你已经有了 IMU 话题，但要注意：
 
 - `gyro` 是**角速度**
@@ -36,7 +39,7 @@ camera/camera/imu  #3. 融合后的 IMU 话题
 如果你只是要“发布数据”，现在已经够了。
 如果你下一步想做“朝下状态判断”，那就该新写一个小节点，比如：
 
-```
+```text
 imu_tilt_node.py
 ```
 
@@ -97,14 +100,14 @@ jj@Jiang:~/projects/tmp/Rc-Vision/ros2_ws$
 
 所以这个话题的结构已经清楚了，主要包含 4 部分：
 
-### 1. `header`
+## 1. `header`
 
 里面有：
 
 - `stamp`：时间戳
 - `frame_id`：坐标系名字
 
-### 2. `orientation`
+## 2. `orientation`
 
 四元数姿态：
 
@@ -116,7 +119,7 @@ jj@Jiang:~/projects/tmp/Rc-Vision/ros2_ws$
 但要注意，**D435i 的这个字段不一定有有效姿态解算值**。
  接口定义里也写了：如果某类估计不可用，对应 covariance 的第一个元素可能会设成 `-1`，表示不要用它。
 
-### 3. `angular_velocity`
+## 3. `angular_velocity`
 
 角速度，也就是陀螺仪数据：
 
@@ -126,11 +129,11 @@ jj@Jiang:~/projects/tmp/Rc-Vision/ros2_ws$
 
 单位通常是：
 
-```
+```text
 rad/sec
 ```
 
-### 4. `linear_acceleration`
+## 4. `linear_acceleration`
 
 线加速度，也就是加速度计数据：
 
@@ -140,7 +143,7 @@ rad/sec
 
 单位通常是：
 
-```
+```text
 m/s^2
 ```
 

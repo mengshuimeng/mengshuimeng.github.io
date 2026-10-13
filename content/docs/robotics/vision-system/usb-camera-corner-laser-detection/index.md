@@ -1,6 +1,11 @@
 ---
 title: "USB 摄像头角点与激光点实时检测"
-description: "将离线帧处理流程改造成外接 USB 摄像头实时检测流程的实现思路。"
+date: 2026-05-05
+authors:
+  - "萌睡梦"
+tags:
+  - "OpenCV"
+  - "视觉检测"
 ---
 
 如何将运行的几帧实例变为我外接一个摄像头然后检测并输出我的角点和激光点
@@ -41,6 +46,7 @@ class LaserMotorController:
         detector.area_threshold = 600  # 连通域面积阈值
         detector.angle_min =60        # 最小角度阈值(度)
         detector.angle_max = 120       # 最大角度阈值(度)
+
 
 
         # PID参数

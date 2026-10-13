@@ -8,3 +8,7 @@ public/
 
 # Local implementation worktrees
 .worktrees/
+
+# Local browser verification artifacts
+.playwright-cli/
+/output/playwright/

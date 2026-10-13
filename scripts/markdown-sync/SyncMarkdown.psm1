@@ -136,6 +136,44 @@ function Read-SyncManifest {
             throw "Manifest source does not exist: $source"
         }
 
+        $translations = New-Object 'System.Collections.Generic.List[object]'
+        $aliases = @()
+        if ($entry.PSObject.Properties['aliases']) {
+            $aliases = @($entry.aliases | ForEach-Object { [string]$_ })
+            foreach ($alias in $aliases) {
+                if ($alias -notmatch '^/(?!/)[^?#\r\n]*$' -or $alias -match '(^|/)\.\.(/|$)') {
+                    throw "Invalid legacy URL alias in manifest entry $index."
+                }
+            }
+        }
+        $languageSet = New-Object 'System.Collections.Generic.HashSet[string]' ([StringComparer]::OrdinalIgnoreCase)
+        $languageSet.Add('zh-cn') | Out-Null
+        if ($entry.PSObject.Properties['translations']) {
+            foreach ($translation in @($entry.translations)) {
+                $translationSource = [string](Assert-ManifestProperty -Entry $translation -Name 'source' -Index $index)
+                $language = [string](Assert-ManifestProperty -Entry $translation -Name 'language' -Index $index)
+                $translationTitle = [string](Assert-ManifestProperty -Entry $translation -Name 'title' -Index $index)
+                if ($language -notmatch '^[a-z]{2}(?:-[a-z]{2})?$' -or -not $languageSet.Add($language)) {
+                    throw "Invalid or duplicate translation language in manifest entry $index."
+                }
+                if ([string]::IsNullOrWhiteSpace($translationTitle)) {
+                    throw "Translation title must not be empty in manifest entry $index."
+                }
+                $translationPath = Resolve-SafeChildPath -Root $SourceRoot -RelativePath $translationSource
+                if (-not $sourceSet.Add($translationPath)) {
+                    throw "Manifest contains duplicate source: $translationSource"
+                }
+                if (-not $delete -and -not (Test-Path -LiteralPath $translationPath -PathType Leaf)) {
+                    throw "Manifest translation source does not exist: $translationSource"
+                }
+                $translations.Add([pscustomobject]@{
+                    SourceRelative = $translationSource
+                    Language = $language
+                    Title = $translationTitle
+                })
+            }
+        }
+
         $result.Add([pscustomobject][ordered]@{
             SourceRelative      = $source
             SourcePath          = $sourcePath
@@ -147,6 +185,8 @@ function Read-SyncManifest {
             Tags                = [string[]]$tags
             Enabled             = $enabled
             Delete              = $delete
+            Translations        = $translations.ToArray()
+            Aliases             = [string[]]$aliases
         })
     }
 
@@ -162,16 +202,12 @@ function ConvertTo-YamlDoubleQuoted {
 function Remove-ExistingFrontMatter {
     param([Parameter(Mandatory = $true)][string]$Markdown)
 
-    if ($Markdown -match '\A---\n.*?\n---(?:\n|\z)') {
-        return [regex]::Replace(
-            $Markdown,
-            '\A---\n.*?\n---(?:\n|\z)',
-            '',
-            [Text.RegularExpressions.RegexOptions]::Singleline
-        )
-    }
-
-    return $Markdown
+    return [regex]::Replace(
+        $Markdown,
+        '\A\uFEFF?---\n.*?\n---(?:\n|\z)',
+        '',
+        [Text.RegularExpressions.RegexOptions]::Singleline
+    )
 }
 
 function ConvertTo-AssetFileName {
@@ -423,6 +459,12 @@ function Convert-SyncDocument {
         foreach ($tag in @($Entry.Tags)) {
             $frontMatter.Add('  - ' + (ConvertTo-YamlDoubleQuoted -Value ([string]$tag)))
         }
+        if ($Entry.PSObject.Properties['Aliases'] -and @($Entry.Aliases).Count -gt 0) {
+            $frontMatter.Add('aliases:')
+            foreach ($alias in @($Entry.Aliases)) {
+                $frontMatter.Add('  - ' + (ConvertTo-YamlDoubleQuoted -Value ([string]$alias)))
+            }
+        }
         $frontMatter.Add('---')
         $frontMatter.Add('')
 
@@ -430,6 +472,39 @@ function Convert-SyncDocument {
         $outputMarkdown = (($outputLines -join "`n").TrimEnd("`n") + "`n")
         $indexPath = Join-Path $temporaryBundle 'index.md'
         [IO.File]::WriteAllText($indexPath, $outputMarkdown, (New-Object Text.UTF8Encoding($false)))
+
+        $translationAssetCount = 0
+        if ($Entry.PSObject.Properties['Translations']) {
+            foreach ($translation in @($Entry.Translations)) {
+                if ($translation.Language -notmatch '^[a-z]{2}(?:-[a-z]{2})?$' -or $translation.Language -eq 'zh-cn') {
+                    throw 'Invalid translation language.'
+                }
+                $translationRoot = Resolve-SafeChildPath -Root $temporaryBundle -RelativePath '.translations'
+                $translationEntry = [pscustomobject]@{
+                    SourceRelative = $translation.SourceRelative
+                    DestinationRelative = $translation.Language
+                    Title = $translation.Title
+                    Date = $Entry.Date
+                    Authors = $Entry.Authors
+                    Tags = $Entry.Tags
+                }
+                $translated = Convert-SyncDocument -Entry $translationEntry -SourceRoot $SourceRoot -OutputRoot $translationRoot -SharedAssetsRoot $SharedAssetsRoot
+                foreach ($asset in Get-ChildItem -LiteralPath (Join-Path $translated.BundlePath 'assets') -File) {
+                    $targetAsset = Join-Path $assetsPath $asset.Name
+                    if (Test-Path -LiteralPath $targetAsset) {
+                        if ((Get-FileHash -LiteralPath $asset.FullName).Hash -ne (Get-FileHash -LiteralPath $targetAsset).Hash) {
+                            throw "Translation media name collision: $($asset.Name)"
+                        }
+                    }
+                    else {
+                        Copy-Item -LiteralPath $asset.FullName -Destination $targetAsset
+                    }
+                }
+                Copy-Item -LiteralPath $translated.IndexPath -Destination (Join-Path $temporaryBundle ('index.' + $translation.Language + '.md'))
+                $translationAssetCount += $translated.AssetCount
+                Remove-Item -LiteralPath $translationRoot -Recurse -Force
+            }
+        }
 
         if (Test-Path -LiteralPath $bundlePath) {
             Remove-Item -LiteralPath $bundlePath -Recurse -Force
@@ -440,7 +515,7 @@ function Convert-SyncDocument {
             BundlePath = $bundlePath
             IndexPath  = Join-Path $bundlePath 'index.md'
             Markdown   = $outputMarkdown
-            AssetCount = $sourceToName.Count
+            AssetCount = $sourceToName.Count + $translationAssetCount
         }
     }
     catch {

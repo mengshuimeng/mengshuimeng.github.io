@@ -1,6 +1,11 @@
 ---
 title: "RealSense D435i 与 YOLO 联调记录"
-description: "记录 RealSense D435i 图像流接入 YOLO 检测流程时的环境与代码要点。"
+date: 2026-05-05
+authors:
+  - "萌睡梦"
+tags:
+  - "RealSense"
+  - "YOLO"
 ---
 
 [magisystem0408/yolov5-DeepSort-RealSenseD435i: realsense+yolov5+deepsense D435i](https://github.com/magisystem0408/yolov5-DeepSort-RealSenseD435i)

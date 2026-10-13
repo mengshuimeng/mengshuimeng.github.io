@@ -39,6 +39,63 @@ function New-TransformRoots {
 }
 
 Describe 'Convert-SyncDocument' {
+    It 'replaces multiline source front matter without leaking it into the article body' {
+        $roots = New-TransformRoots
+        $source = Join-Path $roots.SourceRoot 'notes\article.md'
+        "---`ntitle: Old source metadata`ndate: 2020-01-01`ntags:`n  - old-source-tag`n---`n`n# Test article`n`nReal article body." | Set-Content -LiteralPath $source -Encoding UTF8
+        $result = Convert-SyncDocument -Entry (New-TransformEntry) -SourceRoot $roots.SourceRoot -OutputRoot $roots.OutputRoot -SharedAssetsRoot $roots.SharedAssetsRoot
+        $text = Get-Content -LiteralPath $result.IndexPath -Raw -Encoding UTF8
+        $text | Should Match 'Real article body\.'
+        $text | Should Not Match 'Old source metadata|old-source-tag|2020-01-01'
+        $text | Should Not Match '(?m)^# Test article$'
+    }
+
+    It 'retains explicitly declared legacy URL aliases' {
+        $roots = New-TransformRoots
+        Set-Content -LiteralPath (Join-Path $roots.SourceRoot 'notes\article.md') -Value 'Article body' -Encoding UTF8
+        $entry = New-TransformEntry
+        $entry | Add-Member -MemberType NoteProperty -Name Aliases -Value @('/docs/legacy-note/')
+        $result = Convert-SyncDocument -Entry $entry -SourceRoot $roots.SourceRoot -OutputRoot $roots.OutputRoot -SharedAssetsRoot $roots.SharedAssetsRoot
+        (Get-Content -LiteralPath $result.IndexPath -Raw -Encoding UTF8) | Should Match 'aliases:\n  - "/docs/legacy-note/"'
+    }
+
+    It 'keeps the existing bundle when translated media conflicts with its main page' {
+        $roots = New-TransformRoots
+        New-Item -ItemType Directory -Path (Join-Path $roots.SourceRoot 'english') -Force | Out-Null
+        Set-Content -LiteralPath (Join-Path $roots.SourceRoot 'notes\article.md') -Value '![main](diagram.png)' -Encoding UTF8
+        Set-Content -LiteralPath (Join-Path $roots.SourceRoot 'english\article.md') -Value '![translation](diagram.png)' -Encoding UTF8
+        [IO.File]::WriteAllBytes((Join-Path $roots.SourceRoot 'notes\diagram.png'), [byte[]]@(1, 2, 3))
+        [IO.File]::WriteAllBytes((Join-Path $roots.SourceRoot 'english\diagram.png'), [byte[]]@(4, 5, 6))
+        $entry = New-TransformEntry
+        $entry | Add-Member -MemberType NoteProperty -Name Translations -Value @([pscustomobject]@{ SourceRelative = 'english\article.md'; Language = 'en'; Title = 'English article' })
+        $bundle = Join-Path $roots.OutputRoot $entry.DestinationRelative
+        New-Item -ItemType Directory -Path $bundle -Force | Out-Null
+        $oldIndex = Join-Path $bundle 'index.md'
+        Set-Content -LiteralPath $oldIndex -Value 'Existing article' -Encoding UTF8
+        $before = (Get-FileHash -LiteralPath $oldIndex).Hash
+        { Convert-SyncDocument -Entry $entry -SourceRoot $roots.SourceRoot -OutputRoot $roots.OutputRoot -SharedAssetsRoot $roots.SharedAssetsRoot } | Should Throw
+        (Get-FileHash -LiteralPath $oldIndex).Hash | Should Be $before
+    }
+
+    It 'renders an explicit translation and its local media in the same bundle' {
+        $roots = New-TransformRoots
+        Set-Content -LiteralPath (Join-Path $roots.SourceRoot 'notes\article.md') -Value '# Test article' -Encoding UTF8
+        Set-Content -LiteralPath (Join-Path $roots.SourceRoot 'notes\article.en.md') -Value "# English article`n`nEnglish body.`n`n![diagram](diagram.png)" -Encoding UTF8
+        [IO.File]::WriteAllBytes((Join-Path $roots.SourceRoot 'notes\diagram.png'), [byte[]]@(1, 2, 3))
+        $entry = New-TransformEntry
+        $entry | Add-Member -MemberType NoteProperty -Name Translations -Value @([pscustomobject]@{ SourceRelative = 'notes\article.en.md'; Language = 'en'; Title = 'English article' })
+        $before = (Get-FileHash -LiteralPath (Join-Path $roots.SourceRoot 'notes\article.en.md')).Hash
+        $result = Convert-SyncDocument -Entry $entry -SourceRoot $roots.SourceRoot -OutputRoot $roots.OutputRoot -SharedAssetsRoot $roots.SharedAssetsRoot
+        $translation = Join-Path $result.BundlePath 'index.en.md'
+        Test-Path -LiteralPath $translation | Should Be $true
+        $text = Get-Content -LiteralPath $translation -Raw -Encoding UTF8
+        $text | Should Match 'title: "English article"'
+        $text | Should Match 'English body\.'
+        $text | Should Match '!\[diagram\]\(assets/diagram.png\)'
+        Test-Path -LiteralPath (Join-Path $result.BundlePath 'assets\diagram.png') | Should Be $true
+        (Get-FileHash -LiteralPath (Join-Path $roots.SourceRoot 'notes\article.en.md')).Hash | Should Be $before
+    }
+
     It 'generates deterministic front matter and removes a matching leading H1' {
         $roots = New-TransformRoots
         $source = Join-Path $roots.SourceRoot 'notes\article.md'

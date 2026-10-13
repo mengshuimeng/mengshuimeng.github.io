@@ -1,0 +1,29 @@
+---
+title: "算法链接整理"
+date: 2026-05-05
+authors:
+  - "萌睡梦"
+tags:
+  - "算法"
+  - "参考资料"
+aliases:
+  - "/blog/resources/算法链接/"
+---
+
+https://roadmap.sh/
+
+https://juejin.cn/post/7418134213654642688#heading-0
+
+https://www.codelicence.cn/d/392634632388083712
+
+https://oi.wiki/contest/
+
+https://github.com/walter201230/Python
+
+https://csdiy.wiki/
+
+https://m.runoob.com/cprogramming/
+
+https://www.luogu.com.cn/https://www.luogu.com.cn/
+
+https://codeforces.com/

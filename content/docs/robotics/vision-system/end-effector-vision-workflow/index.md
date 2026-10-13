@@ -1,6 +1,12 @@
 ---
 title: "末端 RealSense 抓取视觉链路整理"
-description: "梳理 WSL、Docker、ROS 2 与 RealSense 组成的末端抓取视觉开发链路。"
+date: 2026-05-05
+authors:
+  - "萌睡梦"
+tags:
+  - "RealSense"
+  - "ROS 2"
+  - "机器人视觉"
 ---
 
 这段聊天本质上一直在做一件事：

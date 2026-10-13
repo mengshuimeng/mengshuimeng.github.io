@@ -1,13 +1,16 @@
 ---
 title: "Windows + WSL2 使用 Codex CLI 与 Oh My Codex"
-description: "在 Windows 与 WSL2 环境中安装、配置和使用 Codex CLI 与 Oh My Codex 的实践指南。"
+date: 2026-05-05
+authors:
+  - "萌睡梦"
+tags:
+  - "Codex"
+  - "WSL"
 ---
 
 ---
 
-## Windows + WSL2 使用 Codex CLI + Oh My Codex 指南
-
-### 1. 这套工具是干什么的？
+## 1. 这套工具是干什么的？
 
 在 Windows + WSL2 环境下，推荐把 **Codex CLI** 和 **Oh My Codex（OMX）** 当成一套“本地项目开发助手”来用。
 
@@ -25,7 +28,7 @@ OMX 则是在 Codex CLI 外面加了一层工作流能力，例如 prompts、ski
 
 ---
 
-### 2. 推荐环境
+## 2. 推荐环境
 
 本文默认环境如下：
 
@@ -64,7 +67,7 @@ All checks passed! oh-my-codex is ready.
 
 ---
 
-### 3. Windows 路径和 WSL 路径怎么对应？
+## 3. Windows 路径和 WSL 路径怎么对应？
 
 在 WSL 中，Windows 磁盘会挂载到 `/mnt` 目录下。
 
@@ -105,7 +108,7 @@ find /mnt/d -maxdepth 6 -type d -iname "ProjectPilot" 2>/dev/null
 
 ---
 
-### 4. 安装 Node.js
+## 4. 安装 Node.js
 
 Codex CLI 和 OMX 都依赖 Node.js。建议使用 Node.js 20 或更高版本。
 
@@ -127,7 +130,7 @@ node -v
 
 ---
 
-### 5. 安装 Codex CLI
+## 5. 安装 Codex CLI
 
 官方支持通过 npm 或 Homebrew 安装 Codex CLI；在 WSL2 中推荐用 npm。([GitHub](https://github.com/openai/codex?utm_source=chatgpt.com))
 
@@ -169,7 +172,7 @@ Logged in using ChatGPT
 
 ---
 
-### 6. 安装 Oh My Codex
+## 6. 安装 Oh My Codex
 
 安装或更新 OMX：
 
@@ -227,7 +230,7 @@ OMX 官方 README 也建议安装或版本更新后运行 `omx setup`，再用 `
 
 ---
 
-### 7. 安装 Rust / Cargo
+## 7. 安装 Rust / Cargo
 
 如果 `omx doctor` 里出现：
 
@@ -280,7 +283,7 @@ cargo 1.95.0
 
 ---
 
-### 8. 检查 OMX 是否安装完整
+## 8. 检查 OMX 是否安装完整
 
 执行：
 
@@ -310,7 +313,7 @@ Explore Harness: ready
 
 ---
 
-### 9. 做一次真实调用测试
+## 9. 做一次真实调用测试
 
 执行：
 
@@ -340,7 +343,7 @@ OMX-EXEC-OK
 
 ---
 
-### 10. Codex CLI 怎么用？
+## 10. Codex CLI 怎么用？
 
 进入项目目录：
 
@@ -393,7 +396,7 @@ Codex CLI 支持 slash commands，你可以输入 `/` 查看命令，例如切�
 
 ---
 
-### 11. Oh My Codex 怎么用？
+## 11. Oh My Codex 怎么用？
 
 进入项目目录：
 
@@ -443,7 +446,7 @@ $executor 按照刚才的计划执行修改，并说明改了哪些文件。
 
 ---
 
-### 12. omx explore 怎么用？
+## 12. omx explore 怎么用？
 
 `omx explore` 是 OMX 的只读仓库探索能力，适合快速扫项目结构。OMX 文档说明，`omx explore` 使用 Rust native harness 做更快、更严格的只读仓库探索。([GitHub](https://github.com/Yeachan-Heo/oh-my-codex/blob/main/docs/readme/README.zh-TW.md?utm_source=chatgpt.com))
 
@@ -475,7 +478,7 @@ $plan 请基于刚才的项目结构，制定一个最小可行修改计划。�
 
 ---
 
-### 13. 权限模式怎么理解？
+## 13. 权限模式怎么理解？
 
 Codex / OMX 能不能修改文件、能不能执行命令，取决于权限和沙箱设置。
 
@@ -513,9 +516,9 @@ YOLO / danger-full-access
 
 ---
 
-### 14. 推荐工作流
+## 14. 推荐工作流
 
-#### 14.1 只读分析项目
+### 14.1 只读分析项目
 
 ```bash
 cd /mnt/d/Documents/code/python/ProjectPilot
@@ -536,7 +539,7 @@ $plan 请只读分析当前项目，不要修改文件，按“必须修改 / �
 
 ---
 
-#### 14.2 修改 README
+### 14.2 修改 README
 
 ```text
 $executor 请根据刚才的计划，只修改 README.md，补充项目简介、环境依赖、运行方式、测试方式和目录结构。修改前先说明计划。
@@ -550,7 +553,7 @@ git diff README.md
 
 ---
 
-#### 14.3 修复项目运行问题
+### 14.3 修复项目运行问题
 
 ```text
 $plan 请检查项目运行入口和依赖，不要修改文件，先告诉我为什么运行失败。
@@ -564,7 +567,7 @@ $executor 按照你的分析修复最小问题，并运行必要测试。
 
 ---
 
-#### 14.4 生成课程作业提交材料
+### 14.4 生成课程作业提交材料
 
 ```text
 $architect 请分析这个项目是否适合作为课程作业提交，重点检查 README、功能闭环、截图说明、测试、CI、文档完整性。
@@ -573,7 +576,7 @@ $executor 请生成一份 docs/submission_checklist.md，列出提交材料、�
 
 ---
 
-### 15. Git 配合使用
+## 15. Git 配合使用
 
 在让 Codex 或 OMX 修改项目前，先检查状态：
 
@@ -616,9 +619,9 @@ git reset --hard
 
 ---
 
-### 16. 常见问题排查
+## 16. 常见问题排查
 
-#### 16.1 `cd` 项目路径失败
+### 16.1 `cd` 项目路径失败
 
 错误：
 
@@ -644,7 +647,7 @@ find /mnt/d -maxdepth 6 -type d -iname "ProjectPilot" 2>/dev/null
 
 ---
 
-#### 16.2 `python: command not found`
+### 16.2 `python: command not found`
 
 错误：
 
@@ -668,7 +671,7 @@ python3 --version
 
 ---
 
-#### 16.3 `omx explore` 报 cargo 不存在
+### 16.3 `omx explore` 报 cargo 不存在
 
 错误：
 
@@ -693,7 +696,7 @@ omx doctor
 
 ---
 
-#### 16.4 `apt update` 出现 RealSense 公钥错误
+### 16.4 `apt update` 出现 RealSense 公钥错误
 
 你遇到过：
 
@@ -709,7 +712,7 @@ https://librealsense.intel.com/Debian/apt-repo
 
 ---
 
-#### 16.5 OMX 提示是否信任当前目录
+### 16.5 OMX 提示是否信任当前目录
 
 你可能会看到：
 
@@ -729,9 +732,9 @@ Do you trust the contents of this directory?
 
 ---
 
-### 17. Codex 和 OMX 怎么选择？
+## 17. Codex 和 OMX 怎么选择？
 
-#### 小任务：用 Codex CLI
+### 小任务：用 Codex CLI
 
 ```bash
 cd /mnt/d/Documents/code/python/ProjectPilot
@@ -750,7 +753,7 @@ codex
 
 ---
 
-#### 大任务：用 OMX
+### 大任务：用 OMX
 
 ```bash
 cd /mnt/d/Documents/code/python/ProjectPilot
@@ -770,7 +773,7 @@ omx --madmax --high
 
 ---
 
-#### 只读探索：用 omx explore
+### 只读探索：用 omx explore
 
 ```bash
 cd /mnt/d/Documents/code/python/ProjectPilot
@@ -787,9 +790,9 @@ omx explore --prompt "只读分析当前项目。"
 
 ---
 
-### 18. 推荐日常命令清单
+## 18. 推荐日常命令清单
 
-#### 环境检查
+### 环境检查
 
 ```bash
 node -v
@@ -800,7 +803,7 @@ codex login status
 omx doctor
 ```
 
-#### 更新工具
+### 更新工具
 
 ```bash
 npm install -g @openai/codex oh-my-codex
@@ -808,31 +811,31 @@ omx setup --force
 omx doctor
 ```
 
-#### 进入项目
+### 进入项目
 
 ```bash
 cd /mnt/d/Documents/code/python/ProjectPilot
 ```
 
-#### 只读探索
+### 只读探索
 
 ```bash
 omx explore --prompt "只读分析项目结构，列出入口、依赖、测试、文档和风险。"
 ```
 
-#### 启动 Codex
+### 启动 Codex
 
 ```bash
 codex
 ```
 
-#### 启动 OMX
+### 启动 OMX
 
 ```bash
 omx --madmax --high
 ```
 
-#### 查看 Git 状态
+### 查看 Git 状态
 
 ```bash
 git status
@@ -841,33 +844,33 @@ git diff
 
 ---
 
-### 19. 推荐提示词模板
+## 19. 推荐提示词模板
 
-#### 19.1 只读审查
+### 19.1 只读审查
 
 ```text
 $plan 请只读审查当前项目，不要修改任何文件。重点检查 README、运行入口、依赖文件、测试、CI、文档和课程提交材料完整性。最后按“必须修改 / 建议修改 / 可选优化”输出。
 ```
 
-#### 19.2 修改前规划
+### 19.2 修改前规划
 
 ```text
 $plan 请先制定最小修改计划，不要直接改文件。要求每一步都说明目标、涉及文件、验证方式和回滚方式。
 ```
 
-#### 19.3 执行修改
+### 19.3 执行修改
 
 ```text
 $executor 按照刚才的计划执行修改。每次修改后说明改了哪些文件、为什么改、如何验证。
 ```
 
-#### 19.4 检查运行
+### 19.4 检查运行
 
 ```text
 $executor 请运行项目的基础测试或 smoke test。如果失败，先解释失败原因，再给出最小修复方案。
 ```
 
-#### 19.5 生成提交说明
+### 19.5 生成提交说明
 
 ```text
 $executor 请根据当前项目生成一份课程提交说明，包含项目简介、环境依赖、运行步骤、功能展示、测试方式和注意事项。
@@ -875,7 +878,7 @@ $executor 请根据当前项目生成一份课程提交说明，包含项目简�
 
 ---
 
-### 20. 最稳的使用习惯
+## 20. 最稳的使用习惯
 
 建议你养成这个顺序：
 
@@ -918,7 +921,7 @@ $executor 请根据当前项目生成一份课程提交说明，包含项目简�
 
 ---
 
-### 21. 我的建议
+## 21. 我的建议
 
 你现在这套环境已经完整可用了。
 

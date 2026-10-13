@@ -80,20 +80,10 @@ toc: false
   </div>
 </div>
 
-## Highlights
-
-{{< cards cols="2" >}}
-  {{< card link="/en/resume/#competition-awards-and-honors" title="RoboCon 2026" subtitle="National first prize in obstacle racing and third prize in task challenge" icon="sparkles" >}}
-  {{< card link="/en/resume/#education" title="Education and Qualification" subtitle="GPA 4.44/5.00 · Ranked 1/116 · Software Designer (Intermediate)" icon="academic-cap" >}}
-  {{< card link="/en/resume/#research" title="ICIC 2026" subtitle="SafeRecovery accepted · Third author · Oral presentation" icon="collection" >}}
-  {{< card link="/en/resume/#research" title="Software Copyrights" subtitle="Contributed to 3 registrations in computer vision and fault diagnosis" icon="document-text" >}}
-{{< /cards >}}
-
 ## Quick Links
 
 {{< cards cols="3" >}}
   {{< card link="/en/about" title="About Me" subtitle="My direction, experience, and interests" icon="user" >}}
-  {{< card link="/en/resume" title="Resume" subtitle="Education, skills, competitions, and project experience" icon="document-text" >}}
   {{< card link="/en/projects" title="Projects" subtitle="Research, competitions, and system implementation" icon="collection" >}}
   {{< card link="/en/blog" title="Blog" subtitle="Deployment notes, debugging logs, and learning records" icon="book-open" >}}
   {{< card link="/en/docs" title="Technical Docs" subtitle="Tutorials and practical notes organized by topic" icon="terminal" >}}

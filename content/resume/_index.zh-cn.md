@@ -2,6 +2,10 @@
 title: 简历
 description: 姜树豪的教育背景、项目经历、竞赛获奖与科研成果
 lastmod: 2026-09-29
+build:
+  render: never
+  list: never
+  publishResources: false
 ---
 
 新疆大学计算机科学与技术本科生，关注机器人视觉、强化学习与具身智能。

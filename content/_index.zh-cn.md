@@ -58,19 +58,6 @@ toc: false
         color: white;
       "
     >查看项目</a>
-    <a
-      href="/resume"
-      style="
-        display: inline-block;
-        padding: 0.7rem 1.1rem;
-        border-radius: 0.9rem;
-        text-decoration: none;
-        font-weight: 600;
-        border: 1px solid rgba(128,128,128,0.35);
-        color: inherit;
-        background: transparent;
-      "
-    >个人简历</a>
   </div>
 
   <div
@@ -113,20 +100,10 @@ toc: false
   </div>
 </div>
 
-## 近期成果
-
-{{< cards cols="2" >}}
-  {{< card link="/resume/#竞赛与荣誉" title="RoboCon 2026" subtitle="仿生足式机器人障碍赛全国一等奖、任务赛全国三等奖" icon="sparkles" >}}
-  {{< card link="/resume/#教育背景" title="学业与资格" subtitle="GPA 4.44/5.00 · 专业排名 1/116 · 软件设计师（中级）" icon="academic-cap" >}}
-  {{< card link="/resume/#科研成果" title="ICIC 2026" subtitle="SafeRecovery 论文录用 · 第三作者 · 口头报告" icon="collection" >}}
-  {{< card link="/resume/#科研成果" title="软件著作权" subtitle="参与完成 3 项软件著作权登记，涵盖视觉与故障诊断" icon="document-text" >}}
-{{< /cards >}}
-
 ## 快速入口
 
 {{< cards cols="3" >}}
   {{< card link="/about" title="关于我" subtitle="方向、经历与兴趣" icon="user" >}}
-  {{< card link="/resume" title="个人简历" subtitle="教育背景、技术栈与竞赛经历" icon="document-text" >}}
   {{< card link="/projects" title="项目经历" subtitle="科研、竞赛与系统实现" icon="collection" >}}
   {{< card link="/blog" title="技术博客" subtitle="部署记录、踩坑总结与学习笔记" icon="book-open" >}}
   {{< card link="/docs" title="技术文档" subtitle="按知识体系整理的教程与实践记录" icon="terminal" >}}

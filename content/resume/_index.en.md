@@ -2,6 +2,10 @@
 title: Resume
 description: Shuhao Jiang's education, projects, competition awards, and research
 lastmod: 2026-09-29
+build:
+  render: never
+  list: never
+  publishResources: false
 ---
 
 Computer Science and Technology undergraduate at Xinjiang University, interested in robotics vision, reinforcement learning, and embodied intelligence.
